@@ -1,320 +1,473 @@
-import React, { useEffect, useState } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { 
-  ArrowRight, 
-  Leaf, 
-  Heart, 
-  Sparkles, 
-  Sun, 
-  Moon, 
-  Menu, 
-  X, 
-  Phone, 
-  MapPin, 
-  Clock, 
-  ChevronRight,
-  Quote,
-  Activity,
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ArrowRight,
+  Award,
+  CheckCircle2,
+  Clock,
+  Heart,
+  Menu,
+  Microscope,
+  ShieldCheck,
+  Star,
+  User,
+  X,
+  XCircle,
+  ChevronDown,
   Baby,
-  Shield
+  Activity,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
 
-// --- Configuration & Data ---
+const FONT_SERIF = { fontFamily: "'Playfair Display', serif" };
+const FONT_SANS = { fontFamily: "'Outfit', sans-serif" };
+
 const NAV_LINKS = [
-  { name: "Our Approach", href: "#approach" },
-  { name: "Services", href: "#services" },
-  { name: "Meet Scarlett", href: "#provider" },
-  { name: "Stories", href: "#testimonials" },
+  { name: "Expertise", href: "#expertise" },
+  { name: "Approach", href: "#approach" },
+  { name: "Specialties", href: "#services" },
+  { name: "Outcomes", href: "#outcomes" },
   { name: "FAQ", href: "#faq" },
 ];
 
-const SERVICE_PILLARS = [
+const SERVICES = [
   {
-    title: "Rise Above Hormone Imbalance",
-    subtitle: "Hormone Health",
-    description: "Specialized hormone care through every stage — adolescence, early reproductive years, late 30s and 40s, postpartum, perimenopause, and postmenopause. Hormones are the pulse of your health.",
-    icon: Moon,
-    items: ["Adolescent & early adulthood", "Late reproductive years", "Postpartum support", "Perimenopause & postmenopause"]
+    icon: <Activity className="w-8 h-8" />,
+    title: "Hormone Health",
+    desc: "Precision hormone balancing across all life stages — perimenopause, menopause, and complex endocrine disorders.",
+    tags: ["BHRT", "Perimenopause", "Adrenal"],
   },
   {
-    title: "Rise Above Metabolic Disease",
-    subtitle: "Metabolic Health",
-    description: "Through advanced testing and a root-cause method, we help reverse metabolic dysfunction, not just manage it. We believe reversal is possible.",
-    icon: Activity,
-    items: ["Insulin resistance", "PCOS", "Prediabetes", "Thyroid disease", "Weight dysregulation"]
+    icon: <Microscope className="w-8 h-8" />,
+    title: "Metabolic Health",
+    desc: "Reversal protocols for insulin resistance, PCOS, prediabetes, thyroid dysfunction, and weight dysregulation.",
+    tags: ["Insulin Resistance", "PCOS", "Thyroid"],
   },
   {
-    title: "Rise Into Sexual Wellness",
-    subtitle: "Sexual Health",
-    description: "Compassionate, expert care for your sexual health at every age — from education and prevention to treatment of complex conditions and trauma-informed healing.",
-    icon: Heart,
-    items: ["Reproductive health promotion", "Prevention of infertility", "Sexual pain conditions", "PTSD & trauma-informed care"]
+    icon: <Heart className="w-8 h-8" />,
+    title: "Sexual Health",
+    desc: "Trauma-informed, evidence-based care for sexual health, pain, and intimacy concerns handled with profound sensitivity.",
+    tags: ["Pelvic Pain", "EAGALA", "Trauma-Informed"],
   },
   {
-    title: "Rise to Your Reproductive Potential",
-    subtitle: "Fertility",
-    description: "We care about your fertility and help you achieve your goals within a whole-health framework — from contraceptive empowerment to fertility promotion and infertility root-cause management.",
-    icon: Baby,
-    items: ["Contraceptive care", "Reproductive life planning", "Fertility preservation", "Infertility management"]
+    icon: <Baby className="w-8 h-8" />,
+    title: "Fertility",
+    desc: "Comprehensive reproductive life planning from contraception counseling and fertility preservation to infertility support.",
+    tags: ["Contraception", "Fertility Planning", "Infertility"],
   },
   {
-    title: "Rise Beyond Your Age",
-    subtitle: "Aging Well",
-    description: "Aging is not decline — it is evolution. We help you thrive across every decade with a whole-health approach to long-term vitality.",
-    icon: Sun,
-    items: ["Bone & muscle health", "Sexual function", "Sleep health", "Dementia prevention", "Vaginal health"]
+    icon: <Star className="w-8 h-8" />,
+    title: "Aging Well",
+    desc: "Proactive longevity strategies addressing bone health, cardiovascular risk, cognitive vitality, and cellular optimization.",
+    tags: ["Longevity", "Bone Health", "Cognition"],
   },
   {
-    title: "We Rise With You",
-    subtitle: "Primary Women's Health",
-    description: "Full coverage for all your primary women's health needs — routine screenings, preventive care, and expert management of everyday concerns.",
-    icon: Shield,
-    items: ["Cervical & breast cancer screening", "GYN biopsy management", "Hereditary cancer screening", "Vaginitis & UTI", "Irregular menses"]
+    icon: <ShieldCheck className="w-8 h-8" />,
+    title: "Primary Women's Health",
+    desc: "Full-spectrum primary care anchored in whole-body understanding — annual wellness, preventive screening, and acute care.",
+    tags: ["Preventive Care", "Wellness", "Annual Exams"],
   },
-];
-
-const ROUTINE_SERVICES = [
-  "Well Woman Care", "Contraceptive Care", "Abnormal Bleeding",
-  "Vaginitis (Acute & Chronic)", "Menopause", "Hormone Health",
-  "Metabolic Dysfunction", "Sexual Health", "Fertility", "Aging Well"
 ];
 
 const TESTIMONIALS = [
   {
-    quote: "For the first time in my life, someone actually listened to every symptom and connected the dots. Scarlett changed how I understand my own body.",
-    author: "A. M., Northwest Arkansas",
+    quote:
+      "For 5 years I was told my exhaustion and weight gain were just 'getting older.' Scarlett ran panels no one else had. Within 3 months of her metabolic protocol, I reversed my insulin resistance and got my life back.",
+    author: "Sarah M.",
+    age: "48",
+    outcome: "Reversed Pre-diabetes & Hormonal Imbalance",
   },
   {
-    quote: "I had been dismissed by so many providers. At SheRises I finally felt seen. The depth of knowledge and the genuine warmth here is unlike anything I've experienced.",
-    author: "R. T., Northwest Arkansas",
+    quote:
+      "As a patient with medical trauma, I've avoided doctors for years. Scarlett's approach is entirely different. Her clinical brilliance is matched only by her profound empathy. She is exactly what women's healthcare should be.",
+    author: "Elena R.",
+    age: "35",
+    outcome: "Resolved Chronic Pelvic Pain",
   },
   {
-    quote: "Scarlett's whole-health approach completely reversed what I was told was permanent metabolic dysfunction. I have my life back.",
-    author: "L. H., Northwest Arkansas",
+    quote:
+      "I had seen seven different doctors over four years. No one could explain my symptoms. Scarlett identified the cascade within our first appointment. I finally feel like myself again.",
+    author: "Meredith T.",
+    age: "42",
+    outcome: "Hormone & Thyroid Optimization",
+  },
+  {
+    quote:
+      "I came in for weight management and left with an entirely new understanding of my health. Scarlett treated me as a complete person, not a collection of symptoms. Life-changing.",
+    author: "Diana L.",
+    age: "51",
+    outcome: "Metabolic Reversal & Menopause Management",
   },
 ];
 
-const FAQS = [
+const FAQ_ITEMS = [
   {
-    question: "What does SheRises specialize in?",
-    answer: "SheRises specializes in hormones and metabolic health across every stage of a woman's life — from adolescence through postmenopause. We also provide full-spectrum primary women's health care including gynecology, sexual health, fertility, and aging well."
+    q: "What makes SheRises different from a conventional OB/GYN?",
+    a: "Conventional visits are typically 10-15 minutes and focused on managing symptoms with standardized prescriptions. Our consultations run 60-90 minutes and investigate the underlying metabolic and hormonal systems driving your symptoms. We optimize for 'optimal' ranges — not just 'normal' — and treat your body as an interconnected whole.",
   },
   {
-    question: "What makes SheRises different from a standard OB/GYN?",
-    answer: "SheRises recenters the care experience entirely around you. Through advanced testing and a root-cause, whole-health method, Scarlett blends modern and traditional therapeutic modalities to find the perfect individualized treatment — not a one-size-fits-all prescription. We believe reversal of metabolic dysfunction is possible."
+    q: "Do you accept insurance?",
+    a: "We operate as a fee-for-service practice, which allows us to provide the depth of care you deserve without the constraints of insurance billing. Many patients find that the comprehensive care they receive here replaces multiple specialist visits. We are happy to provide detailed receipts for Health Savings Account (HSA) reimbursement.",
   },
   {
-    question: "Who is Scarlett Grandy?",
-    answer: "Scarlett Grandy is a Certified Nurse Midwife and Board Certified Women's Health Nurse Practitioner with 16 years specializing in women's whole-health. She is the leading specialist in women's hormone and metabolic health in Northwest Arkansas, a member of The Menopause Society, and a certified Equine Assisted Growth and Learning Specialist."
+    q: "What should I expect at my first consultation?",
+    a: "Your initial visit is a deep-dive diagnostic conversation — 60 to 90 minutes. We review your complete health history, current symptoms, prior lab work, and goals. Depending on your case, we will order comprehensive hormone, metabolic, and nutritional panels that go far beyond standard annual labs. A personalized protocol is designed around your findings.",
   },
   {
-    question: "What is a Certified Nurse Midwife?",
-    answer: "\"Midwife\" literally means \"with woman.\" As a midwife, Scarlett's clinical approach is fundamentally different from the routine medical model — she places you at the center of the care exchange. She holds the space, brings the tools, and paves the way for every woman to find optimal health."
+    q: "Do you see patients remotely or only in person?",
+    a: "We offer both in-person appointments at our Northwest Arkansas location and telehealth consultations for established patients within Arkansas. Initial consultations are preferred in person for the most thorough assessment.",
   },
   {
-    question: "Do you offer telehealth or in-person appointments?",
-    answer: "Please reach out to our office directly to learn about current appointment options and availability. We'd love to connect with you."
-  }
+    q: "Is this practice right for me if I am in my 30s?",
+    a: "Absolutely. Metabolic and hormonal dysfunction does not wait for midlife. PCOS, insulin resistance, thyroid disorders, fertility challenges, and hormonal imbalances are common in the 20s and 30s and are far more responsive to treatment when addressed early. Many of our most transformative patient outcomes are with women under 40.",
+  },
 ];
 
-// --- Animation Variants ---
-const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 }
-  }
-};
-
-// --- Components ---
-
-function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+const FadeIn = ({
+  children,
+  delay = 0,
+  direction = "up",
+  className = "",
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  direction?: "up" | "down" | "left" | "right" | "none";
+  className?: string;
+}) => {
+  const initial: Record<string, number> = { opacity: 0 };
+  if (direction === "up") initial.y = 40;
+  if (direction === "down") initial.y = -40;
+  if (direction === "left") initial.x = 40;
+  if (direction === "right") initial.x = -40;
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent ${
-        isScrolled ? "bg-background/90 backdrop-blur-md border-border/50 py-3 shadow-sm" : "bg-transparent py-5"
-      }`}
+    <motion.div
+      initial={initial}
+      whileInView={{ x: 0, y: 0, opacity: 1 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.8, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
+      className={className}
     >
-      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <Sparkles className="w-6 h-6 text-primary group-hover:rotate-12 transition-transform" />
-          <span className="font-serif text-2xl font-medium tracking-tight text-foreground">SheRises</span>
-        </Link>
+      {children}
+    </motion.div>
+  );
+};
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-            >
-              {link.name}
+function Nav() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <nav className="sticky top-0 z-50 bg-[#FCFBF9]/95 backdrop-blur-md border-b border-[#B89047]/20">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between" style={FONT_SANS}>
+        <a href="#" className="flex items-center gap-2.5">
+          <div
+            className="w-8 h-8 rounded-sm bg-[#132A24] flex items-center justify-center text-[#E8D5A5]"
+            style={FONT_SERIF}
+          >
+            <span className="text-xl leading-none font-medium">S</span>
+          </div>
+          <span className="text-sm font-semibold tracking-[0.15em] uppercase text-[#132A24]">
+            SheRises Health
+          </span>
+        </a>
+
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-[#132A24]">
+          {NAV_LINKS.map((l) => (
+            <a key={l.name} href={l.href} className="hover:text-[#B89047] transition-colors">
+              {l.name}
             </a>
           ))}
-          <Button className="rounded-full px-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20">
-            Book Consultation
-          </Button>
-        </nav>
+        </div>
 
-        {/* Mobile Toggle */}
-        <button 
-          className="md:hidden text-foreground p-2 -mr-2"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        <a
+          href="#cta"
+          className="hidden md:inline-flex items-center gap-2 bg-[#132A24] text-[#F4F1EB] px-6 py-2.5 text-sm font-medium tracking-wide hover:bg-[#1B3B33] transition-colors border border-transparent hover:border-[#B89047]/30"
         >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          Request Consultation
+        </a>
+
+        <button
+          className="md:hidden text-[#132A24]"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border overflow-hidden"
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden overflow-hidden bg-[#FCFBF9] border-t border-[#B89047]/20"
           >
-            <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
-              {NAV_LINKS.map((link) => (
-                <a 
-                  key={link.name} 
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-medium text-foreground py-2 border-b border-border/50"
+            <div className="flex flex-col px-6 py-4 gap-4" style={FONT_SANS}>
+              {NAV_LINKS.map((l) => (
+                <a
+                  key={l.name}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="text-[#132A24] font-medium py-2 border-b border-[#132A24]/10 hover:text-[#B89047] transition-colors"
                 >
-                  {link.name}
+                  {l.name}
                 </a>
               ))}
-              <Button className="mt-4 rounded-full w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                Book Consultation
-              </Button>
+              <a
+                href="#cta"
+                onClick={() => setOpen(false)}
+                className="mt-2 bg-[#132A24] text-[#F4F1EB] px-6 py-3 text-sm font-medium tracking-wide text-center"
+              >
+                Request Consultation
+              </a>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </nav>
   );
 }
 
-function HeroSection() {
+function Hero() {
   return (
-    <section className="relative min-h-[100dvh] flex items-center pt-24 overflow-hidden">
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-background via-background to-secondary/30" />
-      <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          
-          <motion.div 
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-            className="max-w-2xl"
-          >
-            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 text-primary text-sm font-medium mb-6">
-              <Sparkles className="w-4 h-4" />
-              <span>Bringing a New Model of Women's Healthcare to Northwest Arkansas</span>
-            </motion.div>
-            
-            <motion.h1 variants={fadeInUp} className="text-5xl md:text-6xl lg:text-7xl font-serif text-foreground leading-[1.1] mb-6">
-              You deserve care that <span className="text-primary italic">puts you first.</span>
-            </motion.h1>
-            
-            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-lg">
-              SheRises Health specializes in hormones and metabolic health across every stage of a woman's life — blending modern and traditional medicine to find the treatment individualized to you.
-            </motion.p>
-            
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="rounded-full text-base h-14 px-8 bg-primary hover:bg-primary/90 shadow-xl shadow-primary/20">
-                Begin Your Journey <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full text-base h-14 px-8 border-primary/20 hover:bg-primary/5 text-foreground">
-                Explore Our Approach
-              </Button>
-            </motion.div>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-            className="relative"
-          >
-            <div className="aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-[2rem] overflow-hidden relative shadow-2xl">
-              <img 
-                src="/images/hero.png" 
-                alt="Warm radiant consultation room" 
-                className="object-cover w-full h-full"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
-            </div>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.8 }}
-              className="absolute -bottom-6 -left-6 md:-left-12 bg-background p-6 rounded-2xl shadow-xl border border-border/50 max-w-[240px]"
-            >
-              <div className="flex gap-1 mb-2">
-                {[1,2,3,4,5].map(i => <Star key={i} />)}
+    <section className="relative pt-16 pb-28 overflow-hidden bg-[#F4F1EB]">
+      <div
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style={{ backgroundImage: "url(/images/texture-bg.png)", backgroundSize: "cover" }}
+      />
+      <div className="max-w-7xl mx-auto px-6 relative">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-7 z-10 pt-8">
+            <FadeIn direction="up">
+              <div
+                className="inline-flex items-center gap-2 px-3 py-1.5 border border-[#B89047] text-[#B89047] text-xs font-semibold tracking-widest uppercase mb-8 bg-[#FCFBF9]"
+                style={FONT_SANS}
+              >
+                <Award className="w-3.5 h-3.5" />
+                <span>Northwest Arkansas' Leading Specialist</span>
               </div>
-              <p className="text-sm font-medium text-foreground">"I finally feel in control of my body again."</p>
-            </motion.div>
-          </motion.div>
+
+              <h1
+                className="text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.08] text-[#132A24] mb-6"
+                style={FONT_SERIF}
+              >
+                Reversal of metabolic dysfunction is{" "}
+                <span className="italic text-[#B89047]">possible.</span>
+              </h1>
+
+              <p
+                className="text-lg md:text-xl text-[#4B5563] mb-10 max-w-xl font-light leading-relaxed"
+                style={FONT_SANS}
+              >
+                Led by Scarlett Grandy, CNM, WHNP-BC — combining 16 years of clinical leadership
+                with root-cause medicine to solve complex hormone and metabolic challenges.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4" style={FONT_SANS}>
+                <a
+                  href="#cta"
+                  className="bg-[#132A24] text-[#F4F1EB] px-8 py-4 text-base font-medium tracking-wide hover:bg-[#1B3B33] transition-colors flex items-center justify-center gap-2"
+                >
+                  Book a Clinical Consultation
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <a
+                  href="#outcomes"
+                  className="bg-transparent text-[#132A24] border border-[#132A24] px-8 py-4 text-base font-medium tracking-wide hover:bg-[#132A24] hover:text-[#F4F1EB] transition-colors text-center"
+                >
+                  View Clinical Outcomes
+                </a>
+              </div>
+            </FadeIn>
+          </div>
+
+          <div className="lg:col-span-5 relative">
+            <FadeIn direction="left" delay={0.2}>
+              <div className="relative">
+                <div className="absolute inset-0 bg-[#B89047] translate-x-4 translate-y-4" />
+                <img
+                  src="/images/scarlett-authority.png"
+                  alt="Scarlett Grandy, CNM, WHNP-BC"
+                  className="relative z-10 w-full h-[580px] object-cover object-top"
+                />
+                <div className="absolute -left-8 lg:-left-12 bottom-10 z-20 bg-[#132A24] p-5 lg:p-6 shadow-2xl border border-[#B89047]/30 max-w-[260px]">
+                  <h3 className="text-[#F4F1EB] text-lg font-medium mb-1" style={FONT_SERIF}>
+                    Scarlett Grandy
+                  </h3>
+                  <p className="text-[#B89047] text-sm font-semibold tracking-wide mb-3" style={FONT_SANS}>
+                    CNM, WHNP-BC
+                  </p>
+                  <p className="text-[#F4F1EB]/75 text-xs leading-relaxed" style={FONT_SANS}>
+                    Board Certified Women's Health Nurse Practitioner. 16 years specializing in
+                    whole-health methodology.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function Star() {
+function CredentialsBar() {
+  const certs = [
+    "The Menopause Society",
+    "ISSWSH Member",
+    "EAGALA Certified",
+    "Board Certified WHNP",
+    "16 Years Clinical Leadership",
+  ];
   return (
-    <svg className="w-4 h-4 text-accent fill-accent" viewBox="0 0 24 24">
-      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-    </svg>
+    <section className="bg-[#132A24] py-10 border-y border-[#B89047]/20">
+      <div className="max-w-7xl mx-auto px-6" style={FONT_SANS}>
+        <p className="text-center text-[#E8D5A5] text-xs font-semibold tracking-widest uppercase mb-7">
+          Professional Memberships & Certifications
+        </p>
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+          {certs.map((cert) => (
+            <div key={cert} className="flex items-center gap-2.5 text-[#F4F1EB]">
+              <ShieldCheck className="w-5 h-5 text-[#B89047] shrink-0" />
+              <span className="font-medium tracking-wide text-sm">{cert}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
-function MissionSection() {
+function ExpertiseSection() {
   return (
-    <section id="approach" className="py-24 md:py-32 bg-secondary/30 relative">
-      <div className="container mx-auto px-6 md:px-12 max-w-4xl text-center">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-        >
-          <motion.p variants={fadeInUp} className="text-primary font-medium uppercase tracking-widest text-sm mb-6">Our Approach</motion.p>
-          <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-serif text-foreground leading-tight mb-8">
-            SheRises recenters care <br className="hidden md:block"/>
-            <span className="text-primary italic">around you.</span>
-          </motion.h2>
-          <motion.p variants={fadeInUp} className="text-lg text-muted-foreground leading-relaxed mb-8">
-            Through advanced testing and a whole-health, root-cause method, SheRises helps you achieve your optimal health goals. We believe that reversal of metabolic dysfunction is possible — not just management of it.
-          </motion.p>
-          <motion.p variants={fadeInUp} className="text-lg text-muted-foreground leading-relaxed">
-            We blend modern and traditional therapeutic modalities to find the perfect treatment, individualized to you. No rushed appointments. No dismissed symptoms. Just deep, compassionate expertise that gives you back control over your body.
-          </motion.p>
-        </motion.div>
+    <section id="expertise" className="py-24 md:py-36 bg-[#FCFBF9]">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <FadeIn>
+            <div>
+              <h2 className="text-4xl md:text-5xl font-medium text-[#132A24] mb-6 leading-tight" style={FONT_SERIF}>
+                Root-Cause Medicine,{" "}
+                <span className="italic text-[#B89047]">Executed with Precision.</span>
+              </h2>
+              <p className="text-lg text-[#4B5563] mb-10 font-light leading-relaxed" style={FONT_SANS}>
+                Conventional medicine treats symptoms in isolation. We treat the system. By
+                diagnosing underlying metabolic and hormonal dysfunctions, we design targeted
+                protocols to reverse disease states — not just manage them indefinitely.
+              </p>
+
+              <div className="space-y-7" style={FONT_SANS}>
+                {[
+                  {
+                    title: "Comprehensive Diagnostics",
+                    desc: "Advanced hormone panels and metabolic work-ups that go far beyond standard annual labs.",
+                  },
+                  {
+                    title: "Systems-Level Analysis",
+                    desc: "Understanding how your thyroid, adrenal function, sex hormones, and metabolism interact and cascade.",
+                  },
+                  {
+                    title: "Evidence-Based Protocols",
+                    desc: "Targeted interventions using bioidentical hormones, precision supplementation, and metabolic repair strategies.",
+                  },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="mt-0.5 shrink-0">
+                      <div className="w-8 h-8 rounded-full bg-[#132A24]/8 border border-[#132A24]/10 flex items-center justify-center text-[#B89047]">
+                        <span className="text-sm font-bold text-[#132A24]">{i + 1}</span>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-[#132A24] font-semibold mb-1">{item.title}</h4>
+                      <p className="text-sm text-[#4B5563] leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn direction="right" delay={0.2}>
+            <img
+              src="/images/clinic-interior.png"
+              alt="SheRises Health clinical environment"
+              className="w-full h-[620px] object-cover shadow-lg"
+            />
+          </FadeIn>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ContrastSection() {
+  return (
+    <section id="approach" className="py-24 md:py-36 bg-[#132A24] text-[#F4F1EB]">
+      <div className="max-w-5xl mx-auto px-6">
+        <FadeIn>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-medium mb-6" style={FONT_SERIF}>
+              The Standard of Care vs.{" "}
+              <span className="italic text-[#B89047]">The SheRises Standard</span>
+            </h2>
+            <p className="text-lg text-[#F4F1EB]/65 font-light max-w-2xl mx-auto" style={FONT_SANS}>
+              If you have felt dismissed, rushed, or told your labs are "normal" despite feeling
+              terrible — you are not crazy. The conventional model is broken. We built an
+              alternative.
+            </p>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.15}>
+          <div className="grid md:grid-cols-2 gap-px bg-[#B89047]/25 border border-[#B89047]/25" style={FONT_SANS}>
+            <div className="bg-[#132A24] p-8 md:p-12">
+              <h3 className="text-lg font-semibold mb-8 text-[#F4F1EB]/45 flex items-center gap-3">
+                <XCircle className="w-5 h-5" />
+                Conventional OB/GYN
+              </h3>
+              <ul className="space-y-5">
+                {[
+                  "10-minute appointments",
+                  "Treats symptoms with standardized prescriptions",
+                  "Dismisses fatigue and weight gain as 'normal aging'",
+                  "Uses narrow reference ranges for 'normal' labs",
+                  "Siloed care — hormones separate from metabolism",
+                  "Reactive, disease-management model",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-4 text-[#F4F1EB]/65">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#F4F1EB]/25 mt-2 shrink-0" />
+                    <span className="font-light text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-[#1B3B33] p-8 md:p-12 relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-8 opacity-[0.04] pointer-events-none">
+                <ShieldCheck className="w-64 h-64" />
+              </div>
+              <h3 className="text-lg font-semibold mb-8 text-[#B89047] flex items-center gap-3 relative z-10">
+                <CheckCircle2 className="w-5 h-5" />
+                The SheRises Method
+              </h3>
+              <ul className="space-y-5 relative z-10">
+                {[
+                  "60–90 minute deep-dive consultations",
+                  "Investigates and repairs root metabolic dysfunction",
+                  "Validates your symptoms — aging does not have to feel bad",
+                  "Optimizes for 'optimal' ranges, not just 'normal'",
+                  "Whole-systems approach across all body systems",
+                  "Proactive, reversal-focused medicine",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-4 text-[#F4F1EB]">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#B89047] mt-2 shrink-0" />
+                    <span className="font-light text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
@@ -322,169 +475,48 @@ function MissionSection() {
 
 function ServicesSection() {
   return (
-    <section id="services" className="py-24 md:py-32 bg-background">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div className="max-w-2xl">
-            <p className="text-primary font-medium uppercase tracking-widest text-sm mb-4">Our Services</p>
-            <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-4">Full Spectrum Women's Health</h2>
-            <p className="text-lg text-muted-foreground">Every stage. Every concern. Expert medicine guided by root-cause wisdom.</p>
+    <section id="services" className="py-24 md:py-36 bg-[#F4F1EB]">
+      <div className="max-w-7xl mx-auto px-6">
+        <FadeIn>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-medium text-[#132A24] mb-4" style={FONT_SERIF}>
+                Clinical Specialties
+              </h2>
+              <p className="text-lg text-[#4B5563] font-light max-w-lg" style={FONT_SANS}>
+                Targeted expertise for complex physiological challenges across every stage of a
+                woman's life.
+              </p>
+            </div>
           </div>
-        </div>
+        </FadeIn>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SERVICE_PILLARS.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.08 }}
-              className="group bg-card border border-border p-8 rounded-3xl hover:shadow-xl hover:shadow-primary/5 hover:border-primary/30 transition-all duration-500"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-secondary/50 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-500">
-                <service.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors duration-500" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" style={FONT_SANS}>
+          {SERVICES.map((service, i) => (
+            <FadeIn key={service.title} delay={i * 0.07}>
+              <div className="bg-[#FCFBF9] p-8 border border-[#132A24]/10 h-full hover:border-[#B89047] transition-colors group cursor-default flex flex-col">
+                <div className="text-[#B89047] mb-5 transition-transform group-hover:scale-110 origin-left">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-medium text-[#132A24] mb-3" style={FONT_SERIF}>
+                  {service.title}
+                </h3>
+                <p className="text-[#4B5563] font-light mb-7 text-sm leading-relaxed flex-1">
+                  {service.desc}
+                </p>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {service.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs font-medium uppercase tracking-wider text-[#132A24] bg-[#F4F1EB] border border-[#132A24]/10 px-2.5 py-1"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-1">{service.subtitle}</p>
-              <h3 className="text-xl font-serif font-medium text-foreground mb-3">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed mb-5 text-sm">{service.description}</p>
-              <ul className="space-y-1.5">
-                {service.items.map(item => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <ChevronRight className="w-3.5 h-3.5 text-primary shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+            </FadeIn>
           ))}
-        </div>
-
-        {/* Routine services strip */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-16 bg-secondary/30 rounded-3xl p-10"
-        >
-          <p className="text-center text-primary font-medium uppercase tracking-widest text-sm mb-6">Complete Primary Women's Health Coverage</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {ROUTINE_SERVICES.map((s) => (
-              <span key={s} className="px-4 py-2 bg-background border border-border rounded-full text-sm text-foreground font-medium">
-                {s}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-function SanctuarySection() {
-  return (
-    <section className="py-24 bg-foreground text-background relative overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="order-2 lg:order-1 relative"
-          >
-            <div className="aspect-[4/3] rounded-[2rem] overflow-hidden">
-              <img 
-                src="/images/sanctuary.png" 
-                alt="Serene waiting area" 
-                className="w-full h-full object-cover opacity-90"
-              />
-            </div>
-            <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-primary/20 rounded-full blur-3xl" />
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="order-1 lg:order-2"
-          >
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-serif mb-6 text-background">
-              You are the driver.<br/><span className="text-primary italic">We hold the space.</span>
-            </motion.h2>
-            <motion.p variants={fadeInUp} className="text-lg text-background/70 mb-6 leading-relaxed">
-              Scarlett founded and created SheRises to bring women a new model of care. At SheRises, the patient drives the experience. Scarlett holds the space, brings the tools, and paves the way for every woman to find her optimal health.
-            </motion.p>
-            <motion.p variants={fadeInUp} className="text-lg text-background/70 mb-8 leading-relaxed">
-              The word midwife literally means "with woman." That philosophy shapes every appointment — deeply attentive, unhurried, and completely centered on you.
-            </motion.p>
-            <motion.div variants={fadeInUp}>
-              <Button size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                Book Your Consultation
-              </Button>
-            </motion.div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function RootCauseSection() {
-  return (
-    <section className="py-24 md:py-32 bg-background">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="max-w-xl"
-          >
-            <motion.p variants={fadeInUp} className="text-primary font-medium uppercase tracking-widest text-sm mb-4">Advanced Testing. Root-Cause Medicine.</motion.p>
-            <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-serif text-foreground mb-6">
-              Reversal is possible.<br/><span className="text-primary italic">We've seen it.</span>
-            </motion.h2>
-            <motion.p variants={fadeInUp} className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Most providers manage chronic conditions. SheRises works to reverse them. Through comprehensive advanced testing, we identify the root cause of your metabolic and hormonal dysfunction — then build a treatment plan that is entirely yours.
-            </motion.p>
-            <motion.ul variants={fadeInUp} className="space-y-4 mb-8">
-              {[
-                "Advanced hormone panels & testing",
-                "Metabolic dysfunction assessment",
-                "Individualized treatment protocols",
-                "Whole-health, root-cause method",
-                "Blend of modern & traditional modalities"
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-3 text-foreground font-medium">
-                  <div className="w-6 h-6 rounded-full bg-secondary text-primary flex items-center justify-center shrink-0">
-                    <Leaf className="w-3 h-3" />
-                  </div>
-                  {item}
-                </li>
-              ))}
-            </motion.ul>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="aspect-square rounded-full overflow-hidden p-4 border border-border/50 max-w-md mx-auto">
-              <div className="w-full h-full rounded-full overflow-hidden">
-                <img 
-                  src="/images/holistic.png" 
-                  alt="Holistic approach to women's health" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
@@ -493,67 +525,117 @@ function RootCauseSection() {
 
 function ProviderSection() {
   return (
-    <section id="provider" className="py-24 md:py-32 bg-secondary/30">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="bg-background rounded-[3rem] overflow-hidden border border-border/50 shadow-xl shadow-foreground/5">
-          <div className="grid lg:grid-cols-2">
-            <div className="h-full min-h-[400px]">
-              <img 
-                src="/images/doctor.png" 
-                alt="Scarlett Grandy" 
-                className="w-full h-full object-cover object-top"
+    <section className="py-24 md:py-36 bg-[#FCFBF9] border-t border-[#132A24]/8">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <FadeIn direction="right">
+            <div className="relative">
+              <img
+                src="/images/scarlett-authority.png"
+                alt="Scarlett Grandy, CNM, WHNP-BC"
+                className="w-full max-w-md mx-auto lg:mx-0 h-[560px] object-cover object-top shadow-xl"
               />
-            </div>
-            <div className="p-10 md:p-16 lg:p-20 flex flex-col justify-center">
-              <p className="text-primary font-medium uppercase tracking-widest text-sm mb-4">Meet Your Provider</p>
-              <h2 className="text-4xl font-serif text-foreground mb-1">Scarlett Grandy</h2>
-              <p className="text-primary font-semibold mb-1">CNM, WHNP-BC</p>
-              <p className="text-muted-foreground text-sm mb-8">Certified Nurse Midwife &amp; Board Certified Women's Health Nurse Practitioner</p>
-              
-              <div className="space-y-5 text-muted-foreground leading-relaxed mb-8">
-                <p>
-                  Scarlett deliberately chose nursing as her primary route to women's healthcare because she wanted to bring women a fundamentally different experience — one centered on the patient, not the provider.
+              <div className="absolute -bottom-6 -right-4 lg:-right-6 bg-[#B89047] p-5 shadow-xl">
+                <p className="text-[#132A24] font-bold text-3xl" style={FONT_SERIF}>
+                  16
                 </p>
-                <p>
-                  Through 16 years of advanced education and clinical practice, Scarlett has become the leading specialist in women's hormone and metabolic health in Northwest Arkansas. She blends deep trust in evidence-based medicine with the wisdom of integrative approaches to find what truly works for each individual woman.
-                </p>
-                <p>
-                  She is a member of The Menopause Society and the International Society for the Study of Women's Sexual Health, and a certified Equine Assisted Growth and Learning Specialist — offering alternative healing pathways for women with sexual trauma histories.
+                <p className="text-[#132A24] text-xs font-semibold tracking-wide uppercase mt-1" style={FONT_SANS}>
+                  Years of Clinical
+                  <br />
+                  Leadership
                 </p>
               </div>
-
-              <div className="font-serif text-2xl text-foreground italic">Scarlett Grandy</div>
             </div>
-          </div>
+          </FadeIn>
+
+          <FadeIn delay={0.15}>
+            <div style={FONT_SANS}>
+              <p className="text-[#B89047] text-xs font-semibold tracking-widest uppercase mb-4">
+                Meet Your Provider
+              </p>
+              <h2 className="text-4xl md:text-5xl font-medium text-[#132A24] mb-6" style={FONT_SERIF}>
+                Scarlett Grandy,{" "}
+                <span className="text-[#B89047]">CNM, WHNP-BC</span>
+              </h2>
+              <p className="text-lg text-[#4B5563] font-light leading-relaxed mb-6">
+                Scarlett has spent 16 years at the intersection of women's whole-health, bringing
+                together the clinical rigor of board-certified women's health nursing with a
+                root-cause philosophy that the conventional model rarely allows.
+              </p>
+              <p className="text-base text-[#4B5563] font-light leading-relaxed mb-10">
+                Her specialized focus on hormone and metabolic health is rooted in a belief that
+                women's symptoms are not a mystery to be managed — they are a system to be
+                understood. As a Certified Nurse Midwife and Board Certified Women's Health Nurse
+                Practitioner, Scarlett brings both the technical depth and the human presence that
+                complex cases require.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 mb-10">
+                {[
+                  "The Menopause Society",
+                  "ISSWSH Member",
+                  "EAGALA Certified Specialist",
+                  "Certified Nurse Midwife (CNM)",
+                  "Board Certified WHNP-BC",
+                  "Northwest Arkansas, NWA",
+                ].map((cred) => (
+                  <div key={cred} className="flex items-center gap-2 text-sm text-[#132A24]">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#B89047] shrink-0" />
+                    <span className="font-medium">{cred}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="#cta"
+                className="inline-flex items-center gap-2 bg-[#132A24] text-[#F4F1EB] px-8 py-4 text-base font-medium tracking-wide hover:bg-[#1B3B33] transition-colors"
+              >
+                Book a Consultation
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>
   );
 }
 
-function TestimonialsSection() {
+function OutcomesSection() {
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-background">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-primary font-medium uppercase tracking-widest text-sm mb-4">Patient Stories</p>
-          <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-6">Words from our women</h2>
-        </div>
+    <section id="outcomes" className="py-24 md:py-36 bg-[#F4F1EB]">
+      <div className="max-w-7xl mx-auto px-6">
+        <FadeIn>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-medium text-[#132A24] mb-6" style={FONT_SERIF}>
+              Clinical Outcomes
+            </h2>
+            <p className="text-lg text-[#4B5563] font-light max-w-2xl mx-auto" style={FONT_SANS}>
+              Our metric is patient vitality. Hear from women who have reclaimed their health
+              through root-cause protocols.
+            </p>
+          </div>
+        </FadeIn>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8" style={FONT_SANS}>
           {TESTIMONIALS.map((t, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
-              className="bg-secondary/20 p-8 rounded-3xl relative"
-            >
-              <Quote className="w-10 h-10 text-primary/20 absolute top-6 left-6" />
-              <p className="text-foreground leading-relaxed relative z-10 mt-6 mb-8 font-medium">"{t.quote}"</p>
-              <p className="text-muted-foreground text-sm uppercase tracking-wider">— {t.author}</p>
-            </motion.div>
+            <FadeIn key={i} delay={i * 0.1}>
+              <div className="relative p-8 md:p-10 bg-[#FCFBF9] border border-[#132A24]/8 h-full flex flex-col">
+                <Star className="absolute top-6 right-6 w-7 h-7 text-[#B89047]/20" />
+                <p
+                  className="text-[#132A24] mb-8 font-light leading-relaxed flex-1 text-base md:text-lg"
+                  style={{ ...FONT_SERIF, fontStyle: "italic" }}
+                >
+                  "{t.quote}"
+                </p>
+                <div>
+                  <p className="font-semibold text-[#132A24] uppercase tracking-wide text-xs mb-1">
+                    {t.author}, {t.age}
+                  </p>
+                  <p className="text-[#B89047] text-sm font-medium">{t.outcome}</p>
+                </div>
+              </div>
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -561,55 +643,55 @@ function TestimonialsSection() {
   );
 }
 
-function FAQSection() {
+function FaqSection() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 bg-background border-t border-border/50">
-      <div className="container mx-auto px-6 md:px-12 max-w-4xl">
-        <div className="text-center mb-16">
-          <p className="text-primary font-medium uppercase tracking-widest text-sm mb-4">Common Questions</p>
-          <h2 className="text-4xl font-serif text-foreground mb-4">What to Expect at SheRises</h2>
-        </div>
-        
-        <div className="space-y-4">
-          {FAQS.map((faq, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-card border border-border rounded-2xl overflow-hidden"
-            >
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between text-left p-6 md:p-8 gap-4"
-              >
-                <h3 className="text-lg font-serif text-foreground">{faq.question}</h3>
-                <motion.div
-                  animate={{ rotate: open === i ? 90 : 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="shrink-0"
+    <section id="faq" className="py-24 md:py-36 bg-[#FCFBF9] border-t border-[#132A24]/8">
+      <div className="max-w-3xl mx-auto px-6">
+        <FadeIn>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-medium text-[#132A24] mb-4" style={FONT_SERIF}>
+              Common Questions
+            </h2>
+            <p className="text-lg text-[#4B5563] font-light" style={FONT_SANS}>
+              Understanding what to expect before you arrive.
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="space-y-1" style={FONT_SANS}>
+          {FAQ_ITEMS.map((item, i) => (
+            <FadeIn key={i} delay={i * 0.05}>
+              <div className="border border-[#132A24]/10 bg-[#F4F1EB]">
+                <button
+                  className="w-full flex items-start justify-between gap-4 text-left px-7 py-6"
+                  onClick={() => setOpen(open === i ? null : i)}
                 >
-                  <ChevronRight className="w-5 h-5 text-primary" />
-                </motion.div>
-              </button>
-              <AnimatePresence initial={false}>
-                {open === i && (
-                  <motion.div
-                    key="content"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="overflow-hidden"
-                  >
-                    <p className="text-muted-foreground leading-relaxed px-6 md:px-8 pb-6 md:pb-8">{faq.answer}</p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
+                  <span className="font-semibold text-[#132A24] text-sm md:text-base leading-snug">
+                    {item.q}
+                  </span>
+                  <ChevronDown
+                    className={`w-5 h-5 text-[#B89047] shrink-0 mt-0.5 transition-transform duration-300 ${open === i ? "rotate-180" : ""}`}
+                  />
+                </button>
+                <AnimatePresence>
+                  {open === i && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <p className="px-7 pb-7 text-[#4B5563] font-light text-sm leading-relaxed">
+                        {item.a}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -617,42 +699,38 @@ function FAQSection() {
   );
 }
 
-function CTASection() {
+function CtaSection() {
   return (
-    <section className="py-24 md:py-32 bg-primary text-primary-foreground relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.15),transparent_50%)] pointer-events-none" />
-      <div className="container mx-auto px-6 md:px-12 text-center relative z-10 max-w-3xl">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-6xl font-serif mb-6 leading-tight"
-        >
-          Ready to rise above?
-        </motion.h2>
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="text-xl text-primary-foreground/80 mb-10"
-        >
-          Take back control of your health. SheRises is currently accepting new patients.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <Button size="lg" className="rounded-full h-14 px-10 bg-background text-primary hover:bg-background/90 text-lg shadow-xl shadow-background/10">
-            Request an Appointment
-          </Button>
-          <Button size="lg" variant="outline" className="rounded-full h-14 px-10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-lg">
-            Learn More
-          </Button>
-        </motion.div>
+    <section id="cta" className="py-24 md:py-32 bg-[#132A24] text-[#F4F1EB] relative overflow-hidden">
+      <div
+        className="absolute inset-0 opacity-[0.06] pointer-events-none"
+        style={{ backgroundImage: "url(/images/texture-bg.png)", backgroundSize: "cover" }}
+      />
+      <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <FadeIn>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-8 leading-tight" style={FONT_SERIF}>
+            Your health is not a mystery to be managed. It is a system to be optimized.
+          </h2>
+          <p className="text-xl text-[#F4F1EB]/75 font-light mb-12 max-w-2xl mx-auto" style={FONT_SANS}>
+            Schedule a comprehensive consultation with Scarlett Grandy to begin your diagnostic
+            process and understand your body at a new level.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-5" style={FONT_SANS}>
+            <a
+              href="mailto:hello@sheriseshealth.com"
+              className="bg-[#B89047] text-[#132A24] px-10 py-5 text-base font-semibold tracking-wide hover:bg-[#C9A25E] transition-colors"
+            >
+              Book Your Consultation
+            </a>
+            <a
+              href="#faq"
+              className="bg-transparent text-[#F4F1EB] border border-[#F4F1EB]/30 px-10 py-5 text-base font-medium tracking-wide hover:bg-[#F4F1EB]/8 transition-colors flex items-center justify-center gap-2"
+            >
+              <Clock className="w-5 h-5" />
+              Common Questions
+            </a>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
@@ -660,63 +738,27 @@ function CTASection() {
 
 function Footer() {
   return (
-    <footer className="bg-foreground text-background py-16 md:py-24">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-          
-          <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 group mb-6 inline-flex">
-              <Sparkles className="w-6 h-6 text-primary" />
-              <span className="font-serif text-2xl font-medium tracking-tight">SheRises</span>
-            </Link>
-            <p className="text-background/60 leading-relaxed">
-              Changing women's healthcare. Specializing in hormones and metabolic health across every stage of a woman's life.
-            </p>
+    <footer className="bg-[#0f2922] text-[#F4F1EB]/55 py-12 border-t border-[#F4F1EB]/8" style={FONT_SANS}>
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
+        <div className="flex items-center gap-2.5 text-[#F4F1EB]">
+          <div
+            className="w-6 h-6 rounded-sm bg-[#B89047] flex items-center justify-center text-[#132A24]"
+            style={FONT_SERIF}
+          >
+            <span className="text-sm font-bold leading-none">S</span>
           </div>
-
-          <div>
-            <h4 className="font-serif text-lg mb-6 text-primary">Location</h4>
-            <ul className="space-y-4 text-background/70">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 shrink-0 mt-0.5 text-primary/70" />
-                <span>Northwest Arkansas</span>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-serif text-lg mb-6 text-primary">Quick Links</h4>
-            <ul className="space-y-3">
-              {NAV_LINKS.map(link => (
-                <li key={link.name}>
-                  <a href={link.href} className="text-background/70 hover:text-white transition-colors">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-serif text-lg mb-6 text-primary">Credentials</h4>
-            <ul className="space-y-3 text-background/70 text-sm">
-              <li>Certified Nurse Midwife (CNM)</li>
-              <li>Board Certified WHNP</li>
-              <li>Member, The Menopause Society</li>
-              <li>Member, ISSWSH</li>
-              <li>EAGALA Specialist</li>
-            </ul>
-          </div>
-
+          <span className="font-semibold tracking-[0.12em] uppercase text-sm">SheRises Health</span>
         </div>
 
-        <div className="pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-background/40">
-          <p>© {new Date().getFullYear()} SheRises Health. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-          </div>
+        <div className="flex gap-8">
+          {["Patient Portal", "Location", "Privacy Practices"].map((l) => (
+            <a key={l} href="#" className="hover:text-[#B89047] transition-colors">
+              {l}
+            </a>
+          ))}
         </div>
+
+        <div>&copy; {new Date().getFullYear()} SheRises Health. Northwest Arkansas.</div>
       </div>
     </footer>
   );
@@ -724,19 +766,17 @@ function Footer() {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background font-sans selection:bg-primary/20 selection:text-primary">
-      <Navbar />
-      <main>
-        <HeroSection />
-        <MissionSection />
-        <ServicesSection />
-        <SanctuarySection />
-        <RootCauseSection />
-        <ProviderSection />
-        <TestimonialsSection />
-        <FAQSection />
-        <CTASection />
-      </main>
+    <div className="min-h-screen bg-[#FCFBF9] text-[#132A24]" style={FONT_SANS}>
+      <Nav />
+      <Hero />
+      <CredentialsBar />
+      <ExpertiseSection />
+      <ContrastSection />
+      <ServicesSection />
+      <ProviderSection />
+      <OutcomesSection />
+      <FaqSection />
+      <CtaSection />
       <Footer />
     </div>
   );
