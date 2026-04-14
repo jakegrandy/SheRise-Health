@@ -220,7 +220,6 @@ function HeroSection() {
     <section className="relative min-h-[100dvh] flex items-center pt-24 overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-background via-background to-secondary/30" />
       <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
-      
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
@@ -232,7 +231,7 @@ function HeroSection() {
           >
             <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 text-primary text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4" />
-              <span>Changing women's healthcare in Northwest Arkansas</span>
+              <span>Bringing a New Model of Women's Healthcare to Northwest Arkansas</span>
             </motion.div>
             
             <motion.h1 variants={fadeInUp} className="text-5xl md:text-6xl lg:text-7xl font-serif text-foreground leading-[1.1] mb-6">
