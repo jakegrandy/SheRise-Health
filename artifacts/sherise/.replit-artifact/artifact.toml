@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "SheRise Women's Health"
+version = "1.0.0"
+id = "artifacts/sherise"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 26015
+
+[services.development]
+run = "pnpm --filter @workspace/sherise run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/sherise", "run", "build" ]
+publicDir = "artifacts/sherise/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "26015"
+BASE_PATH = "/"

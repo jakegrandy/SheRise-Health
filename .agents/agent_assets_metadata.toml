@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "xGj3FKdKG2M0R34VNf-S-"
+uri = "file://artifacts/sherise/public/images/hero.png"
+type = "image"
+title = "Warm radiant golden hour consultation room"
+
+[[generated]]
+id = "6NsLywdQPNCJB6ZXYo_Zg"
+uri = "file://artifacts/sherise/public/images/doctor.png"
+type = "image"
+title = "Warm compassionate female doctor portrait"
+
+[[generated]]
+id = "z8d-uV9G5SQN6n3T-f5Gj"
+uri = "file://artifacts/sherise/public/images/holistic.png"
+type = "image"
+title = "Hands holding warm herbal tea"
+
+[[generated]]
+id = "bGvdH4THHh4oFLbOyWmKT"
+uri = "file://artifacts/sherise/public/images/sanctuary.png"
+type = "image"
+title = "Serene waiting area natural textures"
