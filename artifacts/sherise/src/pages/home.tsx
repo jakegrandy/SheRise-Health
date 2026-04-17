@@ -145,7 +145,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What makes SheRises different from a conventional OB/GYN?",
-    a: "Conventional OB/GYN care is organ-based and episodic — typically 10-15 minutes, focused on a single presenting complaint, with treatment limited to that organ system. Our model is systems-based and investigative. We spend 60-90 minutes understanding the relationships between your endocrine, metabolic, and nervous systems before designing a protocol. We also optimize for 'optimal' ranges, not just 'normal' reference ranges.",
+    a: "Conventional OB/GYN care is organ-based and episodic — typically 10-15 minutes, focused on a single presenting complaint, with treatment limited to that organ system. Our model is systems-based and investigative. We spend 60-90 minutes understanding the relationships between your endocrine, metabolic, and nervous systems before designing a protocol. We also evaluate for 'optimal' ranges, not just 'normal' reference ranges.",
   },
   {
     q: "What should I expect at my first consultation?",
