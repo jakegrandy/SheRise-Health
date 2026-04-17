@@ -264,30 +264,30 @@ function Hero() {
                 <span>Northwest Arkansas' Leading Integrated Women's Health Specialist</span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.08] text-[#132A24] mb-6" style={FONT_SERIF}>
-                Your symptoms are not isolated.{" "}
-                <span className="italic text-[#B89047]">Your systems are.</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] text-[#132A24] mb-6" style={FONT_SERIF}>
+                Restore Your Metabolism.{" "}
+                <span className="italic text-[#B89047]">Rebalance Your Hormones.</span>{" "}
+                Reclaim Your Health.
               </h1>
 
-              <p className="text-lg md:text-xl text-[#4B5563] mb-6 max-w-xl font-light leading-relaxed" style={FONT_SANS}>
-                SheRises applies a systems-based medical model — treating your hormones, metabolism,
-                reproductive health, nervous system, and lifestyle inputs as an interconnected whole.
+              <p className="text-lg md:text-xl text-[#4B5563] mb-10 max-w-xl font-light leading-relaxed" style={FONT_SANS}>
+                Specialized care for women navigating metabolic dysfunction, perimenopause, menopause,
+                and hormone imbalance — through an integrated, systems-based approach.
               </p>
 
-              <p className="text-base text-[#4B5563] mb-10 max-w-xl font-light leading-relaxed" style={FONT_SANS}>
-                Led by Scarlett Grandy, CNM, WHNP-BC — over 20 years of whole-health medicine in
-                women's whole-health, Northwest Arkansas.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4" style={FONT_SANS}>
+              <div className="flex flex-col sm:flex-row gap-4 mb-5" style={FONT_SANS}>
                 <a href="#cta" className="bg-[#132A24] text-[#F4F1EB] px-8 py-4 text-base font-medium tracking-wide hover:bg-[#1B3B33] transition-colors flex items-center justify-center gap-2">
-                  Book a Clinical Consultation
+                  Book Your Consultation
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a href="#model" className="bg-transparent text-[#132A24] border border-[#132A24] px-8 py-4 text-base font-medium tracking-wide hover:bg-[#132A24] hover:text-[#F4F1EB] transition-colors text-center">
-                  See the Model
+                  Explore the SheRises Framework
                 </a>
               </div>
+
+              <p className="text-xs text-[#4B5563]/60 font-light tracking-wide" style={FONT_SANS}>
+                Root-cause evaluation. Precision treatment. Long-term transformation.
+              </p>
             </FadeIn>
           </div>
 
@@ -301,7 +301,7 @@ function Hero() {
                   <h3 className="text-[#F4F1EB] text-lg font-medium mb-1" style={FONT_SERIF}>Scarlett Grandy</h3>
                   <p className="text-[#B89047] text-sm font-semibold tracking-wide mb-3" style={FONT_SANS}>CNM, WHNP-BC</p>
                   <p className="text-[#F4F1EB]/75 text-xs leading-relaxed" style={FONT_SANS}>
-                    Board Certified Women's Health Nurse Practitioner. over 20 years specializing in systems-based whole-health methodology.
+                    Board Certified Women's Health Nurse Practitioner. 20+ years specializing in systems-based whole-health methodology.
                   </p>
                 </div>
               </div>
