@@ -334,6 +334,102 @@ function CredentialsBar() {
   );
 }
 
+function SystemsPentagon() {
+  const cx = 320, cy = 288, R = 188, nodeR = 66;
+
+  const systems = [
+    { label: ["Hormonal", "Regulation"], angle: -90 },
+    { label: ["Metabolic", "Function"], angle: -18 },
+    { label: ["Reproductive", "Health"], angle: 54 },
+    { label: ["Nervous System", "Regulation"], angle: 126 },
+    { label: ["Lifestyle", "Inputs"], angle: 198 },
+  ];
+
+  const toRad = (deg: number) => (deg * Math.PI) / 180;
+
+  const nodes = systems.map(({ label, angle }) => ({
+    label,
+    x: cx + R * Math.cos(toRad(angle)),
+    y: cy + R * Math.sin(toRad(angle)),
+  }));
+
+  // Pentagon edges: adjacent pairs
+  const edges: [number, number][] = [[0,1],[1,2],[2,3],[3,4],[4,0]];
+
+  function edgePoints(a: number, b: number) {
+    const ax = nodes[a].x, ay = nodes[a].y;
+    const bx = nodes[b].x, by = nodes[b].y;
+    const len = Math.sqrt((bx-ax)**2 + (by-ay)**2);
+    const ux = (bx-ax)/len, uy = (by-ay)/len;
+    const pad = nodeR + 4;
+    return {
+      x1: ax + ux*pad, y1: ay + uy*pad,
+      x2: bx - ux*pad, y2: by - uy*pad,
+    };
+  }
+
+  return (
+    <svg viewBox="0 0 640 576" className="w-full max-w-2xl mx-auto" aria-label="Five interconnected physiologic systems diagram">
+      <defs>
+        <marker id="tip-fwd" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+          <polygon points="0,0 7,3.5 0,7" fill="#B89047" opacity="0.75" />
+        </marker>
+        <marker id="tip-bwd" markerWidth="7" markerHeight="7" refX="1" refY="3.5" orient="auto-start-reverse">
+          <polygon points="0,0 7,3.5 0,7" fill="#B89047" opacity="0.75" />
+        </marker>
+      </defs>
+
+      {/* Spokes from center to each node — very faint dashed */}
+      {nodes.map((n, i) => {
+        const len = Math.sqrt((n.x-cx)**2 + (n.y-cy)**2);
+        const ux = (n.x-cx)/len, uy = (n.y-cy)/len;
+        return (
+          <line key={`spoke-${i}`}
+            x1={cx + ux*42} y1={cy + uy*42}
+            x2={n.x - ux*(nodeR+2)} y2={n.y - uy*(nodeR+2)}
+            stroke="#B89047" strokeWidth="1" strokeOpacity="0.18" strokeDasharray="5 5"
+          />
+        );
+      })}
+
+      {/* Pentagon edges with bidirectional arrows */}
+      {edges.map(([a, b], i) => {
+        const { x1, y1, x2, y2 } = edgePoints(a, b);
+        return (
+          <line key={`edge-${i}`}
+            x1={x1} y1={y1} x2={x2} y2={y2}
+            stroke="#B89047" strokeWidth="1.5" strokeOpacity="0.55"
+            markerEnd="url(#tip-fwd)"
+            markerStart="url(#tip-bwd)"
+          />
+        );
+      })}
+
+      {/* Center hub */}
+      <circle cx={cx} cy={cy} r="40" fill="#0f2922" stroke="#B89047" strokeWidth="1.2" strokeOpacity="0.5" />
+      <text x={cx} y={cy - 7} textAnchor="middle" fill="#E8D5A5"
+        fontSize="9.5" fontFamily="Outfit, sans-serif" fontWeight="600" letterSpacing="1.5">WHOLE</text>
+      <text x={cx} y={cy + 8} textAnchor="middle" fill="#E8D5A5"
+        fontSize="9.5" fontFamily="Outfit, sans-serif" fontWeight="600" letterSpacing="1.5">HEALTH</text>
+
+      {/* System nodes */}
+      {nodes.map((n, i) => (
+        <g key={`node-${i}`}>
+          <circle cx={n.x} cy={n.y} r={nodeR} fill="#1B3B33" stroke="#B89047" strokeWidth="1.5" strokeOpacity="0.5" />
+          {n.label.map((line, li) => (
+            <text key={li}
+              x={n.x} y={n.y + (li - (n.label.length - 1) / 2) * 16}
+              textAnchor="middle" dominantBaseline="middle"
+              fill="#F4F1EB" fontSize="11.5" fontFamily="Outfit, sans-serif" fontWeight="500">
+              {line}
+            </text>
+          ))}
+        </g>
+      ))}
+    </svg>
+  );
+}
+
 function ModelIntroSection() {
   return (
     <section id="model" className="py-24 md:py-36 bg-[#FCFBF9]">
@@ -387,22 +483,13 @@ function ModelIntroSection() {
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <div className="bg-[#132A24] p-8 md:p-12 text-center">
-            <p className="text-[#E8D5A5] text-xs font-semibold tracking-widest uppercase mb-5" style={FONT_SANS}>
+          <div className="bg-[#132A24] px-8 pt-10 pb-4 md:px-12">
+            <p className="text-center text-[#E8D5A5] text-xs font-semibold tracking-widest uppercase mb-2" style={FONT_SANS}>
               Five Interconnected Physiologic Systems
             </p>
-            <div className="flex flex-wrap justify-center gap-3" style={FONT_SANS}>
-              {["Hormonal Regulation", "Metabolic Function", "Reproductive Health", "Nervous System Regulation", "Lifestyle Inputs"].map((sys, i) => (
-                <div key={sys} className="flex items-center gap-2">
-                  <span className="bg-[#1B3B33] border border-[#B89047]/30 text-[#F4F1EB] px-4 py-2 text-sm font-medium">
-                    {sys}
-                  </span>
-                  {i < 4 && <span className="text-[#B89047]/50 text-lg hidden md:block">↔</span>}
-                </div>
-              ))}
-            </div>
-            <p className="text-[#F4F1EB]/55 text-sm font-light mt-6 max-w-xl mx-auto" style={FONT_SANS}>
-              These systems do not operate in sequence — they operate in constant, dynamic relationship.
+            <SystemsPentagon />
+            <p className="text-center text-[#F4F1EB]/55 text-sm font-light mt-0 pb-8 max-w-xl mx-auto" style={FONT_SANS}>
+              These systems operate in constant, dynamic relationship — not in sequence.
               Optimizing one without understanding the others produces incomplete outcomes.
             </p>
           </div>
