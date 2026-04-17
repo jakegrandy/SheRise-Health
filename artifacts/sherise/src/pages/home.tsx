@@ -209,7 +209,9 @@ function Nav() {
 
         <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-[#132A24]">
           {NAV_LINKS.map((l) => (
-            <a key={l.name} href={l.href} className="hover:text-[#B89047] transition-colors">{l.name}</a>
+            <a key={l.name} href={l.href} className="hover:text-[#B89047] transition-colors">
+              {l.name === "The Model" ? "The Framework" : l.name}
+            </a>
           ))}
         </div>
 
