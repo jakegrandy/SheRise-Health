@@ -285,9 +285,6 @@ function Hero() {
                 </a>
               </div>
 
-              <p className="text-xs text-[#4B5563]/60 font-light tracking-wide" style={FONT_SANS}>
-                Root-cause evaluation. Precision treatment. Long-term transformation.
-              </p>
             </FadeIn>
           </div>
 
