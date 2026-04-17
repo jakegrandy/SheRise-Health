@@ -261,7 +261,7 @@ function Hero() {
             <FadeIn direction="up">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-[#B89047] text-[#B89047] text-xs font-semibold tracking-widest uppercase mb-8 bg-[#FCFBF9]" style={FONT_SANS}>
                 <Award className="w-3.5 h-3.5" />
-                <span>Northwest Arkansas' Leading Specialist</span>
+                <span>Northwest Arkansas' Leading Integrated Women's Health Specialist</span>
               </div>
 
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.08] text-[#132A24] mb-6" style={FONT_SERIF}>
