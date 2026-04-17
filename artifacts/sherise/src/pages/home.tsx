@@ -437,7 +437,7 @@ function ModelIntroSection() {
               The Clinical Foundation
             </p>
             <h2 className="text-4xl md:text-5xl font-medium text-[#132A24] mb-8 leading-tight" style={FONT_SERIF}>
-              A systems-based medical model for women's health.
+              The She Rises Framework of Whole-Health
             </h2>
           </div>
         </FadeIn>
