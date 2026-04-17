@@ -275,7 +275,7 @@ function Hero() {
               </p>
 
               <p className="text-base text-[#4B5563] mb-10 max-w-xl font-light leading-relaxed" style={FONT_SANS}>
-                Led by Scarlett Grandy, CNM, WHNP-BC — 16 years of clinical leadership in
+                Led by Scarlett Grandy, CNM, WHNP-BC — over 20 years of whole-health medicine in
                 women's whole-health, Northwest Arkansas.
               </p>
 
@@ -301,7 +301,7 @@ function Hero() {
                   <h3 className="text-[#F4F1EB] text-lg font-medium mb-1" style={FONT_SERIF}>Scarlett Grandy</h3>
                   <p className="text-[#B89047] text-sm font-semibold tracking-wide mb-3" style={FONT_SANS}>CNM, WHNP-BC</p>
                   <p className="text-[#F4F1EB]/75 text-xs leading-relaxed" style={FONT_SANS}>
-                    Board Certified Women's Health Nurse Practitioner. 16 years specializing in systems-based whole-health methodology.
+                    Board Certified Women's Health Nurse Practitioner. over 20 years specializing in systems-based whole-health methodology.
                   </p>
                 </div>
               </div>
@@ -314,7 +314,7 @@ function Hero() {
 }
 
 function CredentialsBar() {
-  const certs = ["The Menopause Society", "ISSWSH Member", "EAGALA Certified", "Board Certified WHNP", "16 Years Clinical Leadership"];
+  const certs = ["The Menopause Society", "ISSWSH Member", "EAGALA Certified", "Board Certified WHNP", "20+ Years Whole-Health Medicine"];
   return (
     <section className="bg-[#132A24] py-10 border-y border-[#B89047]/20">
       <div className="max-w-7xl mx-auto px-6" style={FONT_SANS}>
@@ -636,7 +636,7 @@ function ApproachSection() {
             {[
               { stat: "60–90", label: "Minutes per consultation" },
               { stat: "5", label: "Physiologic systems mapped" },
-              { stat: "16", label: "Years of clinical leadership" },
+              { stat: "20+", label: "Years of whole-health medicine" },
             ].map((item) => (
               <div key={item.label} className="bg-[#132A24] p-8 text-center border border-[#B89047]/15">
                 <p className="text-5xl font-medium text-[#B89047] mb-2" style={FONT_SERIF}>{item.stat}</p>
@@ -660,9 +660,9 @@ function ProviderSection() {
               <img src="/images/scarlett-authority.png" alt="Scarlett Grandy, CNM, WHNP-BC"
                 className="w-full max-w-md mx-auto lg:mx-0 h-[560px] object-cover object-top shadow-xl" />
               <div className="absolute -bottom-6 -right-4 lg:-right-6 bg-[#B89047] p-5 shadow-xl">
-                <p className="text-[#132A24] font-bold text-3xl" style={FONT_SERIF}>16</p>
+                <p className="text-[#132A24] font-bold text-3xl" style={FONT_SERIF}>20+</p>
                 <p className="text-[#132A24] text-xs font-semibold tracking-wide uppercase mt-1" style={FONT_SANS}>
-                  Years of Clinical<br />Leadership
+                  Years of Whole-Health<br />Medicine
                 </p>
               </div>
             </div>
@@ -676,7 +676,7 @@ function ProviderSection() {
                 <span className="text-[#B89047]">CNM, WHNP-BC</span>
               </h2>
               <p className="text-lg text-[#4B5563] font-light leading-relaxed mb-5">
-                Scarlett has spent 16 years at the forefront of women's whole-health, bringing together
+                Scarlett has spent over 20 years at the forefront of women's whole-health, bringing together
                 the clinical rigor of board-certified women's health nursing with a systems-based philosophy
                 that conventional medicine rarely allows time for.
               </p>
