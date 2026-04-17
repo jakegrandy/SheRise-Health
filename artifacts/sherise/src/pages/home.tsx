@@ -570,7 +570,7 @@ function ApproachSection() {
               Standard GYN Care
               <br />
               vs{" "}
-              <span className="italic text-[#B89047]">She Rises</span>
+              <span className="italic text-[#B89047] text-5xl md:text-6xl">She Rises</span>
             </h2>
             <p className="text-lg text-[#F4F1EB]/65 font-light max-w-2xl mx-auto" style={FONT_SANS}>
               The conventional model divides the body into departments. Your endocrinologist manages
