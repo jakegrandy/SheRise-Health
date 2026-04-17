@@ -449,7 +449,7 @@ function ModelIntroSection() {
               with attention to psychological and behavioral drivers."
             </p>
             <p className="text-sm text-[#B89047] font-semibold tracking-wide uppercase mt-4" style={FONT_SANS}>
-              The SheRises Clinical Definition
+              The She Rises Difference
             </p>
           </div>
         </FadeIn>
