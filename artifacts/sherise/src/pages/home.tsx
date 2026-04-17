@@ -567,9 +567,7 @@ function ApproachSection() {
         <FadeIn>
           <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-medium mb-6" style={FONT_SERIF}>
-              Standard GYN Care
-              <br />
-              vs{" "}
+              Standard GYN Care vs{" "}
               <span className="italic text-[#B89047] text-5xl md:text-6xl">She Rises</span>
             </h2>
             <p className="text-lg text-[#F4F1EB]/65 font-light max-w-2xl mx-auto" style={FONT_SANS}>
