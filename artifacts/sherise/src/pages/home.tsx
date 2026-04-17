@@ -486,8 +486,7 @@ function ModelIntroSection() {
             </p>
             <SystemsPentagon />
             <p className="text-center text-[#F4F1EB]/55 text-sm font-light mt-0 pb-8 max-w-xl mx-auto" style={FONT_SANS}>
-              These systems operate in constant, dynamic relationship — not in sequence.
-              Optimizing one without understanding the others produces incomplete outcomes.
+              These systems operate in constant, dynamic relationship. The She Rises Framework optimizes every system in your whole health.
             </p>
           </div>
         </FadeIn>
