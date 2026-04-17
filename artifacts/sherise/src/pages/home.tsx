@@ -566,9 +566,8 @@ function ApproachSection() {
       <div className="max-w-5xl mx-auto px-6">
         <FadeIn>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-medium mb-6" style={FONT_SERIF}>
-              Organ-based, siloed care vs.{" "}
-              <span className="italic text-[#B89047]">Systems in relationship</span>
+              <h2 className="text-4xl md:text-5xl font-medium mb-6" style={FONT_SERIF}>
+              Regular Standard Care vs She Rises
             </h2>
             <p className="text-lg text-[#F4F1EB]/65 font-light max-w-2xl mx-auto" style={FONT_SANS}>
               The conventional model divides the body into departments. Your endocrinologist manages
