@@ -397,7 +397,7 @@ function ModelIntroSection() {
                   <span className="bg-[#1B3B33] border border-[#B89047]/30 text-[#F4F1EB] px-4 py-2 text-sm font-medium">
                     {sys}
                   </span>
-                  {i < 4 && <span className="text-[#B89047]/50 text-lg hidden md:block">→</span>}
+                  {i < 4 && <span className="text-[#B89047]/50 text-lg hidden md:block">↔</span>}
                 </div>
               ))}
             </div>
