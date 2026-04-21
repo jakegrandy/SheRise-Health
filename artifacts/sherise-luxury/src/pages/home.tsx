@@ -1,235 +1,429 @@
-import { useEffect } from "react";
-import { ArrowRight } from "lucide-react";
+import { useRef } from "react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import generationsOfCare from "@assets/generations_of_care_1776802252403.png";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const BASE = import.meta.env.BASE_URL;
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 60 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1.4, ease: [0.16, 1, 0.3, 1] } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1
+    }
+  }
+};
+
+const systems = [
+  {
+    num: "01",
+    title: "Hormonal Harmony",
+    copy: "Navigating perimenopause and menopause with precision. We optimize your hormones using bioidentical therapies, restoring energy, clarity, and libido.",
+  },
+  {
+    num: "02",
+    title: "Metabolic Restoration",
+    copy: "Addressing weight resistance at its source. By evaluating insulin sensitivity, thyroid function, and cellular energy, we rebuild your metabolic flexibility.",
+  },
+  {
+    num: "03",
+    title: "Nervous System Calibration",
+    copy: "Chronic stress rewires the body. We assess cortisol rhythms and provide strategies to shift your system from survival mode back to a state of rest and repair.",
+  },
+  {
+    num: "04",
+    title: "Reproductive Health",
+    copy: "Expert management of complex gynecological concerns. From irregular cycles to pelvic pain, we offer nuanced, specialized care tailored to your anatomy.",
+  },
+  {
+    num: "05",
+    title: "Strategic Lifestyle",
+    copy: "The foundation of lasting health. We curate personalized guidance on nutrition, movement, and recovery that fits seamlessly into a demanding life.",
+  }
+];
+
 export default function Home() {
-  useEffect(() => {
-    const link = document.createElement("link");
-    link.href =
-      "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap";
-    link.rel = "stylesheet";
-    document.head.appendChild(link);
-    return () => {
-      document.head.removeChild(link);
-    };
-  }, []);
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+
+  const heroImageY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <div className="min-h-screen bg-[#FCFBF9] text-[#132A24] font-['Outfit'] selection:bg-[#E8D5A5] selection:text-[#132A24]">
-
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-accent selection:text-background">
       {/* Navigation */}
-      <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-10 md:px-16">
-        <div className="font-['Playfair_Display'] text-2xl tracking-wide text-white mix-blend-difference">
-          SheRises Health
+      <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-10 md:px-16 mix-blend-difference text-white">
+        <div className="font-serif text-2xl tracking-widest uppercase">
+          SheRises
         </div>
-        <div className="hidden md:flex gap-12 text-sm tracking-widest uppercase text-white mix-blend-difference">
-          <a href="#philosophy" className="hover:opacity-60 transition-opacity">Philosophy</a>
-          <a href="#systems" className="hover:opacity-60 transition-opacity">The 5 Systems</a>
-          <a href="#provider" className="hover:opacity-60 transition-opacity">Scarlett Grandy</a>
+        <div className="hidden md:flex gap-12 text-[11px] tracking-[0.25em] uppercase font-light">
+          <a href="#philosophy" className="hover:text-accent transition-colors duration-500">Philosophy</a>
+          <a href="#systems" className="hover:text-accent transition-colors duration-500">The 5 Systems</a>
+          <a href="#provider" className="hover:text-accent transition-colors duration-500">Scarlett Grandy</a>
         </div>
         <a
           href="#book"
-          className="text-sm tracking-widest uppercase border-b border-transparent hover:border-white transition-colors text-white mix-blend-difference pb-1"
+          className="text-[11px] tracking-[0.25em] uppercase font-light flex items-center gap-2 group"
         >
-          Inquire
+          <span className="border-b border-transparent group-hover:border-white transition-colors pb-1">Inquire</span>
+          <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
         </a>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-[90vh] min-h-[700px] flex items-center justify-center overflow-hidden bg-[#F4F1EB]">
+      <section ref={heroRef} className="relative h-screen min-h-[900px] flex items-center bg-primary overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
-            src={generationsOfCare}
-            alt="Two generations holding hands"
-            className="w-full h-full object-cover opacity-90"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30 mix-blend-multiply" />
-        </div>
-
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col items-center justify-center h-full -translate-y-10">
-          <h1 className="font-['Playfair_Display'] text-5xl md:text-7xl lg:text-8xl text-white font-light leading-[1.1] mb-24 tracking-tight drop-shadow-sm">
-            Reimagining Women's Health
-          </h1>
-
-          <a
-            href="#book"
-            className="group relative inline-flex items-center justify-center px-10 py-4 text-sm tracking-[0.2em] uppercase text-white border border-white/40 hover:bg-white hover:text-[#132A24] transition-all duration-500 translate-y-8"
+          <motion.div 
+            className="w-full h-full"
+            style={{ y: heroImageY, opacity: heroOpacity }}
           >
-            <span className="relative z-10 flex items-center gap-3">
-              Request a Consultation
-              <ArrowRight className="w-4 h-4 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-500" />
-            </span>
-          </a>
+            <img
+              src={generationsOfCare}
+              alt="Two generations holding hands"
+              className="w-full h-full object-cover object-center opacity-80 mix-blend-luminosity brightness-75"
+            />
+            <div className="absolute inset-0 bg-primary/60 mix-blend-multiply" />
+          </motion.div>
         </div>
+
+        <motion.div 
+          className="relative z-10 w-full max-w-[100rem] mx-auto px-8 md:px-16 flex flex-col justify-center h-full items-center text-center"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <div className="pt-32 flex flex-col items-center">
+            <motion.h1 
+              variants={fadeUp} 
+              className="font-serif text-6xl md:text-8xl lg:text-[10rem] text-background font-light leading-[0.9] tracking-[-0.03em] mb-16"
+            >
+              Reimagining<br />
+              <span className="italic text-accent">Women's</span> Health
+            </motion.h1>
+
+            <motion.div variants={fadeUp}>
+              <a
+                href="#book"
+                className="group relative inline-flex items-center justify-center px-12 py-6 text-[11px] tracking-[0.3em] uppercase text-background border border-background/20 hover:border-background/60 transition-all duration-700 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-background translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[0.16,1,0.3,1]" />
+                <span className="relative z-10 flex items-center gap-4 group-hover:text-primary transition-colors duration-700">
+                  Request a Consultation
+                  <ArrowRight className="w-4 h-4 opacity-50 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-700" />
+                </span>
+              </a>
+            </motion.div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Credentials Bar */}
-      <section className="border-b border-[#132A24]/10 bg-[#FCFBF9]">
-        <div className="max-w-7xl mx-auto px-8 md:px-16 py-12 flex flex-col md:flex-row justify-between items-center gap-8 text-sm tracking-widest uppercase text-[#132A24]/60">
+      <section className="bg-background relative z-20 border-b border-foreground/10">
+        <div className="max-w-[100rem] mx-auto px-8 md:px-16 py-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] tracking-[0.25em] uppercase text-foreground/50">
           <span>Board Certified WHNP</span>
-          <span className="hidden md:block w-1 h-1 rounded-full bg-[#B89047]/40" />
+          <span className="hidden md:block w-1.5 h-1.5 rotate-45 bg-accent/40" />
           <span>Certified Nurse Midwife</span>
-          <span className="hidden md:block w-1 h-1 rounded-full bg-[#B89047]/40" />
+          <span className="hidden md:block w-1.5 h-1.5 rotate-45 bg-accent/40" />
           <span>20+ Years Clinical Practice</span>
-          <span className="hidden md:block w-1 h-1 rounded-full bg-[#B89047]/40" />
+          <span className="hidden md:block w-1.5 h-1.5 rotate-45 bg-accent/40" />
           <span>Northwest Arkansas</span>
         </div>
       </section>
 
       {/* What We Do */}
-      <section className="py-32 md:py-48 px-8 md:px-16 max-w-7xl mx-auto">
-        <div className="mb-24 md:mb-32">
-          <span className="text-[#B89047] text-sm tracking-[0.3em] uppercase block mb-8">What We Do</span>
-          <h2 className="font-['Playfair_Display'] text-4xl md:text-6xl font-light leading-tight max-w-4xl">
-            At She Rises Health, care spans the full spectrum of women’s health—from preventive screening and reproductive care to hormone optimization and metabolic health.
-          </h2>
-          <p className="mt-8 max-w-4xl text-lg md:text-xl text-[#132A24]/70 leading-relaxed font-light">
-            Services are designed to support women at every stage of life, including adolescence, reproductive years, and midlife and beyond.
-          </p>
-        </div>
+      <section className="py-32 md:py-48 px-8 md:px-16 max-w-[100rem] mx-auto relative z-20 bg-background overflow-hidden">
+        <motion.div 
+          className="mb-32 md:mb-48 flex flex-col lg:flex-row gap-16 lg:gap-32 items-start"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+        >
+          <motion.div variants={fadeUp} className="max-w-md">
+            <span className="text-accent text-[11px] tracking-[0.3em] uppercase block mb-8 font-light">What We Do</span>
+            <p className="text-lg md:text-xl text-foreground/60 leading-[1.8] font-light">
+              Services are designed to support women at every stage of life, including adolescence, reproductive years, and midlife and beyond.
+            </p>
+          </motion.div>
+          <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.25] text-foreground flex-1">
+            At She Rises Health, care spans the full spectrum of women’s health—from <span className="italic text-foreground/70">preventive screening</span> and <span className="italic text-foreground/70">reproductive care</span> to hormone optimization and metabolic health.
+          </motion.h2>
+        </motion.div>
 
-        <div className="grid gap-12 md:gap-16">
-          <div className="border-t border-[#132A24]/10 pt-10">
-            <h3 className="font-['Playfair_Display'] text-2xl md:text-3xl mb-6">Adolescent and Young Adult Care</h3>
-            <p className="text-[#132A24]/70 leading-relaxed text-lg mb-6">
+        <div className="grid lg:grid-cols-3 gap-x-16 gap-y-24 relative">
+          <motion.div 
+            className="group relative"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+          >
+            <div className="mb-10 text-accent font-serif italic text-8xl leading-none opacity-20">1</div>
+            <h3 className="font-serif text-3xl mb-8 text-foreground pb-8 border-b border-foreground/10">Adolescent &<br/>Young Adult Care</h3>
+            <p className="text-foreground/60 leading-[1.8] text-base mb-10 font-light h-20">
               Care for younger patients is individualized, educational, and supportive.
             </p>
-            <ul className="grid md:grid-cols-2 gap-x-10 gap-y-4 text-[#132A24]/80 leading-relaxed text-base md:text-lg">
-              <li>First gynecologic visits and education</li>
-              <li>Menstrual concerns (irregular cycles, painful periods, heavy bleeding)</li>
-              <li>Acne and early hormonal imbalance evaluation</li>
-              <li>Contraceptive counseling and initiation</li>
-              <li>STI screening and sexual health education</li>
-              <li>Body literacy and reproductive health guidance</li>
+            <ul className="space-y-5 text-foreground/80 leading-[1.6] text-sm font-light">
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>First gynecologic visits and education</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>Menstrual concerns (irregular cycles, painful periods, heavy bleeding)</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>Acne and early hormonal imbalance evaluation</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>Contraceptive counseling and initiation</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>STI screening and sexual health education</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>Body literacy and reproductive health guidance</span>
+              </li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="border-t border-[#132A24]/10 pt-10">
-            <h3 className="font-['Playfair_Display'] text-2xl md:text-3xl mb-6">Family Planning and Reproductive Care</h3>
-            <p className="text-[#132A24]/70 leading-relaxed text-lg mb-6">
+          <motion.div 
+            className="group relative"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="mb-10 text-accent font-serif italic text-8xl leading-none opacity-20">2</div>
+            <h3 className="font-serif text-3xl mb-8 text-foreground pb-8 border-b border-foreground/10">Family Planning &<br/>Reproductive Care</h3>
+            <p className="text-foreground/60 leading-[1.8] text-base mb-10 font-light h-20">
               Support for reproductive decision-making is practical, informed, and aligned with each patient’s goals.
             </p>
-            <ul className="grid md:grid-cols-2 gap-x-10 gap-y-4 text-[#132A24]/80 leading-relaxed text-base md:text-lg">
-              <li>Personalized contraceptive education and care (pill, patch, ring, IUD, implant)</li>
-              <li>Preconception counseling and optimization</li>
-              <li>Fertility awareness and cycle tracking education</li>
-              <li>Reproductive life planning</li>
-              <li>Pregnancy prevention and spacing strategies</li>
+            <ul className="space-y-5 text-foreground/80 leading-[1.6] text-sm font-light">
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>Personalized contraceptive education and care (pill, patch, ring, IUD, implant)</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>Preconception counseling and optimization</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>Fertility awareness and cycle tracking education</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>Reproductive life planning</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>Pregnancy prevention and spacing strategies</span>
+              </li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="border-t border-[#132A24]/10 pt-10">
-            <h3 className="font-['Playfair_Display'] text-2xl md:text-3xl mb-6">Hormone and Metabolic Health</h3>
-            <p className="text-[#132A24]/70 leading-relaxed text-lg mb-6">
+          <motion.div 
+            className="group relative"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+            transition={{ delay: 0.4 }}
+          >
+            <div className="mb-10 text-accent font-serif italic text-8xl leading-none opacity-20">3</div>
+            <h3 className="font-serif text-3xl mb-8 text-foreground pb-8 border-b border-foreground/10">Hormone &<br/>Metabolic Health</h3>
+            <p className="text-foreground/60 leading-[1.8] text-base mb-10 font-light h-20">
               Addressing root causes rather than isolated symptoms.
             </p>
-            <ul className="grid md:grid-cols-2 gap-x-10 gap-y-4 text-[#132A24]/80 leading-relaxed text-base md:text-lg">
-              <li>Evaluation and treatment of hormone imbalance</li>
-              <li>PCOS and androgen excess management</li>
-              <li>Insulin resistance and metabolic dysfunction care</li>
-              <li>Weight management with a medical and metabolic focus</li>
-              <li>Perimenopause and menopause care</li>
-              <li>Fatigue, mood changes, sleep disruption, and libido concerns</li>
+            <ul className="space-y-5 text-foreground/80 leading-[1.6] text-sm font-light">
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>Evaluation and treatment of hormone imbalance</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>PCOS and androgen excess management</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>Insulin resistance and metabolic dysfunction care</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>Weight management with a medical and metabolic focus</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>Perimenopause and menopause care</span>
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
+                <span>Fatigue, mood changes, sleep disruption, and libido concerns</span>
+              </li>
             </ul>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Philosophy Section */}
-      <section id="philosophy" className="py-32 md:py-48 px-8 md:px-16 max-w-7xl mx-auto">
-        <div className="mb-24 md:mb-32">
-          <span className="text-[#B89047] text-sm tracking-[0.3em] uppercase block mb-8">The Philosophy</span>
-          <h2 className="font-['Playfair_Display'] text-4xl md:text-6xl font-light leading-tight max-w-3xl">
-            Medicine that listens, investigates, and restores.
-          </h2>
-        </div>
+      <section id="philosophy" className="py-32 md:py-48 px-8 md:px-16 bg-secondary relative z-20">
+        <div className="max-w-[100rem] mx-auto">
+          <motion.div 
+            className="mb-24 md:mb-40"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.span variants={fadeUp} className="text-accent text-[11px] tracking-[0.3em] uppercase block font-light mb-8 text-center">
+              The Philosophy
+            </motion.span>
+            <motion.h2 variants={fadeUp} className="font-serif text-5xl md:text-6xl lg:text-[5rem] font-light leading-[1.1] text-foreground text-center">
+              Medicine that <span className="italic text-foreground/80">listens</span>, investigates,<br/>and <span className="italic text-foreground/80">restores</span>.
+            </motion.h2>
+          </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-16 md:gap-24">
-          <div className="space-y-6">
-            <h3 className="font-['Playfair_Display'] text-2xl">Unrushed Time</h3>
-            <p className="text-[#132A24]/70 leading-relaxed font-light text-lg">
-              Healing cannot happen in fifteen minutes. We protect the time necessary to hear your complete story and understand your unique physiology.
-            </p>
-          </div>
-          <div className="space-y-6">
-            <h3 className="font-['Playfair_Display'] text-2xl">Comprehensive Investigation</h3>
-            <p className="text-[#132A24]/70 leading-relaxed font-light text-lg">
-              We look beyond basic labs, utilizing advanced functional testing to uncover the root causes of exhaustion, weight resistance, and mood shifts.
-            </p>
-          </div>
-          <div className="space-y-6">
-            <h3 className="font-['Playfair_Display'] text-2xl">Refined Protocols</h3>
-            <p className="text-[#132A24]/70 leading-relaxed font-light text-lg">
-              Your body is a complex ecosystem. We design bespoke interventions that harmonize your systems rather than simply masking individual symptoms.
-            </p>
+          <div className="grid md:grid-cols-3 gap-16 md:gap-24 relative">
+            <div className="hidden md:block absolute top-0 left-1/3 bottom-0 w-px bg-foreground/5" />
+            <div className="hidden md:block absolute top-0 right-1/3 bottom-0 w-px bg-foreground/5" />
+            
+            <motion.div 
+              className="space-y-8 text-center px-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+            >
+              <div className="w-16 h-px bg-accent/40 mx-auto mb-12" />
+              <h3 className="font-serif text-3xl text-foreground">Unrushed Time</h3>
+              <p className="text-foreground/60 leading-[1.8] font-light text-lg">
+                Healing cannot happen in fifteen minutes. We protect the time necessary to hear your complete story and understand your unique physiology.
+              </p>
+            </motion.div>
+            
+            <motion.div 
+              className="space-y-8 text-center px-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              transition={{ delay: 0.2 }}
+            >
+              <div className="w-16 h-px bg-accent/40 mx-auto mb-12" />
+              <h3 className="font-serif text-3xl text-foreground">Comprehensive<br/>Investigation</h3>
+              <p className="text-foreground/60 leading-[1.8] font-light text-lg">
+                We look beyond basic labs, utilizing advanced functional testing to uncover the root causes of exhaustion, weight resistance, and mood shifts.
+              </p>
+            </motion.div>
+            
+            <motion.div 
+              className="space-y-8 text-center px-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              transition={{ delay: 0.4 }}
+            >
+              <div className="w-16 h-px bg-accent/40 mx-auto mb-12" />
+              <h3 className="font-serif text-3xl text-foreground">Refined Protocols</h3>
+              <p className="text-foreground/60 leading-[1.8] font-light text-lg">
+                Your body is a complex ecosystem. We design bespoke interventions that harmonize your systems rather than simply masking individual symptoms.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* The 5 Systems */}
-      <section id="systems" className="bg-[#F4F1EB] py-32 md:py-48 px-8 md:px-16">
-        <div className="max-w-4xl mx-auto">
-          <span className="text-[#B89047] text-sm tracking-[0.3em] uppercase block mb-16 text-center">Clinical Framework</span>
+      <section id="systems" className="py-32 md:py-48 px-8 md:px-16 bg-background relative z-20">
+        <div className="max-w-[100rem] mx-auto">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+            className="mb-24 flex flex-col items-center"
+          >
+            <span className="text-accent text-[11px] tracking-[0.3em] uppercase block mb-8 font-light">Clinical Framework</span>
+            <h2 className="font-serif text-5xl md:text-7xl font-light text-foreground leading-[1.1]">The Five Systems</h2>
+          </motion.div>
 
-          <div className="space-y-24">
-            {[
-              {
-                num: "01",
-                title: "Hormonal Harmony",
-                copy: "Navigating perimenopause and menopause with precision. We optimize your hormones using bioidentical therapies, restoring energy, clarity, and libido.",
-              },
-              {
-                num: "02",
-                title: "Metabolic Restoration",
-                copy: "Addressing weight resistance at its source. By evaluating insulin sensitivity, thyroid function, and cellular energy, we rebuild your metabolic flexibility.",
-              },
-              {
-                num: "03",
-                title: "Nervous System Calibration",
-                copy: "Chronic stress rewires the body. We assess cortisol rhythms and provide strategies to shift your system from survival mode back to a state of rest and repair.",
-              },
-              {
-                num: "04",
-                title: "Reproductive Health",
-                copy: "Expert management of complex gynecological concerns. From irregular cycles to pelvic pain, we offer nuanced, specialized care tailored to your anatomy.",
-              },
-              {
-                num: "05",
-                title: "Strategic Lifestyle",
-                copy: "The foundation of lasting health. We curate personalized guidance on nutrition, movement, and recovery that fits seamlessly into a demanding life.",
-              },
-            ].map(({ num, title, copy }) => (
-              <div key={num} className="border-t border-[#132A24]/10 pt-12">
-                <h3 className="font-['Playfair_Display'] text-3xl md:text-4xl mb-6">
-                  {num}. {title}
-                </h3>
-                <p className="text-xl md:text-2xl text-[#132A24]/70 leading-relaxed font-light">{copy}</p>
-              </div>
+          <div className="grid md:grid-cols-2 gap-x-24 gap-y-32">
+            {systems.map(({ num, title, copy }, i) => (
+              <motion.div 
+                key={num} 
+                className="group relative"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={fadeUp}
+                transition={{ delay: i * 0.1 }}
+              >
+                <div className="flex flex-col gap-6 items-start">
+                  <div className="font-serif text-7xl text-foreground/5 mb-4 group-hover:text-accent transition-colors duration-500 italic">
+                    {num}
+                  </div>
+                  <div className="flex-1 space-y-6">
+                    <h3 className="font-serif text-4xl md:text-5xl text-foreground pb-6 border-b border-foreground/10">
+                      {title}
+                    </h3>
+                    <p className="text-xl text-foreground/60 leading-[1.8] font-light">{copy}</p>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Provider Section */}
-      <section id="provider" className="py-32 md:py-48 px-8 md:px-16 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 md:gap-32 items-center">
-          <div className="relative aspect-[3/4] w-full max-w-md mx-auto md:mx-0">
+      <section id="provider" className="py-32 md:py-48 px-8 md:px-16 bg-primary text-background relative z-20 overflow-hidden">
+        <div className="max-w-[100rem] mx-auto grid lg:grid-cols-[1fr_1fr] gap-16 lg:gap-32 items-center">
+          <motion.div 
+            className="relative aspect-[3/4] w-full max-w-xl"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true }}
+          >
+            <div className="absolute inset-0 border border-background/20 translate-x-4 translate-y-4" />
             <img
               src={`${BASE}images/sherise-luxury-provider.png`}
               alt="Scarlett Grandy, CNM, WHNP-BC"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top opacity-90 mix-blend-luminosity brightness-90 hover:mix-blend-normal hover:brightness-100 transition-all duration-1000"
             />
-            <div className="absolute inset-0 border border-[#132A24]/10 translate-x-4 translate-y-4 -z-10" />
-          </div>
+          </motion.div>
 
-          <div className="space-y-8">
-            <span className="text-[#B89047] text-sm tracking-[0.3em] uppercase block">The Practitioner</span>
-            <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl font-light">Scarlett Grandy</h2>
-            <p className="text-sm tracking-widest uppercase text-[#132A24]/50 pb-4 border-b border-[#132A24]/10">CNM, WHNP-BC</p>
+          <motion.div 
+            className="space-y-16 max-w-2xl"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <div>
+              <motion.span variants={fadeUp} className="text-accent text-[11px] tracking-[0.3em] uppercase block mb-8 font-light">The Practitioner</motion.span>
+              <motion.h2 variants={fadeUp} className="font-serif text-6xl md:text-8xl font-light text-background mb-6">Scarlett Grandy</motion.h2>
+              <motion.p variants={fadeUp} className="text-[11px] tracking-[0.3em] uppercase text-background/40 pb-12 border-b border-background/20">CNM, WHNP-BC</motion.p>
+            </div>
 
-            <div className="space-y-6 text-[#132A24]/80 leading-relaxed text-lg font-light pt-4">
+            <motion.div variants={fadeUp} className="space-y-8 text-background/70 leading-[1.8] text-xl font-light">
               <p>
                 With over two decades of clinical experience in women's health, Scarlett founded SheRises to offer the caliber of care she knew her patients deserved.
               </p>
@@ -239,67 +433,89 @@ export default function Home() {
               <p>
                 Her approach merges rigorous clinical expertise with an unparalleled commitment to patient advocacy, ensuring every woman who walks through her doors feels seen, heard, and wholly cared for.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="bg-[#132A24] text-[#F4F1EB] py-32 md:py-48 px-8 md:px-16">
-        <div className="max-w-4xl mx-auto space-y-32">
-          <blockquote className="text-center space-y-8">
-            <p className="font-['Playfair_Display'] text-3xl md:text-5xl font-light leading-snug italic">
-              "For the first time in years, I felt completely heard. The depth of knowledge and the level of care is simply unmatched. Scarlett didn't just treat my symptoms; she restored my vitality."
+      <section className="bg-foreground py-32 md:py-48 px-8 md:px-16 relative z-20">
+        <div className="max-w-[100rem] mx-auto grid lg:grid-cols-2 gap-24 lg:gap-32">
+          <motion.blockquote 
+            className="space-y-12 relative"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+          >
+            <div className="absolute -top-16 -left-8 font-serif text-[12rem] text-accent/10 leading-none">"</div>
+            <p className="font-serif text-3xl md:text-4xl font-light leading-[1.6] italic text-background relative z-10">
+              For the first time in years, I felt completely heard. The depth of knowledge and the level of care is simply unmatched. Scarlett didn't just treat my symptoms; she restored my vitality.
             </p>
-            <footer className="text-sm tracking-widest uppercase text-[#E8D5A5]">
-              — Sarah M., Patient Since 2023
+            <footer className="text-[11px] tracking-[0.3em] uppercase text-background/40 font-light flex items-center gap-4">
+              <div className="w-8 h-px bg-accent/40" />
+              Sarah M., Patient Since 2023
             </footer>
-          </blockquote>
+          </motion.blockquote>
 
-          <div className="w-px h-16 bg-[#E8D5A5]/20 mx-auto" />
-
-          <blockquote className="text-center space-y-8">
-            <p className="font-['Playfair_Display'] text-3xl md:text-5xl font-light leading-snug italic">
-              "The investment in my health through SheRises has been life-changing. The bespoke approach and unhurried appointments are exactly what healthcare should be."
+          <motion.blockquote 
+            className="space-y-12 relative"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="absolute -top-16 -left-8 font-serif text-[12rem] text-accent/10 leading-none">"</div>
+            <p className="font-serif text-3xl md:text-4xl font-light leading-[1.6] italic text-background relative z-10">
+              The investment in my health through SheRises has been life-changing. The bespoke approach and unhurried appointments are exactly what healthcare should be.
             </p>
-            <footer className="text-sm tracking-widest uppercase text-[#E8D5A5]">
-              — Elena R., Patient Since 2024
+            <footer className="text-[11px] tracking-[0.3em] uppercase text-background/40 font-light flex items-center gap-4">
+              <div className="w-8 h-px bg-accent/40" />
+              Elena R., Patient Since 2024
             </footer>
-          </blockquote>
+          </motion.blockquote>
         </div>
       </section>
 
       {/* Booking CTA */}
-      <section id="book" className="py-32 md:py-48 px-8 md:px-16 text-center">
-        <div className="max-w-2xl mx-auto space-y-12">
-          <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl font-light">Begin Your Journey</h2>
-          <p className="text-xl text-[#132A24]/70 font-light leading-relaxed">
+      <section id="book" className="py-32 md:py-48 px-8 md:px-16 text-center bg-background relative z-20 border-b border-foreground/10">
+        <motion.div 
+          className="max-w-4xl mx-auto space-y-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          <motion.h2 variants={fadeUp} className="font-serif text-6xl md:text-8xl font-light text-foreground">Begin Your Journey</motion.h2>
+          <motion.p variants={fadeUp} className="text-xl md:text-2xl text-foreground/60 font-light leading-[1.8] max-w-3xl mx-auto">
             We are currently accepting a limited number of new patients. Request a consultation to discover if the SheRises approach is right for you.
-          </p>
-          <div className="pt-8">
+          </motion.p>
+          <motion.div variants={fadeUp} className="pt-12">
             <a
               href="mailto:hello@sheriseshealth.com"
-              className="group inline-flex items-center justify-center px-12 py-5 text-sm tracking-[0.2em] uppercase text-[#F4F1EB] bg-[#132A24] hover:bg-[#1B3B33] transition-colors duration-500"
+              className="group relative inline-flex items-center justify-center px-16 py-6 text-[11px] tracking-[0.3em] uppercase text-foreground border border-foreground/20 hover:border-foreground/50 transition-all duration-700 overflow-hidden"
             >
-              <span className="flex items-center gap-3">
+              <div className="absolute inset-0 bg-foreground translate-y-[101%] group-hover:translate-y-0 transition-transform duration-700 ease-[0.16,1,0.3,1]" />
+              <span className="relative z-10 flex items-center gap-6 group-hover:text-background transition-colors duration-700">
                 Request a Consultation
-                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-500" />
+                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-700 ease-[0.16,1,0.3,1]" />
               </span>
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-[#132A24]/10 py-16 px-8 md:px-16 text-sm tracking-widest uppercase text-[#132A24]/50">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="font-['Playfair_Display'] text-xl tracking-wide normal-case text-[#132A24]">
-            SheRises Health
+      <footer className="py-16 px-8 md:px-16 text-[11px] tracking-[0.3em] uppercase text-foreground/40 font-light bg-background relative z-20">
+        <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+          <div className="font-serif text-2xl normal-case text-foreground tracking-widest">
+            SheRises
           </div>
-          <div className="flex gap-8">
-            <a href="mailto:hello@sheriseshealth.com" className="hover:text-[#132A24] transition-colors">Contact</a>
-            <a href="#" className="hover:text-[#132A24] transition-colors">Location</a>
-            <a href="#" className="hover:text-[#132A24] transition-colors">Privacy</a>
+          <div className="flex gap-16">
+            <a href="mailto:hello@sheriseshealth.com" className="hover:text-foreground transition-colors duration-500">Contact</a>
+            <a href="#" className="hover:text-foreground transition-colors duration-500">Location</a>
+            <a href="#" className="hover:text-foreground transition-colors duration-500">Privacy</a>
           </div>
           <div>&copy; {new Date().getFullYear()} SheRises Health</div>
         </div>
