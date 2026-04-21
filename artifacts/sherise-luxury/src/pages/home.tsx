@@ -81,7 +81,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative h-screen min-h-[900px] flex items-center bg-primary overflow-hidden">
+      <section ref={heroRef} className="relative h-screen min-h-[900px] flex items-center bg-background overflow-hidden">
         <div className="absolute inset-0 z-0">
           <motion.div 
             className="w-full h-full"
@@ -92,7 +92,7 @@ export default function Home() {
               alt="Two generations holding hands"
               className="w-full h-full object-cover object-center opacity-95 brightness-110"
             />
-            <div className="absolute inset-0 bg-primary/25" />
+            <div className="absolute inset-0 bg-background/40" />
           </motion.div>
         </div>
 
@@ -114,10 +114,10 @@ export default function Home() {
             <motion.div variants={fadeUp}>
               <a
                 href="#book"
-                className="group relative inline-flex items-center justify-center px-12 py-6 text-[11px] tracking-[0.3em] uppercase text-background border border-background/20 hover:border-background/60 transition-all duration-700 overflow-hidden"
+                className="group relative inline-flex items-center justify-center px-12 py-6 text-[11px] tracking-[0.3em] uppercase text-primary border border-primary/30 hover:border-primary transition-all duration-700 overflow-hidden"
               >
-                <div className="absolute inset-0 bg-background translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[0.16,1,0.3,1]" />
-                <span className="relative z-10 flex items-center gap-4 group-hover:text-primary transition-colors duration-700">
+                <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[0.16,1,0.3,1]" />
+                <span className="relative z-10 flex items-center gap-4 group-hover:text-background transition-colors duration-700">
                   Request a Consultation
                   <ArrowRight className="w-4 h-4 opacity-50 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-700" />
                 </span>
