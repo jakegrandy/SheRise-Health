@@ -272,8 +272,7 @@ function Hero() {
               </h1>
 
               <p className="text-lg md:text-xl text-[#4B5563] mb-10 max-w-xl font-light leading-relaxed" style={FONT_SANS}>
-                Precision care for metabolic and hormonal health—delivered through an integrated,
-                systems-based framework.
+                High-end specialty care and routine women's health in one reimagined framework.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-5" style={FONT_SANS}>
