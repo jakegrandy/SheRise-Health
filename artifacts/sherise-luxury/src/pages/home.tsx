@@ -97,15 +97,15 @@ export default function Home() {
         </div>
 
         <motion.div 
-          className="relative z-10 w-full max-w-[100rem] mx-auto px-8 md:px-16 flex flex-col justify-center h-full items-center text-center"
+          className="relative z-10 w-full max-w-[100rem] mx-auto px-8 md:px-16 flex flex-col justify-start h-full items-center text-center"
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
         >
-          <div className="pt-32 flex flex-col items-center">
+          <div className="pt-24 flex flex-col items-center">
             <motion.h1 
               variants={fadeUp} 
-              className="font-serif text-6xl md:text-8xl lg:text-[10rem] text-background font-light leading-[0.9] tracking-[-0.03em] mb-16"
+              className="font-serif text-5xl md:text-7xl lg:text-[8rem] text-background font-light leading-[0.9] tracking-[-0.03em] mb-16"
             >
               Reimagining<br />
               <span className="italic text-accent">Women's</span> Health
