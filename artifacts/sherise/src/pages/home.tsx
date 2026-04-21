@@ -138,6 +138,21 @@ const TESTIMONIALS = [
   },
 ];
 
+const PATIENT_IMPACT = [
+  {
+    title: "You are seen as a whole person",
+    desc: "We look beyond a single symptom or lab result to understand the full picture of what your body is telling us.",
+  },
+  {
+    title: "Your care is built around your life",
+    desc: "We design plans that fit your goals, your season of life, and the way your body actually functions.",
+  },
+  {
+    title: "Your questions guide the process",
+    desc: "Every consultation is an opportunity to listen deeply, connect the dots, and create a plan that makes sense for you.",
+  },
+];
+
 const FAQ_ITEMS = [
   {
     q: "What does 'whole-health' actually mean at SheRises?",
@@ -267,20 +282,20 @@ function Hero() {
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] text-[#132A24] mb-6" style={FONT_SERIF}>
-                Welcome to <span className="italic text-[#B89047]">She Rises</span>
+                Care that starts with <span className="italic text-[#B89047]">you</span>.
               </h1>
 
               <p className="text-lg md:text-xl text-[#4B5563] mb-10 max-w-xl font-light leading-relaxed" style={FONT_SANS}>
-                High-end specialty care and routine women's health in one reimagined framework.
+                Specialized women's health care designed around your symptoms, your story, and your goals.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-5" style={FONT_SANS}>
                 <a href="#cta" className="bg-[#132A24] text-[#F4F1EB] px-8 py-4 text-base font-medium tracking-wide hover:bg-[#1B3B33] transition-colors flex items-center justify-center gap-2">
-                  Book Your Consultation
+                  Start Your Care
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a href="#model" className="bg-transparent text-[#132A24] border border-[#132A24] px-8 py-4 text-base font-medium tracking-wide hover:bg-[#132A24] hover:text-[#F4F1EB] transition-colors text-center">
-                  Explore the SheRises Framework
+                  See How It Works
                 </a>
               </div>
 
@@ -436,38 +451,25 @@ function ModelIntroSection() {
               The Clinical Foundation
             </p>
             <h2 className="text-4xl md:text-5xl font-medium text-[#132A24] mb-8 leading-tight" style={FONT_SERIF}>
-              The She Rises Framework of Whole-Health
+              What your care can feel like
             </h2>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.1}>
           <div className="border-l-4 border-[#B89047] pl-8 mb-16">
-            <p className="text-xl md:text-2xl text-[#132A24] font-light leading-relaxed italic" style={FONT_SERIF}>
+              <p className="text-xl md:text-2xl text-[#132A24] font-light leading-relaxed italic" style={FONT_SERIF}>
               "Hormones, metabolism, and reproductive health are treated together within your unique neurobehavioral context."
             </p>
             <p className="text-sm text-[#B89047] font-semibold tracking-wide uppercase mt-4" style={FONT_SANS}>
-              The She Rises Difference
+              Your care, reimagined
             </p>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.15}>
           <div className="grid md:grid-cols-3 gap-8 mb-16" style={FONT_SANS}>
-            {[
-              {
-                title: "Not Symptom Management",
-                desc: "We do not suppress symptoms. We investigate the upstream system dysregulation producing them and correct it at the source.",
-              },
-              {
-                title: "Not Single-System Care",
-                desc: "Your hormones affect your metabolism. Your nervous system affects your hormones. Treating one in isolation produces temporary results.",
-              },
-              {
-                title: "Systems in Relationship",
-                desc: "We map the relationships between five physiologic systems to understand how dysregulation cascades — then interrupt the cascade at its root.",
-              },
-            ].map((item, i) => (
+            {PATIENT_IMPACT.map((item, i) => (
               <div key={i} className="bg-[#F4F1EB] p-7 border border-[#132A24]/8">
                 <div className="w-8 h-0.5 bg-[#B89047] mb-5" />
                 <h4 className="text-[#132A24] font-semibold mb-3">{item.title}</h4>
@@ -480,11 +482,11 @@ function ModelIntroSection() {
         <FadeIn delay={0.2}>
           <div className="bg-[#132A24] px-8 pt-10 pb-4 md:px-12">
             <p className="text-center text-[#E8D5A5] text-xs font-semibold tracking-widest uppercase mb-2" style={FONT_SANS}>
-              Five Interconnected Physiologic Systems
+              How we care for you
             </p>
             <SystemsPentagon />
             <p className="text-center text-[#F4F1EB]/55 text-sm font-light mt-0 pb-8 max-w-xl mx-auto" style={FONT_SANS}>
-              These systems operate in constant, dynamic relationship. The She Rises Framework optimizes every system in your whole health.
+              These systems work in constant, dynamic relationship. We use that understanding to tailor care to you.
             </p>
           </div>
         </FadeIn>
@@ -562,13 +564,13 @@ function ApproachSection() {
       <div className="max-w-5xl mx-auto px-6">
         <FadeIn>
           <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-medium mb-6" style={FONT_SERIF}>
+            <h2 className="text-4xl md:text-5xl font-medium mb-6" style={FONT_SERIF}>
               Standard GYN Care vs{" "}
-              <span className="italic text-[#B89047] text-5xl md:text-6xl">She Rises</span>
+              <span className="italic text-[#B89047] text-5xl md:text-6xl">Your She Rises Care</span>
             </h2>
             <p className="text-lg text-[#F4F1EB]/65 font-light max-w-2xl mx-auto" style={FONT_SANS}>
               The conventional model divides your body into disease states, addressed in isolation, by
-              different providers. No one looks for the relationships in between. We do.
+              different providers. We look for the relationships in between and build your care around them.
             </p>
           </div>
         </FadeIn>
@@ -607,12 +609,12 @@ function ApproachSection() {
               </h3>
               <ul className="space-y-5 relative z-10">
                 {[
-                  "Five systems mapped together; dysfunction traced to its origin",
-                  "Comprehensive diagnostic consultations; the cascade is fully visible",
-                  "Optimal ranges, not reference ranges; you deserve to feel well",
-                  "Your fatigue, weight, and mood are three expressions of one system",
-                  "Nervous system dysregulation is treated as the medical driver it is",
-                  "Nutrition, movement, and sleep prescribed with clinical precision",
+                  "Five systems mapped together so your care reflects the whole picture",
+                  "Comprehensive diagnostic consultations built around your symptoms and goals",
+                  "Optimal ranges, not reference ranges, so you can feel well in daily life",
+                  "Your fatigue, weight, and mood are connected — and treated that way",
+                  "Nervous system dysregulation is addressed as part of your health story",
+                  "Nutrition, movement, and sleep are prescribed with clinical precision",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-4 text-[#F4F1EB]">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#B89047] mt-2 shrink-0" />
