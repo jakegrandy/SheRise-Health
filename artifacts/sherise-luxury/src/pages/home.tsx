@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { ArrowRight } from "lucide-react";
+import generationsOfCare from "@assets/generations_of_care_1776802252403.png";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -40,7 +41,7 @@ export default function Home() {
       <section className="relative h-[90vh] min-h-[700px] flex items-center justify-center overflow-hidden bg-[#F4F1EB]">
         <div className="absolute inset-0 z-0">
           <img
-            src="@assets/generations_of_care_1776802252403.png"
+            src={generationsOfCare}
             alt="Two generations holding hands"
             className="w-full h-full object-cover opacity-90"
           />
