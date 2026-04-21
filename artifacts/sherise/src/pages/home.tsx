@@ -569,9 +569,8 @@ function ApproachSection() {
               <span className="italic text-[#B89047] text-5xl md:text-6xl">She Rises</span>
             </h2>
             <p className="text-lg text-[#F4F1EB]/65 font-light max-w-2xl mx-auto" style={FONT_SANS}>
-              The conventional model divides the body into departments. Your endocrinologist manages
-              thyroid. Your OB manages hormones. Your PCP manages weight. No one manages the
-              relationships between them. We do.
+              The conventional model divides your body into disease states, addressed in isolation, by
+              different providers. No one looks for the relationships in between. We do.
             </p>
           </div>
         </FadeIn>
