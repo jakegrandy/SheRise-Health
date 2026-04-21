@@ -610,7 +610,7 @@ function ApproachSection() {
               <ul className="space-y-5 relative z-10">
                 {[
                   "Five systems mapped together; dysfunction traced to its origin",
-                  "comprehensive diagnostic consultations; the cascade is fully visible",
+                  "Comprehensive diagnostic consultations; the cascade is fully visible",
                   "Optimal ranges, not reference ranges; you deserve to feel well",
                   "Your fatigue, weight, and mood are three expressions of one system",
                   "Nervous system dysregulation is treated as the medical driver it is",
