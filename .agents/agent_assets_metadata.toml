@@ -96,3 +96,27 @@ id = "tjFSe4Lx0CtH7GkkKj7OT"
 uri = "file://artifacts/mockup-sandbox/public/images/texture-bg.png"
 type = "image"
 title = "Abstract gold and green texture"
+
+[[generated]]
+id = "V6XCQwBy63qmuKVMcFne0"
+uri = "file://artifacts/mockup-sandbox/public/images/sherise-clinical-hero.png"
+type = "image"
+title = "Scientific biological systems diagram"
+
+[[generated]]
+id = "eveTWvmC4wyT_pH5QuoYD"
+uri = "file://artifacts/mockup-sandbox/public/images/sherise-mirror-hero.png"
+type = "image"
+title = "Quiet bedroom warm light"
+
+[[generated]]
+id = "iB5QgEw-nV9akk8Rh3IiR"
+uri = "file://artifacts/mockup-sandbox/public/images/sherise-luxury-hero.png"
+type = "image"
+title = "Luxury wellness hero image"
+
+[[generated]]
+id = "EVTXZ33rIDg3Oc4ZZkLVh"
+uri = "file://artifacts/mockup-sandbox/public/images/sherise-luxury-provider.png"
+type = "image"
+title = "Professional provider portrait"
