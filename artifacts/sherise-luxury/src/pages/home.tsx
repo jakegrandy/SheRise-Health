@@ -78,6 +78,65 @@ export default function Home() {
         </div>
       </section>
 
+      {/* What We Do */}
+      <section className="py-32 md:py-48 px-8 md:px-16 max-w-7xl mx-auto">
+        <div className="mb-24 md:mb-32">
+          <span className="text-[#B89047] text-sm tracking-[0.3em] uppercase block mb-8">What We Do</span>
+          <h2 className="font-['Playfair_Display'] text-4xl md:text-6xl font-light leading-tight max-w-4xl">
+            At She Rises Health, care spans the full spectrum of women’s health—from preventive screening and reproductive care to hormone optimization and metabolic health.
+          </h2>
+          <p className="mt-8 max-w-4xl text-lg md:text-xl text-[#132A24]/70 leading-relaxed font-light">
+            Services are designed to support women at every stage of life, including adolescence, reproductive years, and midlife and beyond.
+          </p>
+        </div>
+
+        <div className="grid gap-12 md:gap-16">
+          <div className="border-t border-[#132A24]/10 pt-10">
+            <h3 className="font-['Playfair_Display'] text-2xl md:text-3xl mb-6">Adolescent and Young Adult Care</h3>
+            <p className="text-[#132A24]/70 leading-relaxed text-lg mb-6">
+              Care for younger patients is individualized, educational, and supportive.
+            </p>
+            <ul className="grid md:grid-cols-2 gap-x-10 gap-y-4 text-[#132A24]/80 leading-relaxed text-base md:text-lg">
+              <li>First gynecologic visits and education</li>
+              <li>Menstrual concerns (irregular cycles, painful periods, heavy bleeding)</li>
+              <li>Acne and early hormonal imbalance evaluation</li>
+              <li>Contraceptive counseling and initiation</li>
+              <li>STI screening and sexual health education</li>
+              <li>Body literacy and reproductive health guidance</li>
+            </ul>
+          </div>
+
+          <div className="border-t border-[#132A24]/10 pt-10">
+            <h3 className="font-['Playfair_Display'] text-2xl md:text-3xl mb-6">Family Planning and Reproductive Care</h3>
+            <p className="text-[#132A24]/70 leading-relaxed text-lg mb-6">
+              Support for reproductive decision-making is practical, informed, and aligned with each patient’s goals.
+            </p>
+            <ul className="grid md:grid-cols-2 gap-x-10 gap-y-4 text-[#132A24]/80 leading-relaxed text-base md:text-lg">
+              <li>Personalized contraceptive education and care (pill, patch, ring, IUD, implant)</li>
+              <li>Preconception counseling and optimization</li>
+              <li>Fertility awareness and cycle tracking education</li>
+              <li>Reproductive life planning</li>
+              <li>Pregnancy prevention and spacing strategies</li>
+            </ul>
+          </div>
+
+          <div className="border-t border-[#132A24]/10 pt-10">
+            <h3 className="font-['Playfair_Display'] text-2xl md:text-3xl mb-6">Hormone and Metabolic Health</h3>
+            <p className="text-[#132A24]/70 leading-relaxed text-lg mb-6">
+              Addressing root causes rather than isolated symptoms.
+            </p>
+            <ul className="grid md:grid-cols-2 gap-x-10 gap-y-4 text-[#132A24]/80 leading-relaxed text-base md:text-lg">
+              <li>Evaluation and treatment of hormone imbalance</li>
+              <li>PCOS and androgen excess management</li>
+              <li>Insulin resistance and metabolic dysfunction care</li>
+              <li>Weight management with a medical and metabolic focus</li>
+              <li>Perimenopause and menopause care</li>
+              <li>Fatigue, mood changes, sleep disruption, and libido concerns</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* Philosophy Section */}
       <section id="philosophy" className="py-32 md:py-48 px-8 md:px-16 max-w-7xl mx-auto">
         <div className="mb-24 md:mb-32">
