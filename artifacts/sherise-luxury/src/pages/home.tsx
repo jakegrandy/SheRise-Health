@@ -48,14 +48,14 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30 mix-blend-multiply" />
         </div>
 
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col items-center mt-20">
-          <h1 className="font-['Playfair_Display'] text-5xl md:text-7xl lg:text-8xl text-white font-light leading-[1.1] mb-12 tracking-tight drop-shadow-sm">
+        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col items-center -mt-6">
+          <h1 className="font-['Playfair_Display'] text-5xl md:text-7xl lg:text-8xl text-white font-light leading-[1.1] mb-16 tracking-tight drop-shadow-sm">
             Reimagining Women's Health
           </h1>
 
           <a
             href="#book"
-            className="group relative inline-flex items-center justify-center px-10 py-4 text-sm tracking-[0.2em] uppercase text-white border border-white/40 hover:bg-white hover:text-[#132A24] transition-all duration-500"
+            className="group relative inline-flex items-center justify-center px-10 py-4 text-sm tracking-[0.2em] uppercase text-white border border-white/40 hover:bg-white hover:text-[#132A24] transition-all duration-500 translate-y-4"
           >
             <span className="relative z-10 flex items-center gap-3">
               Request a Consultation
