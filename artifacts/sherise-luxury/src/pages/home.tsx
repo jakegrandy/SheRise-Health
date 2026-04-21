@@ -40,8 +40,8 @@ export default function Home() {
       <section className="relative h-[90vh] min-h-[700px] flex items-center justify-center overflow-hidden bg-[#F4F1EB]">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${BASE}images/sherise-luxury-hero.png`}
-            alt="Minimalist elegant hands on linen"
+            src="@assets/generations_of_care_1776802252403.png"
+            alt="Two generations holding hands"
             className="w-full h-full object-cover opacity-90"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30 mix-blend-multiply" />
