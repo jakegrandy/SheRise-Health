@@ -49,7 +49,7 @@ export default function Home() {
 
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col items-center mt-20">
           <h1 className="font-['Playfair_Display'] text-5xl md:text-7xl lg:text-8xl text-white font-light leading-[1.1] mb-12 tracking-tight drop-shadow-sm">
-            Elevating the Standard <br className="hidden md:block" /> of Women's Care
+            Reimagining Women's Health
           </h1>
 
           <a
