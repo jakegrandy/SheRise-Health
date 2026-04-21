@@ -108,7 +108,7 @@ export default function Home() {
               className="font-serif text-4xl md:text-5xl lg:text-[5rem] text-background font-light leading-[1.1] tracking-[-0.02em] mb-16"
             >
               <span className="text-primary block">Reimagining</span>
-              <span className="italic text-accent">Women's</span> Health
+              <span className="italic text-accent">Women's</span> <span className="text-primary">Health</span>
             </motion.h1>
 
             <motion.div variants={fadeUp}>
