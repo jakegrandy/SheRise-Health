@@ -445,7 +445,7 @@ function ModelIntroSection() {
         <FadeIn delay={0.1}>
           <div className="border-l-4 border-[#B89047] pl-8 mb-16">
             <p className="text-xl md:text-2xl text-[#132A24] font-light leading-relaxed italic" style={FONT_SERIF}>
-              "Where hormones, metabolism, and reproductive health are treated together."
+              "Where hormones, metabolism, and reproductive health are treated together within your unique neurobehavioral context."
             </p>
             <p className="text-sm text-[#B89047] font-semibold tracking-wide uppercase mt-4" style={FONT_SANS}>
               The She Rises Difference
