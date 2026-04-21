@@ -267,7 +267,7 @@ function Hero() {
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] text-[#132A24] mb-6" style={FONT_SERIF}>
-                Rebalance. Restore. Rise.
+                <span className="italic text-[#B89047]">Balance</span> Now. <span className="italic text-[#B89047]">Thrive</span> Longer.
               </h1>
 
               <p className="text-lg md:text-xl text-[#4B5563] mb-10 max-w-xl font-light leading-relaxed" style={FONT_SANS}>
