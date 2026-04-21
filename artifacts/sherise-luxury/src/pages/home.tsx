@@ -90,9 +90,9 @@ export default function Home() {
             <img
               src={generationsOfCare}
               alt="Two generations holding hands"
-              className="w-full h-full object-cover object-center opacity-80 mix-blend-luminosity brightness-75"
+              className="w-full h-full object-cover object-center opacity-95 brightness-110"
             />
-            <div className="absolute inset-0 bg-primary/60 mix-blend-multiply" />
+            <div className="absolute inset-0 bg-primary/25" />
           </motion.div>
         </div>
 
