@@ -105,7 +105,7 @@ export default function Home() {
           <div className="pt-24 flex flex-col items-center">
             <motion.h1 
               variants={fadeUp} 
-              className="font-serif text-4xl md:text-5xl lg:text-[5rem] text-background font-light leading-[1.1] tracking-[-0.02em] mb-16"
+              className="font-serif text-4xl md:text-6xl lg:text-[6.5rem] text-background font-light leading-[1.1] tracking-[-0.02em] mb-16"
             >
               <span className="text-primary block">Reimagining</span>
               <span className="italic text-accent">Women's</span> <span className="text-primary">Health</span>
