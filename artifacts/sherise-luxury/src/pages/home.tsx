@@ -49,13 +49,13 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col items-center -mt-6">
-          <h1 className="font-['Playfair_Display'] text-5xl md:text-7xl lg:text-8xl text-white font-light leading-[1.1] mb-16 tracking-tight drop-shadow-sm">
+          <h1 className="font-['Playfair_Display'] text-5xl md:text-7xl lg:text-8xl text-white font-light leading-[1.1] mb-24 tracking-tight drop-shadow-sm">
             Reimagining Women's Health
           </h1>
 
           <a
             href="#book"
-            className="group relative inline-flex items-center justify-center px-10 py-4 text-sm tracking-[0.2em] uppercase text-white border border-white/40 hover:bg-white hover:text-[#132A24] transition-all duration-500 translate-y-4"
+            className="group relative inline-flex items-center justify-center px-10 py-4 text-sm tracking-[0.2em] uppercase text-white border border-white/40 hover:bg-white hover:text-[#132A24] transition-all duration-500 translate-y-8"
           >
             <span className="relative z-10 flex items-center gap-3">
               Request a Consultation
