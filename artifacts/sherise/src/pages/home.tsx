@@ -306,15 +306,8 @@ function Hero() {
             <FadeIn direction="left" delay={0.2}>
               <div className="relative">
                 <div className="absolute inset-0 bg-[#B89047] translate-x-4 translate-y-4" />
-                <img src="/images/scarlett-authority.png" alt="Scarlett Grandy, CNM, WHNP-BC"
-                  className="relative z-10 w-full h-[580px] object-cover object-top" />
-                <div className="absolute -left-8 lg:-left-12 bottom-10 z-20 bg-[#132A24] p-5 lg:p-6 shadow-2xl border border-[#B89047]/30 max-w-[260px]">
-                  <h3 className="text-[#F4F1EB] text-lg font-medium mb-1" style={FONT_SERIF}>Scarlett Grandy</h3>
-                  <p className="text-[#B89047] text-sm font-semibold tracking-wide mb-3" style={FONT_SANS}>CNM, WHNP-BC</p>
-                  <p className="text-[#F4F1EB]/75 text-xs leading-relaxed" style={FONT_SANS}>
-                    Board Certified Women's Health Nurse Practitioner. 20+ years specializing in systems-based whole-health methodology.
-                  </p>
-                </div>
+                <img src="/images/women-hero.jpg" alt="Diverse women thriving and living well"
+                  className="relative z-10 w-full h-[580px] object-cover object-center" />
               </div>
             </FadeIn>
           </div>
