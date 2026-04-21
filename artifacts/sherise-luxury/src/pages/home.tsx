@@ -62,7 +62,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-accent selection:text-background">
       {/* Navigation */}
-      <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-10 md:px-16 mix-blend-difference text-white">
+      <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-center gap-12 px-8 py-10 md:px-16 text-primary">
         <div className="font-serif text-2xl tracking-widest uppercase">
           SheRises
         </div>
@@ -75,7 +75,7 @@ export default function Home() {
           href="#book"
           className="text-[11px] tracking-[0.25em] uppercase font-light flex items-center gap-2 group"
         >
-          <span className="border-b border-transparent group-hover:border-white transition-colors pb-1">Inquire</span>
+          <span className="border-b border-transparent group-hover:border-accent transition-colors pb-1">Inquire</span>
           <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
         </a>
       </nav>
