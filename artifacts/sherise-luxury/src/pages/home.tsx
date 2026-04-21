@@ -111,21 +111,24 @@ export default function Home() {
               <span className="italic text-accent">Women's</span> <span className="text-primary">Health</span>
             </motion.h1>
 
-            <motion.div variants={fadeUp}>
-              <a
-                href="#book"
-                className="group relative inline-flex items-center justify-center px-12 py-6 text-[11px] tracking-[0.3em] uppercase text-primary border border-primary/30 hover:border-primary transition-all duration-700 overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[0.16,1,0.3,1]" />
-                <span className="relative z-10 flex items-center gap-4 group-hover:text-background transition-colors duration-700">
-                  Request a Consultation
-                  <ArrowRight className="w-4 h-4 opacity-50 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-700" />
-                </span>
-              </a>
-            </motion.div>
           </div>
         </motion.div>
+
       </section>
+
+      {/* CTA Button */}
+      <div className="bg-background relative z-20 flex justify-center py-12">
+        <a
+          href="#book"
+          className="group relative inline-flex items-center justify-center px-12 py-6 text-[11px] tracking-[0.3em] uppercase text-primary border border-primary/30 hover:border-primary transition-all duration-700 overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[0.16,1,0.3,1]" />
+          <span className="relative z-10 flex items-center gap-4 group-hover:text-background transition-colors duration-700">
+            Request a Consultation
+            <ArrowRight className="w-4 h-4 opacity-50 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-700" />
+          </span>
+        </a>
+      </div>
 
       {/* Credentials Bar */}
       <section className="bg-background relative z-20 border-b border-foreground/10">
