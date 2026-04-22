@@ -524,7 +524,7 @@ export default function Home() {
           viewport={{ once: true }}
           variants={staggerContainer}
         >
-          <motion.h2 variants={fadeUp} className="font-serif text-6xl md:text-8xl font-light text-foreground">Begin Your Journey</motion.h2>
+          <motion.h2 variants={fadeUp} className="font-serif italic text-6xl md:text-8xl font-light text-accent" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>Begin Your Journey</motion.h2>
           <motion.p variants={fadeUp} className="text-xl md:text-2xl text-foreground/60 font-light leading-[1.8] max-w-3xl mx-auto">
             We are currently accepting new patients. Request a consultation to discover if She Rises Women's Health is right for you.
           </motion.p>
