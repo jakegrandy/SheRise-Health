@@ -3,6 +3,7 @@ import { ArrowRight, ArrowUp, ArrowUpRight } from "lucide-react";
 import generationsOfCare from "@assets/generations_of_care_1776802252403.png";
 import sheRisesLogo from "@assets/LOGO_with_vertical_list_transparent_1776884062361.png";
 import srMonogram from "@assets/SR_Monogram_1776893310482.png";
+import scarlettHeadshot from "@assets/closer_up_Headshot_1776896576344.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { SheRisesDifference, SystemsSection } from "@/components/ClinicalFrameworkSections";
 import { FiveSystemsDiagram } from "@/components/FiveSystemsDiagram";
@@ -410,7 +411,7 @@ export default function Home() {
           >
             <div className="absolute inset-0 border border-background/20 translate-x-4 translate-y-4" />
             <img
-              src={`${BASE}images/scarlett-headshot.png?v=2`}
+              src={scarlettHeadshot}
               alt="Scarlett Grandy, CNM, WHNP-BC"
               className="w-full h-full object-cover object-top brightness-100 transition-all duration-1000"
             />
