@@ -421,7 +421,7 @@ export default function Home() {
             variants={staggerContainer}
           >
             <div>
-              <motion.span variants={fadeUp} className="text-accent text-[11px] tracking-[0.3em] uppercase block mb-8 font-light">The Practitioner</motion.span>
+              <motion.span variants={fadeUp} className="text-accent text-[11px] tracking-[0.3em] uppercase block mb-8 font-light">SheRises Founder and Your Provider</motion.span>
               <motion.h2 variants={fadeUp} className="font-serif text-6xl md:text-8xl font-light text-background mb-6">Scarlett Grandy</motion.h2>
               <motion.p variants={fadeUp} className="text-[11px] tracking-[0.3em] uppercase text-background/40 pb-12 border-b border-background/20">CNM, WHNP-BC</motion.p>
             </div>
