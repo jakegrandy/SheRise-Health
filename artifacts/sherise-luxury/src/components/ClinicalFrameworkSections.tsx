@@ -121,31 +121,6 @@ export function ModelIntroSection() {
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.15}>
-          <div className="grid md:grid-cols-3 gap-8 mb-16" style={FONT_SANS}>
-            {[
-              {
-                title: "Not Symptom Management",
-                desc: "We do not suppress symptoms. We investigate the upstream system dysregulation producing them and correct it at the source.",
-              },
-              {
-                title: "Not Single-System Care",
-                desc: "Your hormones affect your metabolism. Your nervous system affects your hormones. Treating one in isolation produces temporary results.",
-              },
-              {
-                title: "Systems in Relationship",
-                desc: "We map the relationships between five physiologic systems to understand how dysregulation cascades — then interrupt the cascade at its root.",
-              },
-            ].map((item, i) => (
-              <div key={i} className="bg-[#F4F1EB] p-7 border border-[#132A24]/10">
-                <div className="w-8 h-0.5 bg-[#B89047] mb-5" />
-                <h4 className="text-lg text-[#132A24] font-semibold mb-3">{item.title}</h4>
-                <p className="text-base text-[#4B5563] font-light leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </FadeIn>
-
       </div>
     </section>
   );
