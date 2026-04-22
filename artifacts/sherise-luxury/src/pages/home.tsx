@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import generationsOfCare from "@assets/generations_of_care_1776802252403.png";
-import sheRisesLogo from "@assets/SR_LOGO_3_with_stars_1776881378461.png";
+import sheRisesLogo from "@assets/LOGO_with_vertical_list_transparent_1776884062361.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiveSystemsDiagram } from "@/components/FiveSystemsDiagram";
 import { ModelIntroSection, SystemsSection } from "@/components/ClinicalFrameworkSections";
@@ -65,25 +65,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-accent selection:text-background">
       {/* Navigation */}
-      <nav className="absolute top-0 left-0 right-0 z-50 grid grid-cols-[auto_1fr_auto] items-center px-8 py-5 md:px-16 text-primary">
-        <a href="#" aria-label="SheRises Health" className="flex items-center">
-          <img
-            src={sheRisesLogo}
-            alt="SheRises Health"
-            className="h-10 md:h-12 w-auto object-contain"
-          />
-        </a>
-        <div className="hidden md:flex gap-12 text-[11px] tracking-[0.25em] uppercase font-light items-center justify-center">
-          <a href="#philosophy" className="hover:text-accent transition-colors duration-500">Our Philosophy</a>
-          <a href="#systems" className="hover:text-accent transition-colors duration-500">The Framework</a>
-          <a href="#provider" className="hover:text-accent transition-colors duration-500">Scarlett Grandy</a>
-          <a href="#book" className="group">
-            <span className="border-b border-transparent group-hover:border-accent transition-colors pb-1">Inquire</span>
-          </a>
-        </div>
-        <div />
-      </nav>
-
       {/* Hero Section */}
       <section ref={heroRef} className="relative h-screen min-h-[900px] flex items-center bg-background overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -94,42 +75,39 @@ export default function Home() {
             <img
               src={generationsOfCare}
               alt="Two generations holding hands"
-              className="w-full h-full object-cover object-center opacity-95 brightness-110"
+              className="w-full h-full object-contain object-bottom opacity-95 brightness-110"
             />
             <div className="absolute inset-0 bg-background/40" />
           </motion.div>
         </div>
 
-        <motion.div 
-          className="relative z-10 w-full max-w-[100rem] mx-auto px-8 md:px-16 flex flex-col justify-start h-full items-center text-center"
+        <motion.div
+          className="absolute -top-6 md:-top-8 left-[calc(50%-1.25rem)] -translate-x-1/2 z-10"
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
         >
-          <div className="pt-28 md:pt-32 flex flex-col items-center w-full">
-            <motion.div
-              variants={fadeUp}
-              className="relative flex items-center justify-center"
-            >
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 -m-32 md:-m-48"
-                style={{
-                  background:
-                    "radial-gradient(ellipse at center, rgba(250,243,232,0.7) 0%, rgba(250,243,232,0.4) 35%, rgba(250,243,232,0.15) 55%, rgba(250,243,232,0) 75%)",
-                  filter: "blur(20px)",
-                }}
-              />
-              <img
-                src={sheRisesLogo}
-                alt="SheRises Women's Health — Hormones, Metabolic, Reproductive"
-                className="relative w-[300px] sm:w-[380px] md:w-[500px] lg:w-[580px] xl:w-[620px] h-auto select-none drop-shadow-[0_2px_18px_rgba(120,60,70,0.18)]"
-                draggable={false}
-              />
-            </motion.div>
-
-          </div>
+          <motion.div variants={fadeUp} className="relative">
+            <img
+              src={sheRisesLogo}
+              alt="SheRises Women's Health — Hormones, Metabolic, Reproductive"
+              className="block w-[280px] sm:w-[320px] md:w-[380px] lg:w-[440px] xl:w-[480px] h-auto select-none"
+              style={{ filter: "brightness(0.78) saturate(1.25) contrast(1.05)" }}
+              draggable={false}
+            />
+          </motion.div>
         </motion.div>
+
+        <nav className="absolute bottom-0 left-0 right-0 z-20 flex items-center justify-center px-8 py-8 md:px-16 md:py-10 text-primary">
+          <div className="hidden md:flex gap-12 text-[11px] tracking-[0.25em] uppercase font-light items-center justify-center">
+            <a href="#philosophy" className="hover:text-accent transition-colors duration-500">Our Philosophy</a>
+            <a href="#systems" className="hover:text-accent transition-colors duration-500">The Framework</a>
+            <a href="#provider" className="hover:text-accent transition-colors duration-500">Scarlett Grandy</a>
+            <a href="#book" className="group">
+              <span className="border-b border-transparent group-hover:border-accent transition-colors pb-1">Inquire</span>
+            </a>
+          </div>
+        </nav>
 
       </section>
 
