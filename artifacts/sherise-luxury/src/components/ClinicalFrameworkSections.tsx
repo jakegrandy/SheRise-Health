@@ -89,7 +89,7 @@ const frameworkItems: FrameworkItem[] = [
       "Cancer screening",
       "Hereditary disorders",
     ],
-    conditions: ["Preventive care", "Fatigue", "Poor recovery", "Weight concerns", "Painful breast syndrome", "Lactation mastitis", "Longevity planning"],
+    conditions: ["Preventive care", "Fatigue", "Poor recovery", "Weight concerns", "Painful breast syndrome", "Lactation mastitis", "Autoimmune disease", "Longevity planning"],
   },
 ];
 
