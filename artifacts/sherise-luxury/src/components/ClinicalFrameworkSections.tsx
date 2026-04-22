@@ -101,7 +101,7 @@ export function ModelIntroSection() {
       <div className="max-w-5xl mx-auto px-6">
         <FadeIn>
           <div className="text-center">
-            <p className="text-[#B89047] text-[11px] font-light tracking-[0.3em] uppercase" style={FONT_SANS}>
+            <p className="text-[#B5736A] text-[11px] font-light tracking-[0.3em] uppercase" style={FONT_SANS}>
               The SheRises Framework
             </p>
           </div>
@@ -115,11 +115,11 @@ export function ModelIntroSection() {
 export function SheRisesDifference() {
   return (
     <FadeIn delay={0.1}>
-      <div className="border-l-4 border-[#B89047] pl-8">
+      <div className="border-l-4 border-[#B5736A] pl-8">
         <p className="text-2xl md:text-3xl text-[#132A24] font-light leading-relaxed italic" style={FONT_SERIF}>
           "Hormones, metabolism, and reproductive health are treated together within your unique neurobehavioral context."
         </p>
-        <p className="text-base text-[#B89047] font-semibold tracking-wide uppercase mt-4" style={FONT_SANS}>
+        <p className="text-base text-[#B5736A] font-semibold tracking-wide uppercase mt-4" style={FONT_SANS}>
           The She Rises Difference
         </p>
       </div>
@@ -133,12 +133,12 @@ export function SystemsSection() {
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-36">
         <FadeIn>
           <div className="mb-16">
-            <p className="text-[#B89047] text-xs font-semibold tracking-widest uppercase mb-5" style={FONT_SANS}>
+            <p className="text-[#B5736A] text-xs font-semibold tracking-widest uppercase mb-5" style={FONT_SANS}>
               The Five Physiologic Systems
             </p>
             <h2 className="text-4xl md:text-5xl font-medium text-[#132A24] leading-tight" style={FONT_SERIF}>
               What we investigate.<br />
-              <span className="italic text-[#B89047]">And why it matters.</span>
+              <span className="italic text-[#B5736A]">And why it matters.</span>
             </h2>
           </div>
         </FadeIn>
@@ -146,14 +146,14 @@ export function SystemsSection() {
         <div className="space-y-0">
           {FIVE_SYSTEMS.map((system, i) => (
             <FadeIn key={system.number} delay={i * 0.06}>
-              <div className={`grid md:grid-cols-12 gap-0 border border-[#132A24]/10 ${i > 0 ? "border-t-0" : ""} group hover:border-[#B89047] transition-colors`}>
+              <div className={`grid md:grid-cols-12 gap-0 border border-[#132A24]/10 ${i > 0 ? "border-t-0" : ""} group hover:border-[#B5736A] transition-colors`}>
                 <div className={`md:col-span-1 flex items-start justify-center pt-8 pb-6 ${i % 2 === 0 ? "bg-[#FCFBF9]" : "bg-[#F4F1EB]"}`}>
-                  <span className="text-xs font-bold text-[#B89047]/50 tracking-widest" style={FONT_SANS}>{system.number}</span>
+                  <span className="text-xs font-bold text-[#B5736A]/50 tracking-widest" style={FONT_SANS}>{system.number}</span>
                 </div>
 
                 <div className={`md:col-span-4 p-8 border-r border-[#132A24]/10 ${i % 2 === 0 ? "bg-[#FCFBF9]" : "bg-[#F4F1EB]"}`}>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="text-[#B89047]">{system.icon}</div>
+                    <div className="text-[#B5736A]">{system.icon}</div>
                     <h3 className="text-2xl font-medium text-[#132A24]" style={FONT_SERIF}>{system.name}</h3>
                   </div>
                   <p className="text-sm text-[#4B5563] font-light leading-relaxed" style={FONT_SANS}>{system.definition}</p>
@@ -164,7 +164,7 @@ export function SystemsSection() {
                   <ul className="space-y-2.5" style={FONT_SANS}>
                     {system.subsystems.map((sub) => (
                       <li key={sub} className="flex items-start gap-2.5 text-sm text-[#4B5563] font-light">
-                        <div className="w-1 h-1 rounded-full bg-[#B89047] mt-2 shrink-0" />
+                        <div className="w-1 h-1 rounded-full bg-[#B5736A] mt-2 shrink-0" />
                         {sub}
                       </li>
                     ))}

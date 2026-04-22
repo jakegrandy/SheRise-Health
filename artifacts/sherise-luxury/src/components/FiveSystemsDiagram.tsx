@@ -35,10 +35,10 @@ function SystemsPentagon() {
     <svg viewBox="0 0 640 576" className="w-full max-w-2xl mx-auto" aria-label="Five interconnected physiologic systems diagram">
       <defs>
         <marker id="tip-fwd-fsd" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-          <polygon points="0,0 7,3.5 0,7" fill="#B89047" opacity="0.75" />
+          <polygon points="0,0 7,3.5 0,7" fill="#B5736A" opacity="0.75" />
         </marker>
         <marker id="tip-bwd-fsd" markerWidth="7" markerHeight="7" refX="1" refY="3.5" orient="auto-start-reverse">
-          <polygon points="0,0 7,3.5 0,7" fill="#B89047" opacity="0.75" />
+          <polygon points="0,0 7,3.5 0,7" fill="#B5736A" opacity="0.75" />
         </marker>
       </defs>
 
@@ -49,7 +49,7 @@ function SystemsPentagon() {
           <line key={`spoke-${i}`}
             x1={cx + ux*42} y1={cy + uy*42}
             x2={n.x - ux*(nodeR+2)} y2={n.y - uy*(nodeR+2)}
-            stroke="#B89047" strokeWidth="1" strokeOpacity="0.18" strokeDasharray="5 5"
+            stroke="#B5736A" strokeWidth="1" strokeOpacity="0.18" strokeDasharray="5 5"
           />
         );
       })}
@@ -59,22 +59,22 @@ function SystemsPentagon() {
         return (
           <line key={`edge-${i}`}
             x1={x1} y1={y1} x2={x2} y2={y2}
-            stroke="#B89047" strokeWidth="1.5" strokeOpacity="0.55"
+            stroke="#B5736A" strokeWidth="1.5" strokeOpacity="0.55"
             markerEnd="url(#tip-fwd-fsd)"
             markerStart="url(#tip-bwd-fsd)"
           />
         );
       })}
 
-      <circle cx={cx} cy={cy} r="40" fill="#0f2922" stroke="#B89047" strokeWidth="1.2" strokeOpacity="0.5" />
-      <text x={cx} y={cy - 7} textAnchor="middle" fill="#E8D5A5"
+      <circle cx={cx} cy={cy} r="40" fill="#0f2922" stroke="#B5736A" strokeWidth="1.2" strokeOpacity="0.5" />
+      <text x={cx} y={cy - 7} textAnchor="middle" fill="#E8C9C2"
         fontSize="9.5" fontFamily="Outfit, sans-serif" fontWeight="600" letterSpacing="1.5">WHOLE</text>
-      <text x={cx} y={cy + 8} textAnchor="middle" fill="#E8D5A5"
+      <text x={cx} y={cy + 8} textAnchor="middle" fill="#E8C9C2"
         fontSize="9.5" fontFamily="Outfit, sans-serif" fontWeight="600" letterSpacing="1.5">HEALTH</text>
 
       {nodes.map((n, i) => (
         <g key={`node-${i}`}>
-          <circle cx={n.x} cy={n.y} r={nodeR} fill="#132A24" stroke="#B89047" strokeWidth="1.5" strokeOpacity="0.7" />
+          <circle cx={n.x} cy={n.y} r={nodeR} fill="#132A24" stroke="#B5736A" strokeWidth="1.5" strokeOpacity="0.7" />
           {n.label.map((line, li) => (
             <text key={li}
               x={n.x} y={n.y + (li - (n.label.length - 1) / 2) * 18}
@@ -92,7 +92,7 @@ function SystemsPentagon() {
 export function FiveSystemsDiagram() {
   return (
     <div className="bg-[#EDF2EE] border border-[#132A24]/10 rounded-2xl px-6 pt-8 pb-6 md:px-10">
-      <p className="text-center text-[#B89047] text-xs font-semibold tracking-widest uppercase mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>
+      <p className="text-center text-[#B5736A] text-xs font-semibold tracking-widest uppercase mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>
         Five Interconnected Physiologic Systems
       </p>
       <SystemsPentagon />

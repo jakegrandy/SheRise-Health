@@ -36,7 +36,7 @@
      Cream:        #FCFBF9  → hsl(40 33% 98%)
      Cream Dark:   #F4F1EB  → hsl(40 30% 94%)
      Forest green: #132A24  → hsl(158 37% 12%)
-     Gold:         #B89047  → hsl(40 44% 50%)
+     Rose:         #B5736A  → hsl(7 34% 56%)
   */
 
   --background:             40 33% 98%;   
@@ -47,7 +47,7 @@
 
   --border:                 158 20% 85%;
   --input:                  158 20% 85%;
-  --ring:                   40 44% 50%;   
+  --ring:                   7 34% 56%;   
 
   --primary:                158 37% 12%;  
   --primary-foreground:     40 33% 98%;   
@@ -55,7 +55,7 @@
   --secondary:              40 30% 94%;   
   --secondary-foreground:   158 37% 12%;
 
-  --accent:                 40 44% 50%;   
+  --accent:                 7 34% 56%;   
   --accent-foreground:      40 33% 98%;
 
   --muted:                  158 20% 85%;
