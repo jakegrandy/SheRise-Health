@@ -157,7 +157,7 @@ export default function Home() {
             variants={fadeUp}
             className="mb-24 md:mb-32 max-w-7xl mx-auto grid lg:grid-cols-[2fr_3fr] gap-10 lg:gap-16 items-start"
           >
-            <div className="max-w-md">
+            <div className="max-w-md lg:pt-16">
               <p className="text-accent text-[11px] font-light tracking-[0.3em] uppercase mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
                 The SheRises Framework
               </p>
