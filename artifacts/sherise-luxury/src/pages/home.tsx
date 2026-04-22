@@ -186,7 +186,7 @@ export default function Home() {
               The SheRises Philosophy
             </motion.span>
             <motion.h2 variants={fadeUp} className="font-serif text-5xl md:text-6xl lg:text-[5rem] font-light leading-[1.1] text-foreground text-center">
-              Medicine that <span className="italic text-foreground/80">listens</span>, investigates,<br/>and <span className="italic text-foreground/80">restores</span>.
+              Medicine that <span className="italic text-accent">listens</span>, investigates,<br/>and <span className="italic text-accent">restores</span>.
             </motion.h2>
           </motion.div>
 
