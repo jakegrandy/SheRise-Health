@@ -49,7 +49,7 @@ function SystemsPentagon() {
           <line key={`spoke-${i}`}
             x1={cx + ux*42} y1={cy + uy*42}
             x2={n.x - ux*(nodeR+2)} y2={n.y - uy*(nodeR+2)}
-            stroke="#B5736A" strokeWidth="1" strokeOpacity="0.18" strokeDasharray="5 5"
+            stroke="#B5736A" strokeWidth="1.4" strokeOpacity="0.7" strokeDasharray="5 5"
           />
         );
       })}
