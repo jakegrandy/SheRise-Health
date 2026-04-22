@@ -20,7 +20,7 @@ const frameworkItems: FrameworkItem[] = [
     icon: <Waves className="w-6 h-6" />,
     name: "Hormonal Regulation",
     definition:
-      "Your hormones affect how you feel about everything. Dysfunction in one reliably disrupts the others.",
+      "Your hormones affect how you feel about everything. Dysfunction in one reliably disrupts the others. Your sleep, your mood, and even your sexual function is tied to your hormone regulation. At She Rises Women's Health, we stop the decline and restore hormonal health.",
     subsystems: [
       "Estrogen & progesterone",
       "Adrenal excess or insufficiency",
