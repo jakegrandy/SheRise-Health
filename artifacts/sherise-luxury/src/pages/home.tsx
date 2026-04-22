@@ -140,6 +140,15 @@ export default function Home() {
       {/* The Framework */}
       <section id="systems" className="py-32 md:py-48 px-8 md:px-16 bg-background relative z-20">
         <div className="max-w-[100rem] mx-auto">
+          <motion.h2
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+            className="font-serif italic text-accent text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[1.1] text-center mb-20 md:mb-28"
+          >
+            Reimagining Women's Healthcare
+          </motion.h2>
           <ModelIntroSection />
 
           <motion.div
