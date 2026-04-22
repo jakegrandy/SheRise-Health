@@ -86,6 +86,8 @@ const frameworkItems: FrameworkItem[] = [
       "Body composition and strength",
       "Preventive health planning",
       "Long-term wellness optimization",
+      "Cancer screening",
+      "Hereditary disorders",
     ],
     conditions: ["Preventive care", "Fatigue", "Poor recovery", "Weight concerns", "Longevity planning"],
   },
