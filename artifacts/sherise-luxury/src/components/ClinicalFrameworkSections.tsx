@@ -23,7 +23,7 @@ const FIVE_SYSTEMS = [
     icon: <Waves className="w-6 h-6" />,
     name: "Hormonal Regulation",
     definition:
-      "The ovarian, adrenal, and thyroid axes do not operate independently — they form a cascading endocrine network. Dysfunction in one reliably disrupts the others. We map the entire axis.",
+      "Your hormones affect how you feel about everything. Dysfunction in one reliably disrupts the others.",
     subsystems: [
       "Estrogen & progesterone balance",
       "Adrenal cortisol and DHEA output",
