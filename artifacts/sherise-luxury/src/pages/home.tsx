@@ -233,7 +233,7 @@ export default function Home() {
               ],
             },
           ].map((stage, i) => {
-            const isForest = i === 2;
+            const isForest = i === 1 || i === 2;
             return (
               <motion.div
                 key={stage.num}
