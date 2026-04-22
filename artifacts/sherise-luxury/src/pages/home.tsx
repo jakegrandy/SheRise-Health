@@ -66,9 +66,13 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-accent selection:text-background">
       {/* Navigation */}
       <nav className="absolute top-0 left-0 right-0 z-50 grid grid-cols-[auto_1fr_auto] items-center px-8 py-5 md:px-16 text-primary">
-        <div className="font-serif text-2xl tracking-widest uppercase">
-          SheRises
-        </div>
+        <a href="#" aria-label="SheRises Health" className="flex items-center">
+          <img
+            src={sheRisesLogo}
+            alt="SheRises Health"
+            className="h-10 md:h-12 w-auto object-contain"
+          />
+        </a>
         <div className="hidden md:flex gap-12 text-[11px] tracking-[0.25em] uppercase font-light items-center justify-center">
           <a href="#philosophy" className="hover:text-accent transition-colors duration-500">Our Philosophy</a>
           <a href="#systems" className="hover:text-accent transition-colors duration-500">The Framework</a>
