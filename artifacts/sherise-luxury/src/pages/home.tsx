@@ -141,12 +141,23 @@ export default function Home() {
       {/* The Framework */}
       <section id="systems" className="py-32 md:py-48 px-8 md:px-16 bg-background relative z-20">
         <div className="max-w-[100rem] mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+            className="max-w-7xl mx-auto"
+          >
+            <p className="text-accent text-[11px] font-light tracking-[0.3em] uppercase mb-6" style={{ fontFamily: "'Outfit', sans-serif" }}>
+              The SheRises Framework
+            </p>
+          </motion.div>
           <motion.h2
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUp}
-            className="font-serif italic text-accent text-3xl md:text-4xl lg:text-5xl font-light leading-[1.2] text-left mb-16 md:mb-20"
+            className="max-w-7xl mx-auto font-serif italic text-accent text-3xl md:text-4xl lg:text-5xl font-light leading-[1.2] text-left mb-16 md:mb-20"
           >
             Reimagining Women's Healthcare
           </motion.h2>
@@ -157,10 +168,7 @@ export default function Home() {
             variants={fadeUp}
             className="mb-24 md:mb-32 max-w-7xl mx-auto grid lg:grid-cols-[2fr_3fr] gap-10 lg:gap-16 items-start"
           >
-            <div className="max-w-md lg:pt-16">
-              <p className="text-accent text-[11px] font-light tracking-[0.3em] uppercase mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                The SheRises Framework
-              </p>
+            <div className="max-w-md lg:pt-4">
               <SheRisesDifference />
             </div>
             <div className="w-full">
