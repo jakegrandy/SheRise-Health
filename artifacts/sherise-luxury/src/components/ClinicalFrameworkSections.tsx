@@ -101,10 +101,10 @@ export function ModelIntroSection() {
       <div className="max-w-5xl mx-auto px-6">
         <FadeIn>
           <div className="text-center mb-16">
-            <p className="text-[#B89047] text-xs font-semibold tracking-widest uppercase mb-5" style={FONT_SANS}>
+            <p className="text-[#B89047] text-sm font-semibold tracking-widest uppercase mb-5" style={FONT_SANS}>
               The Clinical Foundation
             </p>
-            <h2 className="text-4xl md:text-5xl font-medium text-[#132A24] mb-8 leading-tight" style={FONT_SERIF}>
+            <h2 className="text-5xl md:text-6xl font-medium text-[#132A24] mb-8 leading-tight" style={FONT_SERIF}>
               The She Rises Framework of Whole-Health
             </h2>
           </div>
@@ -112,10 +112,10 @@ export function ModelIntroSection() {
 
         <FadeIn delay={0.1}>
           <div className="border-l-4 border-[#B89047] pl-8 mb-16">
-            <p className="text-xl md:text-2xl text-[#132A24] font-light leading-relaxed italic" style={FONT_SERIF}>
+            <p className="text-2xl md:text-3xl text-[#132A24] font-light leading-relaxed italic" style={FONT_SERIF}>
               "Hormones, metabolism, and reproductive health are treated together within your unique neurobehavioral context."
             </p>
-            <p className="text-sm text-[#B89047] font-semibold tracking-wide uppercase mt-4" style={FONT_SANS}>
+            <p className="text-base text-[#B89047] font-semibold tracking-wide uppercase mt-4" style={FONT_SANS}>
               The She Rises Difference
             </p>
           </div>
@@ -139,8 +139,8 @@ export function ModelIntroSection() {
             ].map((item, i) => (
               <div key={i} className="bg-[#F4F1EB] p-7 border border-[#132A24]/10">
                 <div className="w-8 h-0.5 bg-[#B89047] mb-5" />
-                <h4 className="text-[#132A24] font-semibold mb-3">{item.title}</h4>
-                <p className="text-sm text-[#4B5563] font-light leading-relaxed">{item.desc}</p>
+                <h4 className="text-lg text-[#132A24] font-semibold mb-3">{item.title}</h4>
+                <p className="text-base text-[#4B5563] font-light leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
