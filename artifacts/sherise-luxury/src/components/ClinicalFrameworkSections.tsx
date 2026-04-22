@@ -133,9 +133,6 @@ export function SystemsSection() {
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-36">
         <FadeIn>
           <div className="mb-16">
-            <p className="text-[#B5736A] text-xs font-semibold tracking-widest uppercase mb-5" style={FONT_SANS}>
-              The Five Physiologic Systems
-            </p>
             <h2 className="text-4xl md:text-5xl font-medium text-[#132A24] leading-tight" style={FONT_SERIF}>
               What we investigate.<br />
               <span className="italic text-[#B5736A]">And why it matters.</span>
