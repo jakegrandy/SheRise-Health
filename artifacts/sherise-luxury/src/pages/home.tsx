@@ -98,15 +98,32 @@ export default function Home() {
           </motion.div>
         </motion.div>
 
-        <nav className="absolute bottom-0 left-0 right-0 z-20 flex items-center justify-center px-8 py-8 md:px-16 md:py-10 text-primary">
-          <div className="hidden md:flex gap-12 text-[13px] tracking-[0.32em] uppercase items-center justify-center" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}>
-            <a href="#philosophy" className="hover:text-accent transition-colors duration-500">Our Philosophy</a>
-            <a href="#systems" className="hover:text-accent transition-colors duration-500">The Framework</a>
-            <a href="#provider" className="hover:text-accent transition-colors duration-500">Scarlett Grandy</a>
-            <a href="#book" className="group">
-              <span className="border-b border-transparent group-hover:border-accent transition-colors pb-1">Inquire</span>
-            </a>
-          </div>
+        <nav
+          className="hidden md:flex absolute left-8 lg:left-16 top-1/2 -translate-y-1/2 z-20 flex-col gap-8 text-[13px] tracking-[0.32em] uppercase text-primary items-start"
+          style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}
+        >
+          <a href="#philosophy" className="hover:text-accent transition-colors duration-500">The Philosophy</a>
+          <a href="#systems" className="hover:text-accent transition-colors duration-500">The Framework</a>
+          <a href="#care-stages" className="hover:text-accent transition-colors duration-500">Who We See</a>
+        </nav>
+
+        <nav
+          className="hidden md:flex absolute right-8 lg:right-16 top-1/2 -translate-y-1/2 z-20 flex-col gap-8 text-[13px] tracking-[0.32em] uppercase text-primary items-end text-right"
+          style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}
+        >
+          <a href="#systems" className="hover:text-accent transition-colors duration-500">What We Treat</a>
+          <a href="#provider" className="hover:text-accent transition-colors duration-500">Meet Scarlett Grandy</a>
+          <a href="#book" className="group">
+            <span className="border-b border-transparent group-hover:border-accent transition-colors pb-1">Inquire</span>
+          </a>
+        </nav>
+
+        <nav className="md:hidden absolute bottom-0 left-0 right-0 z-20 flex items-center justify-center gap-6 px-6 py-6 text-primary text-[10px] tracking-[0.28em] uppercase flex-wrap" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}>
+          <a href="#philosophy" className="hover:text-accent transition-colors">Philosophy</a>
+          <a href="#systems" className="hover:text-accent transition-colors">Framework</a>
+          <a href="#care-stages" className="hover:text-accent transition-colors">Who We See</a>
+          <a href="#provider" className="hover:text-accent transition-colors">Scarlett</a>
+          <a href="#book" className="hover:text-accent transition-colors">Inquire</a>
         </nav>
 
       </section>
@@ -251,7 +268,7 @@ export default function Home() {
       </section>
 
       {/* Care Stages */}
-      <section className="py-32 md:py-48 px-8 md:px-16 max-w-[100rem] mx-auto relative z-20 bg-background overflow-hidden">
+      <section id="care-stages" className="py-32 md:py-48 px-8 md:px-16 max-w-[100rem] mx-auto relative z-20 bg-background overflow-hidden">
         <motion.p
           initial="hidden"
           whileInView="visible"
