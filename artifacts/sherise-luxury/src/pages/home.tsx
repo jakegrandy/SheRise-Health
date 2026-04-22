@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ArrowUp, ArrowUpRight } from "lucide-react";
 import generationsOfCare from "@assets/generations_of_care_1776802252403.png";
 import sheRisesLogo from "@assets/LOGO_with_vertical_list_transparent_1776884062361.png";
+import srMonogram from "@assets/SR_Monogram_1776893310482.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { SheRisesDifference, SystemsSection } from "@/components/ClinicalFrameworkSections";
 import { FiveSystemsDiagram } from "@/components/FiveSystemsDiagram";
@@ -575,9 +576,14 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-16 px-8 md:px-16 text-[11px] tracking-[0.3em] uppercase text-foreground/40 font-light bg-background relative z-20">
         <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-          <div className="font-serif text-2xl normal-case text-foreground tracking-widest">
-            SheRises
-          </div>
+          <a href="#top" className="flex items-center gap-3 normal-case">
+            <img
+              src={srMonogram}
+              alt="SheRises"
+              className="h-14 md:h-16 w-auto select-none"
+              draggable={false}
+            />
+          </a>
           <div className="flex gap-16">
             <a href="mailto:hello@sheriseshealth.com" className="hover:text-foreground transition-colors duration-500">Contact</a>
             <a href="#" className="hover:text-foreground transition-colors duration-500">Location</a>
