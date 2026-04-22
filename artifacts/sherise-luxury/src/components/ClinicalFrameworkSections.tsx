@@ -57,7 +57,7 @@ const frameworkItems: FrameworkItem[] = [
       "Postmenopausal health and longevity",
       "Fertility preservation and infertility support",
     ],
-    conditions: ["Irregular cycles", "PMS/PMDD", "Perimenopause", "Menopause", "Fertility planning", "PCOS", "Heavy periods", "Contraception", "Vaginitis management", "STI testing and treatment"],
+    conditions: ["Irregular cycles", "PMS/PMDD", "Fertility planning", "PCOS", "Heavy periods", "Contraception", "Vaginitis management", "STI testing and treatment"],
   },
   {
     number: "04",
