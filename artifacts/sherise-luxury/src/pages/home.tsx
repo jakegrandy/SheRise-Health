@@ -140,7 +140,7 @@ export default function Home() {
       {/* What We Do */}
       <section className="py-32 md:py-48 px-8 md:px-16 max-w-[100rem] mx-auto relative z-20 bg-background overflow-hidden">
         <motion.div 
-          className="mb-32 md:mb-48 flex flex-col lg:flex-row gap-16 lg:gap-32 items-start"
+          className="mb-12 md:mb-16 flex flex-col lg:flex-row gap-16 lg:gap-32 items-start"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
