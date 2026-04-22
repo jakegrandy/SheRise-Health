@@ -383,7 +383,7 @@ export default function Home() {
                     {stage.intro}
                   </p>
 
-                  <ul className={`space-y-3.5 text-[13px] leading-[1.55] font-light text-foreground/80`}>
+                  <ul className={`space-y-4 text-base md:text-[17px] leading-[1.65] font-light text-foreground/80`}>
                     {stage.items.map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <div className={`w-1 h-1 mt-[0.55rem] rounded-full shrink-0 ${isForest ? "bg-accent" : "bg-accent"}`} />
