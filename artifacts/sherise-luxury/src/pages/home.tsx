@@ -229,6 +229,7 @@ export default function Home() {
                 "Sexual health screening and counseling",
                 "Perimenopause and menopause-related sexual changes",
                 "Relationship-centered communication and support",
+                "Infection management and health promotion",
               ],
             },
           ].map((stage, i) => {
