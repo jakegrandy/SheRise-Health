@@ -137,6 +137,94 @@ export default function Home() {
         </div>
       </section>
 
+      {/* The Framework */}
+      <section id="systems" className="py-32 md:py-48 px-8 md:px-16 bg-background relative z-20">
+        <div className="max-w-[100rem] mx-auto">
+          <ModelIntroSection />
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+            className="mb-24 md:mb-32 max-w-3xl mx-auto"
+          >
+            <SheRisesDifference />
+          </motion.div>
+
+        </div>
+        <SystemsSection />
+      </section>
+
+      {/* Philosophy Section */}
+      <section id="philosophy" className="py-32 md:py-48 px-8 md:px-16 bg-secondary relative z-20">
+        <div className="max-w-[100rem] mx-auto">
+          <motion.div 
+            className="mb-24 md:mb-40"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.span variants={fadeUp} className="text-accent text-[11px] tracking-[0.3em] uppercase block font-light mb-8 text-center">
+              The SheRises Philosophy
+            </motion.span>
+            <motion.h2 variants={fadeUp} className="font-serif text-5xl md:text-6xl lg:text-[5rem] font-light leading-[1.1] text-foreground text-center">
+              Medicine that <span className="italic text-foreground/80">listens</span>, investigates,<br/>and <span className="italic text-foreground/80">restores</span>.
+            </motion.h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-16 md:gap-24 relative">
+            <div className="hidden md:block absolute top-0 left-1/3 bottom-0 w-px bg-foreground/5" />
+            <div className="hidden md:block absolute top-0 right-1/3 bottom-0 w-px bg-foreground/5" />
+            
+            <motion.div 
+              className="space-y-8 text-center px-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+            >
+              <div className="w-16 h-px bg-accent/40 mx-auto mb-12" />
+              <h3 className="font-serif text-3xl text-foreground">Unrushed Time</h3>
+              <p className="text-foreground/60 leading-[1.8] font-light text-lg">
+                Healing cannot happen in fifteen minutes. We protect the time necessary to hear your complete story and understand your unique physiology.
+              </p>
+            </motion.div>
+            
+            <motion.div 
+              className="space-y-8 text-center px-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              transition={{ delay: 0.2 }}
+            >
+              <div className="w-16 h-px bg-accent/40 mx-auto mb-12" />
+              <h3 className="font-serif text-3xl text-foreground">Comprehensive<br/>Investigation</h3>
+              <p className="text-foreground/60 leading-[1.8] font-light text-lg">
+                We look beyond basic labs, utilizing advanced functional testing to uncover the root causes of exhaustion, weight resistance, and mood shifts.
+              </p>
+            </motion.div>
+            
+            <motion.div 
+              className="space-y-8 text-center px-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              transition={{ delay: 0.4 }}
+            >
+              <div className="w-16 h-px bg-accent/40 mx-auto mb-12" />
+              <h3 className="font-serif text-3xl text-foreground">Refined Protocols</h3>
+              <p className="text-foreground/60 leading-[1.8] font-light text-lg">
+                Your body is an interconnected system. At SheRises, we go beyond symptom management with integrated care plans that restore balance across your physiology.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Care Stages */}
       <section className="py-32 md:py-48 px-8 md:px-16 max-w-[100rem] mx-auto relative z-20 bg-background overflow-hidden">
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 relative">
@@ -241,94 +329,6 @@ export default function Home() {
               </motion.div>
             );
           })}
-        </div>
-      </section>
-
-      {/* The Framework */}
-      <section id="systems" className="py-32 md:py-48 px-8 md:px-16 bg-background relative z-20">
-        <div className="max-w-[100rem] mx-auto">
-          <ModelIntroSection />
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUp}
-            className="mb-24 md:mb-32 max-w-3xl mx-auto"
-          >
-            <SheRisesDifference />
-          </motion.div>
-
-        </div>
-        <SystemsSection />
-      </section>
-
-      {/* Philosophy Section */}
-      <section id="philosophy" className="py-32 md:py-48 px-8 md:px-16 bg-secondary relative z-20">
-        <div className="max-w-[100rem] mx-auto">
-          <motion.div 
-            className="mb-24 md:mb-40"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            <motion.span variants={fadeUp} className="text-accent text-[11px] tracking-[0.3em] uppercase block font-light mb-8 text-center">
-              The SheRises Philosophy
-            </motion.span>
-            <motion.h2 variants={fadeUp} className="font-serif text-5xl md:text-6xl lg:text-[5rem] font-light leading-[1.1] text-foreground text-center">
-              Medicine that <span className="italic text-foreground/80">listens</span>, investigates,<br/>and <span className="italic text-foreground/80">restores</span>.
-            </motion.h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-16 md:gap-24 relative">
-            <div className="hidden md:block absolute top-0 left-1/3 bottom-0 w-px bg-foreground/5" />
-            <div className="hidden md:block absolute top-0 right-1/3 bottom-0 w-px bg-foreground/5" />
-            
-            <motion.div 
-              className="space-y-8 text-center px-4"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-            >
-              <div className="w-16 h-px bg-accent/40 mx-auto mb-12" />
-              <h3 className="font-serif text-3xl text-foreground">Unrushed Time</h3>
-              <p className="text-foreground/60 leading-[1.8] font-light text-lg">
-                Healing cannot happen in fifteen minutes. We protect the time necessary to hear your complete story and understand your unique physiology.
-              </p>
-            </motion.div>
-            
-            <motion.div 
-              className="space-y-8 text-center px-4"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              transition={{ delay: 0.2 }}
-            >
-              <div className="w-16 h-px bg-accent/40 mx-auto mb-12" />
-              <h3 className="font-serif text-3xl text-foreground">Comprehensive<br/>Investigation</h3>
-              <p className="text-foreground/60 leading-[1.8] font-light text-lg">
-                We look beyond basic labs, utilizing advanced functional testing to uncover the root causes of exhaustion, weight resistance, and mood shifts.
-              </p>
-            </motion.div>
-            
-            <motion.div 
-              className="space-y-8 text-center px-4"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              transition={{ delay: 0.4 }}
-            >
-              <div className="w-16 h-px bg-accent/40 mx-auto mb-12" />
-              <h3 className="font-serif text-3xl text-foreground">Refined Protocols</h3>
-              <p className="text-foreground/60 leading-[1.8] font-light text-lg">
-                Your body is an interconnected system. At SheRises, we go beyond symptom management with integrated care plans that restore balance across your physiology.
-              </p>
-            </motion.div>
-          </div>
         </div>
       </section>
 
