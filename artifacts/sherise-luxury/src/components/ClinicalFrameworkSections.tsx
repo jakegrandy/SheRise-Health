@@ -84,7 +84,6 @@ const frameworkItems: FrameworkItem[] = [
       "Cardiometabolic risk",
       "Inflammation and recovery",
       "Body composition and strength",
-      "Preventive health planning",
       "Long-term wellness optimization",
       "Cancer screening",
       "Hereditary disorders",
