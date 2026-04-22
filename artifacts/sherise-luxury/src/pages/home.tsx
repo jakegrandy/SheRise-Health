@@ -3,7 +3,6 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import generationsOfCare from "@assets/generations_of_care_1776802252403.png";
 import sheRisesLogo from "@assets/LOGO_with_vertical_list_transparent_1776884062361.png";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { FiveSystemsDiagram } from "@/components/FiveSystemsDiagram";
 import { ModelIntroSection, SheRisesDifference, SystemsSection } from "@/components/ClinicalFrameworkSections";
 
 const BASE = import.meta.env.BASE_URL;
@@ -286,14 +285,9 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUp}
-            className="mb-24 md:mb-32 max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+            className="mb-24 md:mb-32 max-w-3xl mx-auto"
           >
-            <div className="max-w-md mx-auto w-full">
-              <FiveSystemsDiagram />
-            </div>
-            <div>
-              <SheRisesDifference />
-            </div>
+            <SheRisesDifference />
           </motion.div>
 
         </div>
