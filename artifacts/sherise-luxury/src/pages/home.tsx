@@ -3,7 +3,8 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import generationsOfCare from "@assets/generations_of_care_1776802252403.png";
 import sheRisesLogo from "@assets/LOGO_with_vertical_list_transparent_1776884062361.png";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ModelIntroSection, SheRisesDifference, SystemsSection } from "@/components/ClinicalFrameworkSections";
+import { SheRisesDifference, SystemsSection } from "@/components/ClinicalFrameworkSections";
+import { FiveSystemsDiagram } from "@/components/FiveSystemsDiagram";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -149,16 +150,22 @@ export default function Home() {
           >
             Reimagining Women's Healthcare
           </motion.h2>
-          <ModelIntroSection />
-
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUp}
-            className="mb-24 md:mb-32 max-w-3xl mx-auto"
+            className="mb-24 md:mb-32 max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
           >
-            <SheRisesDifference />
+            <div>
+              <p className="text-accent text-[11px] font-light tracking-[0.3em] uppercase mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                The SheRises Framework
+              </p>
+              <SheRisesDifference />
+            </div>
+            <div className="max-w-md mx-auto w-full">
+              <FiveSystemsDiagram />
+            </div>
           </motion.div>
 
         </div>
