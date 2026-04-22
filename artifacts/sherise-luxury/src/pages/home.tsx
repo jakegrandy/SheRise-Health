@@ -168,7 +168,7 @@ export default function Home() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 relative">
           {[
             {
               num: "01",
