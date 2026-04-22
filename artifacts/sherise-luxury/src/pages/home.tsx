@@ -448,8 +448,12 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="bg-foreground py-32 md:py-48 px-8 md:px-16 relative z-20">
-        <div className="max-w-[100rem] mx-auto">
+      <section className="bg-foreground py-32 md:py-48 px-8 md:px-16 relative z-20 overflow-hidden">
+        {/* Decorative blurred orbs */}
+        <div className="absolute top-1/3 -left-32 w-[28rem] h-[28rem] rounded-full bg-accent/5 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-1/4 -right-32 w-[32rem] h-[32rem] rounded-full bg-background/5 blur-3xl pointer-events-none" />
+
+        <div className="max-w-[100rem] mx-auto relative">
           <motion.h2
             className="font-serif text-4xl md:text-5xl font-light text-background mb-20 md:mb-28"
             initial="hidden"
@@ -459,78 +463,83 @@ export default function Home() {
           >
             Women Share:
           </motion.h2>
-        </div>
-        <div className="max-w-[100rem] mx-auto grid lg:grid-cols-2 gap-24 lg:gap-32">
-          <motion.blockquote 
-            className="space-y-12 relative"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-          >
-            <div className="absolute -top-16 -left-8 font-serif text-[12rem] text-accent/10 leading-none">"</div>
-            <p className="font-serif text-3xl md:text-4xl font-light leading-[1.6] italic text-background relative z-10">
-              For the first time, I felt completely heard by a provider. I was having 6–10 hot flashes an hour and I just didn't know how I would live. Scarlett got me fixed up and I'm feeling better than ever. My energy is back! I'm exercising and losing weight! My marriage even got better! AND no more hot flashes!
-            </p>
-            <footer className="text-[11px] tracking-[0.3em] uppercase text-background/40 font-light flex items-center gap-4">
-              <div className="w-8 h-px bg-accent/40" />
-              Sarah M., Age 55
-            </footer>
-          </motion.blockquote>
 
-          <motion.blockquote 
-            className="space-y-12 relative"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            transition={{ delay: 0.2 }}
-          >
-            <div className="absolute -top-16 -left-8 font-serif text-[12rem] text-accent/10 leading-none">"</div>
-            <p className="font-serif text-3xl md:text-4xl font-light leading-[1.6] italic text-background relative z-10">
-              I struggled with PCOS and was told I would never get pregnant. We welcomed our first child into the world last year and I believe we couldn't have done it without Scarlett. She helped me lose weight and start ovulating again. Her approach really changed my life.
-            </p>
-            <footer className="text-[11px] tracking-[0.3em] uppercase text-background/40 font-light flex items-center gap-4">
-              <div className="w-8 h-px bg-accent/40" />
-              Elena R., Age 32
-            </footer>
-          </motion.blockquote>
+          <div className="grid md:grid-cols-12 gap-8 md:gap-10 relative">
+            {/* Sarah — large ivory bubble, top-left */}
+            <motion.blockquote
+              className="md:col-span-7 bg-background text-foreground rounded-[3rem] p-10 md:p-14 relative shadow-2xl"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+            >
+              <div className="font-serif text-[7rem] text-accent/30 leading-[0.5] mb-2">"</div>
+              <p className="font-serif text-xl md:text-2xl font-light leading-[1.6] italic">
+                For the first time, I felt completely heard by a provider. I was having 6–10 hot flashes an hour and I just didn't know how I would live. Scarlett got me fixed up and I'm feeling better than ever. My energy is back! I'm exercising and losing weight! My marriage even got better! AND no more hot flashes!
+              </p>
+              <footer className="mt-10 text-[11px] tracking-[0.3em] uppercase text-foreground/50 font-light flex items-center gap-4">
+                <div className="w-8 h-px bg-accent" />
+                Sarah M., Age 55
+              </footer>
+            </motion.blockquote>
 
-          <motion.blockquote 
-            className="space-y-12 relative"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            transition={{ delay: 0.4 }}
-          >
-            <div className="absolute -top-16 -left-8 font-serif text-[12rem] text-accent/10 leading-none">"</div>
-            <p className="font-serif text-3xl md:text-4xl font-light leading-[1.6] italic text-background relative z-10">
-              Scarlett got me in right away for birth control. She made the process so easy! I had no idea what I wanted and she showed me all the options and answered all my questions! I will definitely be coming back! Scarlett is the best!
-            </p>
-            <footer className="text-[11px] tracking-[0.3em] uppercase text-background/40 font-light flex items-center gap-4">
-              <div className="w-8 h-px bg-accent/40" />
-              Maria R., Age 24
-            </footer>
-          </motion.blockquote>
+            {/* Elena — gold bubble, top-right, offset down */}
+            <motion.blockquote
+              className="md:col-span-5 md:mt-16 bg-accent text-background rounded-[3rem] p-10 md:p-12 relative shadow-2xl"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              transition={{ delay: 0.15 }}
+            >
+              <div className="font-serif text-[7rem] text-background/30 leading-[0.5] mb-2">"</div>
+              <p className="font-serif text-xl md:text-2xl font-light leading-[1.6] italic">
+                I struggled with PCOS and was told I would never get pregnant. We welcomed our first child into the world last year and I believe we couldn't have done it without Scarlett. She helped me lose weight and start ovulating again. Her approach really changed my life.
+              </p>
+              <footer className="mt-10 text-[11px] tracking-[0.3em] uppercase text-background/70 font-light flex items-center gap-4">
+                <div className="w-8 h-px bg-background/50" />
+                Elena R., Age 32
+              </footer>
+            </motion.blockquote>
 
-          <motion.blockquote 
-            className="space-y-12 relative"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            transition={{ delay: 0.2 }}
-          >
-            <div className="absolute -top-16 -left-8 font-serif text-[12rem] text-accent/10 leading-none">"</div>
-            <p className="font-serif text-3xl md:text-4xl font-light leading-[1.6] italic text-background relative z-10">
-              I had quietly accepted that painful intercourse was just part of getting older. It affected my confidence, my relationship, and my entire outlook on the years ahead of me. I had brought it up with doctors before and was told to "use lubricant" and that it was just menopause. Scarlett understood what was happening. It took several months but the pain improved and now is totally gone. I have a thriving, healthy sex-life now, no pain at all. Beyond that, I feel like myself again.
-            </p>
-            <footer className="text-[11px] tracking-[0.3em] uppercase text-background/40 font-light flex items-center gap-4">
-              <div className="w-8 h-px bg-accent/40" />
-              Veronica H., Age 57
-            </footer>
-          </motion.blockquote>
+            {/* Maria — small outlined bubble, bottom-left, offset up */}
+            <motion.blockquote
+              className="md:col-span-5 md:-mt-8 bg-background/[0.04] text-background rounded-[3rem] p-10 md:p-12 relative border border-background/20 backdrop-blur-sm"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              transition={{ delay: 0.3 }}
+            >
+              <div className="font-serif text-[7rem] text-accent/50 leading-[0.5] mb-2">"</div>
+              <p className="font-serif text-xl md:text-2xl font-light leading-[1.6] italic">
+                Scarlett got me in right away for birth control. She made the process so easy! I had no idea what I wanted and she showed me all the options and answered all my questions! I will definitely be coming back! Scarlett is the best!
+              </p>
+              <footer className="mt-10 text-[11px] tracking-[0.3em] uppercase text-background/60 font-light flex items-center gap-4">
+                <div className="w-8 h-px bg-accent" />
+                Maria R., Age 24
+              </footer>
+            </motion.blockquote>
+
+            {/* Veronica — large ivory bubble, bottom-right */}
+            <motion.blockquote
+              className="md:col-span-7 md:mt-12 bg-background text-foreground rounded-[3rem] p-10 md:p-14 relative shadow-2xl"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              transition={{ delay: 0.45 }}
+            >
+              <div className="font-serif text-[7rem] text-accent/30 leading-[0.5] mb-2">"</div>
+              <p className="font-serif text-xl md:text-2xl font-light leading-[1.6] italic">
+                I had quietly accepted that painful intercourse was just part of getting older. It affected my confidence, my relationship, and my entire outlook on the years ahead of me. I had brought it up with doctors before and was told to "use lubricant" and that it was just menopause. Scarlett understood what was happening. It took several months but the pain improved and now is totally gone. I have a thriving, healthy sex-life now, no pain at all. Beyond that, I feel like myself again.
+              </p>
+              <footer className="mt-10 text-[11px] tracking-[0.3em] uppercase text-foreground/50 font-light flex items-center gap-4">
+                <div className="w-8 h-px bg-accent" />
+                Veronica H., Age 57
+              </footer>
+            </motion.blockquote>
+          </div>
         </div>
       </section>
 
