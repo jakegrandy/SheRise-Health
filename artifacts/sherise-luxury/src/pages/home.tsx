@@ -449,6 +449,17 @@ export default function Home() {
 
       {/* Testimonials */}
       <section className="bg-foreground py-32 md:py-48 px-8 md:px-16 relative z-20">
+        <div className="max-w-[100rem] mx-auto">
+          <motion.h2
+            className="font-serif text-4xl md:text-5xl font-light text-background mb-20 md:mb-28"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+          >
+            Women Share:
+          </motion.h2>
+        </div>
         <div className="max-w-[100rem] mx-auto grid lg:grid-cols-2 gap-24 lg:gap-32">
           <motion.blockquote 
             className="space-y-12 relative"
