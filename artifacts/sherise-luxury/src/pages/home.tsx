@@ -179,7 +179,7 @@ export default function Home() {
           {[
             {
               num: "01",
-              title: "Adolescent &\u00A0Young Adult Care",
+              title: "Adolescent &\u00A0Young Adult Years",
               intro: "Care for younger patients is individualized, educational, and supportive.",
               tone: "ivory",
               items: [
@@ -193,7 +193,7 @@ export default function Home() {
             },
             {
               num: "02",
-              title: "Family Planning &\u00A0Reproductive Care",
+              title: "Family Planning &\u00A0Reproductive Years",
               intro: "Practical, informed support for reproductive decision-making — aligned with each patient's goals.",
               tone: "forest",
               items: [
