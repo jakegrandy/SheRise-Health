@@ -218,8 +218,21 @@ export default function Home() {
                 "Fatigue, mood, sleep disruption, and libido concerns",
               ],
             },
+            {
+              num: "04",
+              title: "Sexual Health and Function",
+              intro: "Support for intimacy, comfort, and sexual wellbeing across life stages.",
+              tone: "forest",
+              items: [
+                "Low desire, arousal concerns, and orgasm changes",
+                "Pain with sex, vaginal dryness, and pelvic discomfort",
+                "Sexual health screening and counseling",
+                "Perimenopause and menopause-related sexual changes",
+                "Relationship-centered communication and support",
+              ],
+            },
           ].map((stage, i) => {
-            const isForest = stage.tone === "forest";
+            const isForest = i % 2 === 1;
             return (
               <motion.div
                 key={stage.num}
