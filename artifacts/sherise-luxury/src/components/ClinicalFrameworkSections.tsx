@@ -110,19 +110,23 @@ export function ModelIntroSection() {
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.1}>
-          <div className="border-l-4 border-[#B89047] pl-8 mb-16">
-            <p className="text-2xl md:text-3xl text-[#132A24] font-light leading-relaxed italic" style={FONT_SERIF}>
-              "Hormones, metabolism, and reproductive health are treated together within your unique neurobehavioral context."
-            </p>
-            <p className="text-base text-[#B89047] font-semibold tracking-wide uppercase mt-4" style={FONT_SANS}>
-              The She Rises Difference
-            </p>
-          </div>
-        </FadeIn>
-
       </div>
     </section>
+  );
+}
+
+export function SheRisesDifference() {
+  return (
+    <FadeIn delay={0.1}>
+      <div className="border-l-4 border-[#B89047] pl-8">
+        <p className="text-2xl md:text-3xl text-[#132A24] font-light leading-relaxed italic" style={FONT_SERIF}>
+          "Hormones, metabolism, and reproductive health are treated together within your unique neurobehavioral context."
+        </p>
+        <p className="text-base text-[#B89047] font-semibold tracking-wide uppercase mt-4" style={FONT_SANS}>
+          The She Rises Difference
+        </p>
+      </div>
+    </FadeIn>
   );
 }
 
