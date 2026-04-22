@@ -460,7 +460,7 @@ export default function Home() {
             Women Share:
           </motion.h2>
         </div>
-        <div className="max-w-[100rem] mx-auto grid lg:grid-cols-2 gap-24 lg:gap-32">
+        <div className="max-w-[100rem] mx-auto grid lg:grid-cols-3 gap-24 lg:gap-32">
           <motion.blockquote 
             className="space-y-12 relative"
             initial="hidden"
@@ -493,6 +493,24 @@ export default function Home() {
             <footer className="text-[11px] tracking-[0.3em] uppercase text-background/40 font-light flex items-center gap-4">
               <div className="w-8 h-px bg-accent/40" />
               Elena R., Age 32
+            </footer>
+          </motion.blockquote>
+
+          <motion.blockquote 
+            className="space-y-12 relative"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            transition={{ delay: 0.4 }}
+          >
+            <div className="absolute -top-16 -left-8 font-serif text-[12rem] text-accent/10 leading-none">"</div>
+            <p className="font-serif text-3xl md:text-4xl font-light leading-[1.6] italic text-background relative z-10">
+              Scarlett got me in right away for birth control. She made the process so easy! I had no idea what I wanted and she showed me all the options and answered all my questions! I will definitely be coming back! Scarlett is the best!
+            </p>
+            <footer className="text-[11px] tracking-[0.3em] uppercase text-background/40 font-light flex items-center gap-4">
+              <div className="w-8 h-px bg-accent/40" />
+              Maria R., Age 24
             </footer>
           </motion.blockquote>
         </div>
