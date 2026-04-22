@@ -346,7 +346,7 @@ export default function Home() {
               <div className="w-16 h-px bg-accent/40 mx-auto mb-12" />
               <h3 className="font-serif text-3xl text-foreground">Refined Protocols</h3>
               <p className="text-foreground/60 leading-[1.8] font-light text-lg">
-                Your body is a complex ecosystem. We design bespoke interventions that harmonize your systems rather than simply masking individual symptoms.
+                Your body is an interconnected system. At SheRises, we go beyond symptom management with integrated care plans that restore balance across your physiology.
               </p>
             </motion.div>
           </div>
