@@ -194,7 +194,7 @@ export default function Home() {
             {
               num: "02",
               title: "Family Planning &\u00A0Reproductive Years",
-              intro: "Practical, informed support for reproductive decision-making — aligned with each patient's goals.",
+              intro: "Practical, informed support for conception and pregnancy prevention in alignment with your personal health preferences.",
               tone: "forest",
               items: [
                 "Personalized contraceptive care — pill, patch, ring, IUD, implant",
