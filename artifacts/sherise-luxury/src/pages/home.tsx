@@ -407,9 +407,9 @@ export default function Home() {
           >
             <div className="absolute inset-0 border border-background/20 translate-x-4 translate-y-4" />
             <img
-              src={`${BASE}images/sherise-luxury-provider.png`}
+              src={`${BASE}images/scarlett-headshot.png`}
               alt="Scarlett Grandy, CNM, WHNP-BC"
-              className="w-full h-full object-cover object-top opacity-90 mix-blend-luminosity brightness-90 hover:mix-blend-normal hover:brightness-100 transition-all duration-1000"
+              className="w-full h-full object-cover object-top brightness-100 transition-all duration-1000"
             />
           </motion.div>
 
