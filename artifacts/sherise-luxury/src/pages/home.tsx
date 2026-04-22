@@ -227,7 +227,7 @@ export default function Home() {
                 "Low desire, arousal concerns, and orgasm changes",
                 "Pain with sex, vaginal dryness, and pelvic discomfort",
                 "Sexual health screening and counseling",
-                "Perimenopause and menopause-related sexual changes",
+                "Perimenopause, menopause, and postpartum related sexual changes",
                 "Relationship-centered communication and support",
                 "Infection management and health promotion",
               ],
