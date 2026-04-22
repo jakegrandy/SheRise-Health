@@ -175,124 +175,95 @@ export default function Home() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-x-16 gap-y-24 relative">
-          <motion.div 
-            className="group relative"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUp}
-          >
-            <div className="mb-10 text-accent font-serif italic text-8xl leading-none opacity-20">1</div>
-            <h3 className="font-serif text-3xl mb-8 text-foreground pb-8 border-b border-foreground/10">Adolescent &<br/>Young Adult Care</h3>
-            <p className="text-foreground/60 leading-[1.8] text-base mb-10 font-light h-20">
-              Care for younger patients is individualized, educational, and supportive.
-            </p>
-            <ul className="space-y-5 text-foreground/80 leading-[1.6] text-sm font-light">
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>First gynecologic visits and education</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>Menstrual concerns (irregular cycles, painful periods, heavy bleeding)</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>Acne and early hormonal imbalance evaluation</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>Contraceptive counseling and initiation</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>STI screening and sexual health education</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>Body literacy and reproductive health guidance</span>
-              </li>
-            </ul>
-          </motion.div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative">
+          {[
+            {
+              num: "01",
+              title: "Adolescent &\u00A0Young Adult Care",
+              intro: "Care for younger patients is individualized, educational, and supportive.",
+              tone: "ivory",
+              items: [
+                "First gynecologic visits and education",
+                "Menstrual concerns — irregular, painful, or heavy cycles",
+                "Acne and early hormonal imbalance evaluation",
+                "Contraceptive counseling and initiation",
+                "STI screening and sexual health education",
+                "Body literacy and reproductive health guidance",
+              ],
+            },
+            {
+              num: "02",
+              title: "Family Planning &\u00A0Reproductive Care",
+              intro: "Practical, informed support for reproductive decision-making — aligned with each patient's goals.",
+              tone: "forest",
+              items: [
+                "Personalized contraceptive care — pill, patch, ring, IUD, implant",
+                "Preconception counseling and optimization",
+                "Fertility awareness and cycle tracking education",
+                "Reproductive life planning",
+                "Pregnancy prevention and spacing strategies",
+              ],
+            },
+            {
+              num: "03",
+              title: "Hormone &\u00A0Metabolic Health",
+              intro: "Addressing root causes rather than isolated symptoms.",
+              tone: "ivory",
+              items: [
+                "Evaluation and treatment of hormone imbalance",
+                "PCOS and androgen excess management",
+                "Insulin resistance and metabolic dysfunction care",
+                "Weight management with a medical and metabolic focus",
+                "Perimenopause and menopause care",
+                "Fatigue, mood, sleep disruption, and libido concerns",
+              ],
+            },
+          ].map((stage, i) => {
+            const isForest = stage.tone === "forest";
+            return (
+              <motion.div
+                key={stage.num}
+                className={`group relative rounded-3xl p-10 lg:p-12 overflow-hidden border transition-all duration-500 hover:-translate-y-1 ${
+                  isForest
+                    ? "bg-foreground text-background border-foreground/20 hover:border-accent"
+                    : "bg-secondary/40 text-foreground border-foreground/10 hover:border-accent/60 hover:bg-secondary/60"
+                }`}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={fadeUp}
+                transition={{ delay: i * 0.15 }}
+              >
+                {/* Watermark numeral */}
+                <div
+                  className={`absolute top-6 right-8 font-serif italic text-[8rem] leading-none pointer-events-none select-none ${
+                    isForest ? "text-accent/20" : "text-accent/15"
+                  }`}
+                >
+                  {stage.num}
+                </div>
 
-          <motion.div 
-            className="group relative"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUp}
-            transition={{ delay: 0.2 }}
-          >
-            <div className="mb-10 text-accent font-serif italic text-8xl leading-none opacity-20">2</div>
-            <h3 className="font-serif text-3xl mb-8 text-foreground pb-8 border-b border-foreground/10">Family Planning &<br/>Reproductive Care</h3>
-            <p className="text-foreground/60 leading-[1.8] text-base mb-10 font-light h-20">
-              Support for reproductive decision-making is practical, informed, and aligned with each patient’s goals.
-            </p>
-            <ul className="space-y-5 text-foreground/80 leading-[1.6] text-sm font-light">
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>Personalized contraceptive education and care (pill, patch, ring, IUD, implant)</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>Preconception counseling and optimization</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>Fertility awareness and cycle tracking education</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>Reproductive life planning</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>Pregnancy prevention and spacing strategies</span>
-              </li>
-            </ul>
-          </motion.div>
+                <div className="relative">
+                  <div className={`w-10 h-px mb-8 ${isForest ? "bg-accent" : "bg-accent"}`} />
+                  <h3 className={`font-serif text-3xl lg:text-[2rem] leading-[1.15] font-light mb-6 ${isForest ? "text-background" : "text-foreground"}`}>
+                    {stage.title}
+                  </h3>
+                  <p className={`text-base leading-[1.7] font-light italic mb-10 max-w-sm ${isForest ? "text-background/70" : "text-foreground/60"}`}>
+                    {stage.intro}
+                  </p>
 
-          <motion.div 
-            className="group relative"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUp}
-            transition={{ delay: 0.4 }}
-          >
-            <div className="mb-10 text-accent font-serif italic text-8xl leading-none opacity-20">3</div>
-            <h3 className="font-serif text-3xl mb-8 text-foreground pb-8 border-b border-foreground/10">Hormone &<br/>Metabolic Health</h3>
-            <p className="text-foreground/60 leading-[1.8] text-base mb-10 font-light h-20">
-              Addressing root causes rather than isolated symptoms.
-            </p>
-            <ul className="space-y-5 text-foreground/80 leading-[1.6] text-sm font-light">
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>Evaluation and treatment of hormone imbalance</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>PCOS and androgen excess management</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>Insulin resistance and metabolic dysfunction care</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>Weight management with a medical and metabolic focus</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>Perimenopause and menopause care</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent shrink-0" />
-                <span>Fatigue, mood changes, sleep disruption, and libido concerns</span>
-              </li>
-            </ul>
-          </motion.div>
+                  <ul className={`space-y-3.5 text-[13px] leading-[1.55] font-light ${isForest ? "text-background/85" : "text-foreground/80"}`}>
+                    {stage.items.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <div className={`w-1 h-1 mt-[0.55rem] rounded-full shrink-0 ${isForest ? "bg-accent" : "bg-accent"}`} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </section>
 
