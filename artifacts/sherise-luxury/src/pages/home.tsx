@@ -470,7 +470,7 @@ export default function Home() {
           >
             <div className="absolute -top-16 -left-8 font-serif text-[12rem] text-accent/10 leading-none">"</div>
             <p className="font-serif text-3xl md:text-4xl font-light leading-[1.6] italic text-background relative z-10">
-              For the first time in years, I felt completely heard. The depth of knowledge and the level of care is simply unmatched. Scarlett didn't just treat my symptoms; she restored my vitality.
+              For the first time, I felt completely heard by a provider. I was having 6–10 hot flashes an hour and I just didn't know how I would live. Scarlett got me fixed up and I'm feeling better than ever. My energy is back! I'm exercising and losing weight! My marriage even got better! AND no more hot flashes!
             </p>
             <footer className="text-[11px] tracking-[0.3em] uppercase text-background/40 font-light flex items-center gap-4">
               <div className="w-8 h-px bg-accent/40" />
