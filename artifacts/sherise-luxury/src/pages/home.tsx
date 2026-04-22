@@ -428,13 +428,19 @@ export default function Home() {
 
             <motion.div variants={fadeUp} className="space-y-8 text-background/70 leading-[1.8] text-xl font-light">
               <p>
-                With over two decades of clinical experience in women's health, Scarlett founded SheRises to offer the caliber of care she knew her patients deserved.
+                Scarlett Grandy founded SheRises to address a critical gap in women's healthcare. Scarlett is a midwife first and foremost, which means she listens to women.
               </p>
               <p>
-                Having witnessed countless women being dismissed by conventional medicine—told their fatigue, weight gain, and mood changes were "just part of getting older"—she created a sanctuary for deep investigation and genuine healing.
+                As a provider working for large healthcare organizations, she felt rushed and pressured by volume requirements and financial incentives. She wanted something different — for her practice and for the women she served.
               </p>
               <p>
-                Her approach merges rigorous clinical expertise with an unparalleled commitment to patient advocacy, ensuring every woman who walks through her doors feels seen, heard, and wholly cared for.
+                Too often, women come to Scarlett after having seen many other healthcare professionals, all with the same story. They feel rushed and dismissed. Their symptoms are normalized, and disease is left to progress to irreversible stages.
+              </p>
+              <p>
+                At SheRises, Scarlett pioneers a new model of care with root-cause evaluation, disease reversal, and patient-provider partnership.
+              </p>
+              <p className="text-background/90 italic font-light">
+                The outcome is optimal health — thriving through all the stages of womanhood.
               </p>
             </motion.div>
           </motion.div>
