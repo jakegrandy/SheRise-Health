@@ -105,7 +105,7 @@ export function ModelIntroSection() {
               Clinical Framework
             </p>
             <h2 className="text-5xl md:text-6xl font-medium text-[#132A24] mb-8 leading-tight" style={FONT_SERIF}>
-              The She Rises Framework of Whole-Health
+              The She Rises Framework
             </h2>
           </div>
         </FadeIn>
