@@ -158,7 +158,7 @@ export default function Home() {
           <span className="hidden md:block w-1.5 h-1.5 rotate-45 bg-accent/40" />
           <span>20+ Years Clinical Practice</span>
           <span className="hidden md:block w-1.5 h-1.5 rotate-45 bg-accent/40" />
-          <span>Scarlett Grandy</span>
+          <span>ISSWSH Member</span>
         </div>
       </section>
 
