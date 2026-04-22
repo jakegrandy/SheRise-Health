@@ -316,7 +316,7 @@ export default function Home() {
                 key={stage.num}
                 className={`group relative rounded-3xl p-10 lg:p-12 overflow-hidden border transition-all duration-500 hover:-translate-y-1 ${
                   isForest
-                    ? "bg-foreground text-background border-foreground/20 hover:border-accent"
+                    ? "bg-[#F0DAD4] text-foreground border-[#B5736A]/25 hover:border-accent"
                     : "bg-secondary/40 text-foreground border-foreground/10 hover:border-accent/60 hover:bg-secondary/60"
                 }`}
                 initial="hidden"
@@ -327,7 +327,7 @@ export default function Home() {
               >
                 <div
                   className={`absolute top-6 right-8 font-serif italic text-[8rem] leading-none pointer-events-none select-none ${
-                    isForest ? "text-accent/20" : "text-accent/15"
+                    isForest ? "text-accent/30" : "text-accent/15"
                   }`}
                 >
                   {stage.num}
@@ -335,14 +335,14 @@ export default function Home() {
 
                 <div className="relative">
                   <div className={`w-10 h-px mb-8 ${isForest ? "bg-accent" : "bg-accent"}`} />
-                  <h3 className={`font-serif text-3xl lg:text-[2rem] leading-[1.15] font-light mb-6 ${isForest ? "text-background" : "text-foreground"}`}>
+                  <h3 className={`font-serif text-3xl lg:text-[2rem] leading-[1.15] font-light mb-6 text-foreground`}>
                     {stage.title}
                   </h3>
-                  <p className={`text-base leading-[1.7] font-light italic mb-10 max-w-sm ${isForest ? "text-background/70" : "text-foreground/60"}`}>
+                  <p className={`text-base leading-[1.7] font-light italic mb-10 max-w-sm text-foreground/65`}>
                     {stage.intro}
                   </p>
 
-                  <ul className={`space-y-3.5 text-[13px] leading-[1.55] font-light ${isForest ? "text-background/85" : "text-foreground/80"}`}>
+                  <ul className={`space-y-3.5 text-[13px] leading-[1.55] font-light text-foreground/80`}>
                     {stage.items.map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <div className={`w-1 h-1 mt-[0.55rem] rounded-full shrink-0 ${isForest ? "bg-accent" : "bg-accent"}`} />
