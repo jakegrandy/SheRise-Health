@@ -27,7 +27,7 @@ const frameworkItems: FrameworkItem[] = [
       "Thyroid function (TSH, free T3, T4, reverse T3)",
       "Androgen levels, sensitivities & testosterone",
     ],
-    conditions: ["Perimenopause", "Menopause", "PCOS", "Adrenal dysregulation", "Thyroid disorders", "Hormone replenishment therapy"],
+    conditions: ["Perimenopause", "Menopause", "PCOS", "Adrenal dysregulation", "Thyroid disorders", "Hormone replenishment therapy", "Vaginal dryness", "Painful sex"],
   },
   {
     number: "02",
