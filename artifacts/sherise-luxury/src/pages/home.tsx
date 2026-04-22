@@ -40,7 +40,7 @@ const systems = [
   {
     num: "04",
     title: "Reproductive Health",
-    copy: "Expert management of complex gynecological concerns. From irregular cycles to pelvic pain, we offer nuanced, specialized care tailored to your anatomy.",
+    copy: "Your reproductive health should feel understood, not managed. At SheRises, we offer thoughtful, individualized care—from first cycles and contraception to PCOS, fertility, and hormone transitions. Care that adapts to you, and evolves with your life.",
   },
   {
     num: "05",
