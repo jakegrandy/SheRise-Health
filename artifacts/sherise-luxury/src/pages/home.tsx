@@ -104,7 +104,7 @@ export default function Home() {
           animate="visible"
           variants={staggerContainer}
         >
-          <div className="pt-24 flex flex-col items-center">
+          <div className="pt-32 flex flex-col items-center">
             <motion.h1 
               variants={fadeUp} 
               className="text-4xl md:text-6xl lg:text-[6.5rem] text-background leading-[1.1] tracking-[-0.02em] mb-16"
