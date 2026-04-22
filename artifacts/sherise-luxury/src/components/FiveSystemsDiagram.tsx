@@ -91,8 +91,11 @@ function SystemsPentagon() {
 
 export function FiveSystemsDiagram() {
   return (
-    <div className="bg-[#EDF2EE] border border-[#132A24]/10 rounded-2xl px-6 py-8 md:px-10">
+    <div className="bg-[#EDF2EE] border border-[#132A24]/10 rounded-2xl px-6 pt-8 pb-6 md:px-10">
       <SystemsPentagon />
+      <p className="text-center text-[#132A24]/60 text-sm font-light mt-0 pb-2 max-w-xl mx-auto" style={{ fontFamily: "Outfit, sans-serif" }}>
+        These systems operate in constant, dynamic relationship. The She Rises Framework optimizes every system in your whole health.
+      </p>
     </div>
   );
 }
