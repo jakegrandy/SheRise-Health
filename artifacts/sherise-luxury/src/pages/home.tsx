@@ -69,7 +69,7 @@ export default function Home() {
           SheRises
         </div>
         <div className="hidden md:flex gap-12 text-[11px] tracking-[0.25em] uppercase font-light">
-          <a href="#philosophy" className="hover:text-accent transition-colors duration-500">Philosophy</a>
+          <a href="#philosophy" className="hover:text-accent transition-colors duration-500">Our Philosophy</a>
           <a href="#systems" className="hover:text-accent transition-colors duration-500">The Framework</a>
           <a href="#provider" className="hover:text-accent transition-colors duration-500">Scarlett Grandy</a>
         </div>
@@ -297,7 +297,7 @@ export default function Home() {
             variants={staggerContainer}
           >
             <motion.span variants={fadeUp} className="text-accent text-[11px] tracking-[0.3em] uppercase block font-light mb-8 text-center">
-              The Philosophy
+              The SheRises Philosophy
             </motion.span>
             <motion.h2 variants={fadeUp} className="font-serif text-5xl md:text-6xl lg:text-[5rem] font-light leading-[1.1] text-foreground text-center">
               Medicine that <span className="italic text-foreground/80">listens</span>, investigates,<br/>and <span className="italic text-foreground/80">restores</span>.
