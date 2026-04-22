@@ -49,7 +49,7 @@ const frameworkItems: FrameworkItem[] = [
     icon: <Moon className="w-6 h-6" />,
     name: "Reproductive Health",
     definition:
-      "Reproductive physiology spans decades and life stages. At She Rises, we care for you in your teens and 20's through all your firsts; we are with you through your 30's and 40's when your body starts to change and your family planning years are coming to an end. And we are here with you in your 50's and into your golden years when your best years are ahead of you. We want you thriving in every stage.",
+      "Reproductive physiology spans decades and life stages. At She Rises, we care for you in your teens and 20's through all your firsts; we are with you through your 30's and 40's when your body starts to change and your family planning years are coming to an end. And we are here with you in your 50's and into your golden years. We want you thriving in every stage.",
     subsystems: [
       "Menstrual cycle regulation and optimization",
       "Contraception counseling and management",
