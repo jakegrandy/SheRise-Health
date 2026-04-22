@@ -123,6 +123,7 @@ export default function Home() {
           <a href="#book" className="group">
             <span className="border-b border-transparent group-hover:border-accent transition-colors pb-1">Inquire</span>
           </a>
+          <a href="#testimonials" className="hover:text-accent transition-colors duration-500">Testimonials</a>
         </nav>
 
         <nav className="md:hidden absolute bottom-0 left-0 right-0 z-20 flex items-center justify-center gap-6 px-6 py-6 text-primary text-[10px] tracking-[0.28em] uppercase flex-wrap" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}>
@@ -448,7 +449,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="bg-foreground py-32 md:py-48 px-8 md:px-16 relative z-20 overflow-hidden">
+      <section id="testimonials" className="bg-foreground py-32 md:py-48 px-8 md:px-16 relative z-20 overflow-hidden">
         {/* Decorative blurred orbs */}
         <div className="absolute top-1/3 -left-32 w-[28rem] h-[28rem] rounded-full bg-accent/5 blur-3xl pointer-events-none" />
         <div className="absolute bottom-1/4 -right-32 w-[32rem] h-[32rem] rounded-full bg-background/5 blur-3xl pointer-events-none" />
