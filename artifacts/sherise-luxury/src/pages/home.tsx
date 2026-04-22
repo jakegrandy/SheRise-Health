@@ -460,7 +460,7 @@ export default function Home() {
             Women Share:
           </motion.h2>
         </div>
-        <div className="max-w-[100rem] mx-auto grid lg:grid-cols-3 gap-24 lg:gap-32">
+        <div className="max-w-[100rem] mx-auto grid lg:grid-cols-2 gap-24 lg:gap-32">
           <motion.blockquote 
             className="space-y-12 relative"
             initial="hidden"
@@ -511,6 +511,24 @@ export default function Home() {
             <footer className="text-[11px] tracking-[0.3em] uppercase text-background/40 font-light flex items-center gap-4">
               <div className="w-8 h-px bg-accent/40" />
               Maria R., Age 24
+            </footer>
+          </motion.blockquote>
+
+          <motion.blockquote 
+            className="space-y-12 relative"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="absolute -top-16 -left-8 font-serif text-[12rem] text-accent/10 leading-none">"</div>
+            <p className="font-serif text-3xl md:text-4xl font-light leading-[1.6] italic text-background relative z-10">
+              I had quietly accepted that painful intercourse was just part of getting older. It affected my confidence, my relationship, and my entire outlook on the years ahead of me. I had brought it up with doctors before and was told to "use lubricant" and that it was just menopause. Scarlett understood what was happening. It took several months but the pain improved and now is totally gone. I have a thriving, healthy sex-life now, no pain at all. Beyond that, I feel like myself again.
+            </p>
+            <footer className="text-[11px] tracking-[0.3em] uppercase text-background/40 font-light flex items-center gap-4">
+              <div className="w-8 h-px bg-accent/40" />
+              Veronica H., Age 57
             </footer>
           </motion.blockquote>
         </div>
