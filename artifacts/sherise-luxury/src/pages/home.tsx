@@ -228,7 +228,7 @@ export default function Home() {
               <div className="w-16 h-px bg-accent/40 mx-auto mb-12" />
               <h3 className="font-serif text-3xl text-foreground">Comprehensive<br/>Investigation</h3>
               <p className="text-foreground/60 leading-[1.8] font-light text-lg">
-                We look beyond basic labs, utilizing advanced functional testing to uncover the root causes of exhaustion, weight resistance, and mood shifts.
+                We look beyond basic labs. Your root-cause is often hidden in your story. We listen and find the answer your body already knows.
               </p>
             </motion.div>
             
