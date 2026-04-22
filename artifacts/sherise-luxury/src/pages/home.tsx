@@ -276,6 +276,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* The Framework */}
+      <section id="systems" className="py-32 md:py-48 px-8 md:px-16 bg-background relative z-20">
+        <div className="max-w-[100rem] mx-auto">
+          <ModelIntroSection />
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+            className="mb-12 md:mb-16 flex flex-col items-center"
+          >
+            <h2 className="font-serif text-5xl md:text-7xl font-light text-foreground leading-[1.1]">The Five Systems</h2>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+            className="mb-24 md:mb-32 max-w-5xl mx-auto"
+          >
+            <FiveSystemsDiagram />
+          </motion.div>
+
+        </div>
+        <SystemsSection />
+      </section>
+
       {/* Philosophy Section */}
       <section id="philosophy" className="py-32 md:py-48 px-8 md:px-16 bg-secondary relative z-20">
         <div className="max-w-[100rem] mx-auto">
@@ -343,35 +372,6 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-      </section>
-
-      {/* The Framework */}
-      <section id="systems" className="py-32 md:py-48 px-8 md:px-16 bg-background relative z-20">
-        <div className="max-w-[100rem] mx-auto">
-          <ModelIntroSection />
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUp}
-            className="mb-12 md:mb-16 flex flex-col items-center"
-          >
-            <h2 className="font-serif text-5xl md:text-7xl font-light text-foreground leading-[1.1]">The Five Systems</h2>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUp}
-            className="mb-24 md:mb-32 max-w-5xl mx-auto"
-          >
-            <FiveSystemsDiagram />
-          </motion.div>
-
-        </div>
-        <SystemsSection />
       </section>
 
       {/* Provider Section */}
