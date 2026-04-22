@@ -64,21 +64,18 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-accent selection:text-background">
       {/* Navigation */}
-      <nav className="absolute top-0 left-0 right-0 z-50 grid grid-cols-3 items-center px-8 py-5 md:px-16 text-primary">
-        <div className="font-serif text-2xl tracking-widest uppercase justify-self-start">
+      <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 md:px-16 text-primary">
+        <div className="font-serif text-2xl tracking-widest uppercase">
           SheRises
         </div>
-        <div className="hidden md:flex gap-12 text-[11px] tracking-[0.25em] uppercase font-light justify-self-center">
+        <div className="hidden md:flex gap-12 text-[11px] tracking-[0.25em] uppercase font-light items-center">
           <a href="#philosophy" className="hover:text-accent transition-colors duration-500">Our Philosophy</a>
           <a href="#systems" className="hover:text-accent transition-colors duration-500">The Framework</a>
           <a href="#provider" className="hover:text-accent transition-colors duration-500">Scarlett Grandy</a>
+          <a href="#book" className="group">
+            <span className="border-b border-transparent group-hover:border-accent transition-colors pb-1">Inquire</span>
+          </a>
         </div>
-        <a
-          href="#book"
-          className="text-[11px] tracking-[0.25em] uppercase font-light flex items-center gap-2 group justify-self-end"
-        >
-          <span className="border-b border-transparent group-hover:border-accent transition-colors pb-1">Inquire</span>
-        </a>
       </nav>
 
       {/* Hero Section */}
