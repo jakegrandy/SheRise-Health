@@ -42,7 +42,7 @@ const frameworkItems: FrameworkItem[] = [
       "Inflammatory markers and metabolic risk",
       "Lipid metabolism and cardiovascular health",
     ],
-    conditions: ["Insulin resistance", "Prediabetes", "PCOS", "Weight dysregulation", "Metabolic syndrome"],
+    conditions: ["Insulin resistance", "Prediabetes", "Type 2 diabetes", "Hypertension", "Hyperlipidemia", "PCOS", "Weight dysregulation", "Metabolic syndrome"],
   },
   {
     number: "03",
