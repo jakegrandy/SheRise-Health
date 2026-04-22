@@ -159,7 +159,7 @@ export function SystemsSection() {
                 </div>
 
                 <div className={`md:col-span-4 p-8 border-r border-[#132A24]/10 ${i % 2 === 0 ? "bg-[#FCFBF9]" : "bg-[#F4F1EB]"}`}>
-                  <p className="text-xs font-semibold text-[#132A24]/45 tracking-widest uppercase mb-4" style={FONT_SANS}>What We Assess</p>
+                  <p className="text-xs font-bold text-[#132A24]/70 tracking-widest uppercase mb-4" style={FONT_SANS}>What We Assess</p>
                   <ul className="space-y-2.5" style={FONT_SANS}>
                     {system.subsystems.map((sub) => (
                       <li key={sub} className="flex items-start gap-2.5 text-sm text-[#4B5563] font-light">
@@ -171,7 +171,7 @@ export function SystemsSection() {
                 </div>
 
                 <div className={`md:col-span-3 p-8 ${i % 2 === 0 ? "bg-[#FCFBF9]" : "bg-[#F4F1EB]"}`}>
-                  <p className="text-xs font-semibold text-[#132A24]/45 tracking-widest uppercase mb-4" style={FONT_SANS}>Conditions Addressed</p>
+                  <p className="text-xs font-bold text-[#132A24]/70 tracking-widest uppercase mb-4" style={FONT_SANS}>Conditions Addressed</p>
                   <div className="flex flex-wrap gap-2" style={FONT_SANS}>
                     {system.conditions.map((cond) => (
                       <span key={cond} className="text-xs font-medium text-[#132A24] bg-[#132A24]/5 border border-[#132A24]/10 px-2.5 py-1">
