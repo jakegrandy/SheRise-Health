@@ -40,7 +40,7 @@ const systems = [
   {
     num: "04",
     title: "Reproductive Health",
-    copy: "Your reproductive health should feel understood, not managed. At SheRises, we offer thoughtful, individualized care—from first cycles and contraception to PCOS, fertility, and hormone transitions. Care that adapts to you, and evolves with your life.",
+    copy: "Your reproductive health should feel understood, not managed. At SheRises, we offer thoughtful, individualized care. From first cycles and contraception to PCOS, fertility, and hormone transitions. Care that adapts to you, and evolves with your life.",
   },
   {
     num: "05",
