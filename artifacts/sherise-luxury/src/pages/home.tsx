@@ -197,11 +197,11 @@ export default function Home() {
               intro: "Practical, informed support for conception and pregnancy prevention in alignment with your personal health preferences.",
               tone: "forest",
               items: [
-                "Personalized contraceptive care — pill, patch, ring, IUD, implant",
-                "Preconception counseling and optimization",
-                "Fertility awareness and cycle tracking education",
                 "Reproductive life planning",
-                "Pregnancy prevention and spacing strategies",
+                "Preconception counseling and optimization",
+                "Pregnancy prevention and spacing of pregnancies",
+                "Full menu of contraceptive offerings — pill, patch, ring, IUD, implant, injection",
+                "Natural family planning and cycle tracking education",
               ],
             },
             {
