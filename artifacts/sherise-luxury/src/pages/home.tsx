@@ -252,6 +252,23 @@ export default function Home() {
 
       {/* Care Stages */}
       <section className="py-32 md:py-48 px-8 md:px-16 max-w-[100rem] mx-auto relative z-20 bg-background overflow-hidden">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUp}
+          className="mb-16 md:mb-24 max-w-3xl"
+        >
+          <p className="text-accent text-[11px] font-light tracking-[0.3em] uppercase mb-6" style={{ fontFamily: "'Outfit', sans-serif" }}>
+            Who We See
+          </p>
+          <h2
+            className="italic text-accent text-3xl md:text-4xl lg:text-5xl font-light leading-[1.2]"
+            style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+          >
+            Who we see and what we treat.
+          </h2>
+        </motion.div>
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 relative">
           {[
             {
