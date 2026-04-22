@@ -156,13 +156,23 @@ export default function Home() {
         >
           <motion.div variants={fadeUp} className="max-w-md">
             <span className="text-accent text-[11px] tracking-[0.3em] uppercase block mb-8 font-light">What We Do</span>
-            <p className="text-lg md:text-xl text-foreground/60 leading-[1.8] font-light">
-              Services are designed to support women at every stage of life, including adolescence, reproductive years, and midlife and beyond.
-            </p>
           </motion.div>
           <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.25] text-foreground flex-1">
             At She Rises Health, care spans the full spectrum of women’s health—from <span className="italic text-foreground/70">preventive screening</span> and <span className="italic text-foreground/70">reproductive care</span> to hormone optimization and metabolic health.
           </motion.h2>
+        </motion.div>
+
+        <motion.div
+          className="mb-20 md:mb-28 max-w-3xl"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUp}
+        >
+          <span className="text-accent text-[11px] tracking-[0.3em] uppercase block mb-6 font-light">Who We See</span>
+          <p className="text-2xl md:text-3xl text-foreground/70 leading-[1.5] font-light font-serif italic">
+            Services are designed to support women at every stage of life, including adolescence, reproductive years, and midlife and beyond.
+          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-x-16 gap-y-24 relative">
