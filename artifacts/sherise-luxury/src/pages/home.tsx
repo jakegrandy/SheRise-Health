@@ -576,11 +576,12 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-16 px-8 md:px-16 text-[11px] tracking-[0.3em] uppercase text-foreground/40 font-light bg-background relative z-20">
         <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-          <a href="#top" className="flex items-center gap-3 normal-case">
+          <a href="#top" className="flex items-center normal-case shrink-0">
             <img
               src={srMonogram}
-              alt="SheRises"
-              className="h-14 md:h-16 w-auto select-none"
+              alt="SheRises Women's Health"
+              className="h-32 md:h-40 lg:h-48 w-auto select-none"
+              style={{ mixBlendMode: "multiply" }}
               draggable={false}
             />
           </a>
@@ -589,7 +590,7 @@ export default function Home() {
             <a href="#" className="hover:text-foreground transition-colors duration-500">Location</a>
             <a href="#" className="hover:text-foreground transition-colors duration-500">Privacy</a>
           </div>
-          <div>&copy; {new Date().getFullYear()} SheRises Health</div>
+          <div>&copy; {new Date().getFullYear()} SheRises Women's Health</div>
         </div>
       </footer>
 
