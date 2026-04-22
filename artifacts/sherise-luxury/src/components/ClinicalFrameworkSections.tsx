@@ -1,23 +1,20 @@
+import { useMemo } from "react";
 import { motion } from "framer-motion";
-import { Waves, Flame, Moon, Zap, Leaf } from "lucide-react";
-import type { ReactNode } from "react";
-import { FiveSystemsDiagram } from "./FiveSystemsDiagram";
+import { Activity, Brain, Flame, Moon, Waves, ChevronRight } from "lucide-react";
 
-const FONT_SERIF = { fontFamily: "'Playfair Display', serif" };
 const FONT_SANS = { fontFamily: "'Outfit', sans-serif" };
+const FONT_SERIF = { fontFamily: "'Cormorant Garamond', Georgia, serif" };
 
-const FadeIn = ({ children, delay = 0 }: { children: ReactNode; delay?: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 24 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-80px" }}
-    transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
-  >
-    {children}
-  </motion.div>
-);
+type FrameworkItem = {
+  number: string;
+  icon: JSX.Element;
+  name: string;
+  definition: string;
+  subsystems: string[];
+  conditions: string[];
+};
 
-const FIVE_SYSTEMS = [
+const frameworkItems: FrameworkItem[] = [
   {
     number: "01",
     icon: <Waves className="w-6 h-6" />,
@@ -37,7 +34,7 @@ const FIVE_SYSTEMS = [
     icon: <Flame className="w-6 h-6" />,
     name: "Metabolic Function",
     definition:
-      "Metabolism is more than weight. It governs cellular energy production, insulin sensitivity, inflammatory signaling, and body composition — all of which deteriorate silently until symptoms are undeniable.",
+      "Metabolism is more than body weight. It governs cellular energy production, insulin sensitivity, inflammatory signaling, and bone and muscle health. The root cause of most disease states is in your metabolic health.",
     subsystems: [
       "Insulin sensitivity and glucose regulation",
       "Body composition and adipose signaling",
@@ -64,35 +61,48 @@ const FIVE_SYSTEMS = [
   },
   {
     number: "04",
-    icon: <Zap className="w-6 h-6" />,
-    name: "Nervous System Regulation",
+    icon: <Brain className="w-6 h-6" />,
+    name: "Neurobehavioral Context",
     definition:
-      "Chronic stress is not a lifestyle problem — it is a physiologic one. Dysregulated stress responses alter hormone production, impair metabolic function, and drive inflammation. We treat it as the medical driver it is.",
+      "Your symptoms are shaped by stress, sleep, mood, and the demands of your real life. We treat the whole person, not isolated lab values.",
     subsystems: [
-      "HPA axis and cortisol rhythm",
+      "Stress response and resilience",
+      "Sleep quality and circadian rhythm",
+      "Mood, cognition, and attention",
       "Autonomic nervous system balance",
-      "Trauma physiology and somatic response",
-      "Sleep architecture and restorative depth",
-      "Mood, anxiety, and neurohormonal interface",
+      "Lifestyle patterns and care preferences",
     ],
-    conditions: ["Chronic stress", "Burnout", "Medical trauma", "Sleep dysfunction", "Anxiety & mood dysregulation"],
+    conditions: ["Anxiety", "Brain fog", "Insomnia", "Burnout", "Stress intolerance"],
   },
   {
     number: "05",
-    icon: <Leaf className="w-6 h-6" />,
-    name: "Lifestyle Inputs",
+    icon: <Activity className="w-6 h-6" />,
+    name: "Whole Health",
     definition:
-      "Nutrition, movement, and sleep are not adjuncts to medicine — they are primary levers of physiologic change. We prescribe them with the same evidence-base and specificity as any clinical intervention.",
+      "We connect the systems that shape your daily energy, longevity, and quality of life so your care is cohesive, clear, and personalized.",
     subsystems: [
-      "Therapeutic nutrition and nutrient density",
-      "Movement type, timing, and hormonal impact",
-      "Sleep quality and circadian entrainment",
-      "Gut microbiome and hormonal metabolism",
-      "Supplement and nutraceutical protocols",
+      "Cardiometabolic risk",
+      "Inflammation and recovery",
+      "Body composition and strength",
+      "Preventive health planning",
+      "Long-term wellness optimization",
     ],
-    conditions: ["Nutritional deficiencies", "Exercise physiology", "Gut-hormone axis", "Sleep disorders", "Longevity optimization"],
+    conditions: ["Preventive care", "Fatigue", "Poor recovery", "Weight concerns", "Longevity planning"],
   },
 ];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
+};
+
+function FadeIn({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return (
+    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp} className={className}>
+      {children}
+    </motion.div>
+  );
+}
 
 export function ModelIntroSection() {
   return (
@@ -105,7 +115,6 @@ export function ModelIntroSection() {
             </p>
           </div>
         </FadeIn>
-
       </div>
     </section>
   );
@@ -113,20 +122,22 @@ export function ModelIntroSection() {
 
 export function SheRisesDifference() {
   return (
-    <FadeIn delay={0.1}>
+    <FadeIn>
       <div className="border-l-4 border-[#B5736A] pl-8">
-        <p className="text-2xl md:text-3xl text-[#132A24] font-light leading-relaxed italic" style={FONT_SERIF}>
-          "Hormones, metabolism, and reproductive health are treated together within your unique neurobehavioral context."
-        </p>
-        <p className="text-base text-[#B5736A] font-semibold tracking-wide uppercase mt-4" style={FONT_SANS}>
+        <p className="text-[#B5736A] text-xs font-semibold tracking-widest uppercase mb-5" style={FONT_SANS}>
           The She Rises Difference
         </p>
+        <h3 className="text-2xl md:text-3xl font-medium text-[#132A24] leading-snug" style={FONT_SERIF}>
+          Hormones, metabolism, and reproductive health are treated together within your unique neurobehavioral context.
+        </h3>
       </div>
     </FadeIn>
   );
 }
 
 export function SystemsSection() {
+  const items = useMemo(() => frameworkItems, []);
+
   return (
     <section id="five-systems-detail" className="bg-[#F4F1EB]">
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-36">
@@ -140,39 +151,40 @@ export function SystemsSection() {
         </FadeIn>
 
         <div className="space-y-0">
-          {FIVE_SYSTEMS.map((system, i) => (
-            <FadeIn key={system.number} delay={i * 0.06}>
+          {items.map((system, i) => (
+            <FadeIn key={system.number} className="group">
               <div className={`grid md:grid-cols-12 gap-0 border border-[#132A24]/10 ${i > 0 ? "border-t-0" : ""} group hover:border-[#B5736A] transition-colors`}>
-                <div className={`md:col-span-1 flex items-start justify-center pt-8 pb-6 ${i % 2 === 0 ? "bg-[#FCFBF9]" : "bg-[#F4F1EB]"}`}>
+                <div className="md:col-span-2 p-6 md:p-8 border-b md:border-b-0 md:border-r border-[#132A24]/10 bg-[#FCFBF9]/50">
                   <span className="text-xs font-bold text-[#B5736A]/50 tracking-widest" style={FONT_SANS}>{system.number}</span>
                 </div>
-
-                <div className={`md:col-span-4 p-8 border-r border-[#132A24]/10 ${i % 2 === 0 ? "bg-[#FCFBF9]" : "bg-[#F4F1EB]"}`}>
+                <div className="md:col-span-4 p-6 md:p-8 border-b md:border-b-0 md:border-r border-[#132A24]/10 bg-[#FCFBF9]">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="text-[#B5736A]">{system.icon}</div>
                     <h3 className="text-2xl font-medium text-[#132A24]" style={FONT_SERIF}>{system.name}</h3>
                   </div>
-                  <p className="text-sm text-[#4B5563] font-light leading-relaxed" style={FONT_SANS}>{system.definition}</p>
+                  <p className="text-sm md:text-base text-[#132A24]/75 leading-7" style={FONT_SANS}>{system.definition}</p>
                 </div>
-
-                <div className={`md:col-span-4 p-8 border-r border-[#132A24]/10 ${i % 2 === 0 ? "bg-[#FCFBF9]" : "bg-[#F4F1EB]"}`}>
-                  <p className="text-xs font-bold text-[#132A24]/70 tracking-widest uppercase mb-4" style={FONT_SANS}>What We Assess</p>
-                  <ul className="space-y-2.5" style={FONT_SANS}>
-                    {system.subsystems.map((sub) => (
-                      <li key={sub} className="flex items-start gap-2.5 text-sm text-[#4B5563] font-light">
-                        <div className="w-1 h-1 rounded-full bg-[#B5736A] mt-2 shrink-0" />
-                        {sub}
+                <div className="md:col-span-3 p-6 md:p-8 border-b md:border-b-0 md:border-r border-[#132A24]/10 bg-[#FCFBF9]/70">
+                  <p className="text-[#B5736A] text-xs font-semibold tracking-widest uppercase mb-5" style={FONT_SANS}>
+                    Systems We Assess
+                  </p>
+                  <ul className="space-y-3">
+                    {system.subsystems.map((item) => (
+                      <li key={item} className="flex gap-3 text-sm md:text-[0.95rem] leading-6 text-[#132A24]/80">
+                        <ChevronRight className="w-4 h-4 mt-1 shrink-0 text-[#B5736A]" />
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-
-                <div className={`md:col-span-3 p-8 ${i % 2 === 0 ? "bg-[#FCFBF9]" : "bg-[#F4F1EB]"}`}>
-                  <p className="text-xs font-bold text-[#132A24]/70 tracking-widest uppercase mb-4" style={FONT_SANS}>Conditions Addressed</p>
-                  <div className="flex flex-wrap gap-2" style={FONT_SANS}>
-                    {system.conditions.map((cond) => (
-                      <span key={cond} className="text-xs font-medium text-[#132A24] bg-[#132A24]/5 border border-[#132A24]/10 px-2.5 py-1">
-                        {cond}
+                <div className="md:col-span-3 p-6 md:p-8 bg-[#FCFBF9]/50">
+                  <p className="text-[#B5736A] text-xs font-semibold tracking-widest uppercase mb-5" style={FONT_SANS}>
+                    Conditions
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {system.conditions.map((condition) => (
+                      <span key={condition} className="text-xs md:text-sm rounded-full border border-[#B5736A]/20 bg-[#FCFBF9] px-3 py-1 text-[#132A24]/80">
+                        {condition}
                       </span>
                     ))}
                   </div>
@@ -185,14 +197,3 @@ export function SystemsSection() {
     </section>
   );
 }
-
-export function ClinicalFrameworkSections() {
-  return (
-    <>
-      <ModelIntroSection />
-      <SystemsSection />
-    </>
-  );
-}
-
-export default ClinicalFrameworkSections;
