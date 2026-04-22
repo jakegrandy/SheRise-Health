@@ -409,7 +409,7 @@ export default function Home() {
             <img
               src={`${BASE}images/scarlett-headshot.png`}
               alt="Scarlett Grandy, CNM, WHNP-BC"
-              className="w-full h-full object-cover object-top brightness-100 transition-all duration-1000"
+              className="w-full h-full object-cover object-[center_15%] scale-125 origin-top brightness-100 transition-all duration-1000"
             />
           </motion.div>
 
