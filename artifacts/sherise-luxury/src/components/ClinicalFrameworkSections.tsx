@@ -85,6 +85,7 @@ const frameworkItems: FrameworkItem[] = [
       "Inflammation and recovery",
       "Body composition and strength",
       "Long-term wellness optimization",
+      "Breast health",
       "Cancer screening",
       "Hereditary disorders",
     ],
