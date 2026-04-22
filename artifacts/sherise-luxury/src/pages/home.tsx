@@ -68,7 +68,7 @@ export default function Home() {
         </div>
         <div className="hidden md:flex gap-12 text-[11px] tracking-[0.25em] uppercase font-light">
           <a href="#philosophy" className="hover:text-accent transition-colors duration-500">Philosophy</a>
-          <a href="#systems" className="hover:text-accent transition-colors duration-500">The 5 Systems</a>
+          <a href="#systems" className="hover:text-accent transition-colors duration-500">The Framework</a>
           <a href="#provider" className="hover:text-accent transition-colors duration-500">Scarlett Grandy</a>
         </div>
         <a
