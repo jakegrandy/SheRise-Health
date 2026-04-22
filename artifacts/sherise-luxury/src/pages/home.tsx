@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import generationsOfCare from "@assets/generations_of_care_1776802252403.png";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { FiveSystemsDiagram } from "@/components/FiveSystemsDiagram";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -365,6 +366,16 @@ export default function Home() {
           >
             <span className="text-accent text-[11px] tracking-[0.3em] uppercase block mb-8 font-light">Clinical Framework</span>
             <h2 className="font-serif text-5xl md:text-7xl font-light text-foreground leading-[1.1]">The Five Systems</h2>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+            className="mb-24 md:mb-32 max-w-5xl mx-auto"
+          >
+            <FiveSystemsDiagram />
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-x-24 gap-y-32">
