@@ -286,16 +286,6 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUp}
-            className="mb-12 md:mb-16 flex flex-col items-center"
-          >
-            <h2 className="font-serif text-5xl md:text-7xl font-light text-foreground leading-[1.1]">The Five Systems</h2>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeUp}
             className="mb-24 md:mb-32 max-w-5xl mx-auto"
           >
             <FiveSystemsDiagram />
