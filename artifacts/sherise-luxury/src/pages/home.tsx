@@ -539,7 +539,7 @@ export default function Home() {
         >
           <motion.h2 variants={fadeUp} className="font-serif text-6xl md:text-8xl font-light text-foreground">Begin Your Journey</motion.h2>
           <motion.p variants={fadeUp} className="text-xl md:text-2xl text-foreground/60 font-light leading-[1.8] max-w-3xl mx-auto">
-            We are currently accepting a limited number of new patients. Request a consultation to discover if the SheRises approach is right for you.
+            We are currently accepting new patients. Request a consultation to discover if She Rises is right for you.
           </motion.p>
           <motion.div variants={fadeUp} className="pt-12">
             <a
