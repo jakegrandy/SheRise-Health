@@ -158,7 +158,7 @@ export default function Home() {
             <span className="text-accent text-[11px] tracking-[0.3em] uppercase block mb-8 font-light">What We Do</span>
           </motion.div>
           <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.25] text-foreground flex-1">
-            At She Rises Health, we serve <span className="italic text-foreground/70">women of all ages</span>, offering comprehensive GYN care with a specialized focus on <span className="italic text-foreground/70">advanced hormone optimization</span> and <span className="italic text-foreground/70">metabolic health</span>.
+            At She Rises Health, we serve <span className="italic text-foreground/70">women of all ages</span>, offering comprehensive GYN care with a specialized focus on advanced <span className="italic text-accent">hormone optimization</span> and <span className="italic text-foreground/70">metabolic health</span>.
           </motion.h2>
         </motion.div>
 
