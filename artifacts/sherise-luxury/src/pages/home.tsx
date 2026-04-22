@@ -463,7 +463,7 @@ export default function Home() {
             </p>
             <footer className="text-[11px] tracking-[0.3em] uppercase text-background/40 font-light flex items-center gap-4">
               <div className="w-8 h-px bg-accent/40" />
-              Sarah M., Patient Since 2023
+              Sarah M., Age 55
             </footer>
           </motion.blockquote>
 
@@ -481,7 +481,7 @@ export default function Home() {
             </p>
             <footer className="text-[11px] tracking-[0.3em] uppercase text-background/40 font-light flex items-center gap-4">
               <div className="w-8 h-px bg-accent/40" />
-              Elena R., Patient Since 2024
+              Elena R., Age 32
             </footer>
           </motion.blockquote>
         </div>
