@@ -3,7 +3,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import generationsOfCare from "@assets/generations_of_care_1776802252403.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiveSystemsDiagram } from "@/components/FiveSystemsDiagram";
-import { ModelIntroSection } from "@/components/ClinicalFrameworkSections";
+import { ModelIntroSection, SystemsSection } from "@/components/ClinicalFrameworkSections";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -381,32 +381,8 @@ export default function Home() {
             <FiveSystemsDiagram />
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-x-24 gap-y-32">
-            {systems.map(({ num, title, copy }, i) => (
-              <motion.div 
-                key={num} 
-                className="group relative"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={fadeUp}
-                transition={{ delay: i * 0.1 }}
-              >
-                <div className="flex flex-col gap-6 items-start">
-                  <div className="font-serif text-7xl text-foreground/5 mb-4 group-hover:text-accent transition-colors duration-500 italic">
-                    {num}
-                  </div>
-                  <div className="flex-1 space-y-6">
-                    <h3 className="font-serif text-4xl md:text-5xl text-foreground pb-6 border-b border-foreground/10">
-                      {title}
-                    </h3>
-                    <p className="text-xl text-foreground/60 leading-[1.8] font-light">{copy}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
+        <SystemsSection />
       </section>
 
       {/* Provider Section */}
