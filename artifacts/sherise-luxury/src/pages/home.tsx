@@ -206,7 +206,7 @@ export default function Home() {
             },
             {
               num: "03",
-              title: "Hormone &\u00A0Metabolic Health",
+              title: "Hormone and Metabolic Concerns",
               intro: "Addressing root causes rather than isolated symptoms.",
               tone: "ivory",
               items: [
