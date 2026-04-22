@@ -97,7 +97,7 @@ const FIVE_SYSTEMS = [
 
 export function ModelIntroSection() {
   return (
-    <section id="model" className="py-24 md:py-36 bg-[#FCFBF9]">
+    <section id="model" className="pt-0 pb-24 md:pb-36 bg-[#FCFBF9]">
       <div className="max-w-5xl mx-auto px-6">
         <FadeIn>
           <div className="text-center mb-16">
