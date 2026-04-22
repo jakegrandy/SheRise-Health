@@ -156,16 +156,18 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          className="mb-20 md:mb-28 max-w-3xl"
+          className="mb-20 md:mb-28 flex flex-col lg:flex-row gap-16 lg:gap-32 items-start"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUp}
+          variants={staggerContainer}
         >
-          <span className="text-accent text-[11px] tracking-[0.3em] uppercase block mb-6 font-light">Who We See</span>
-          <p className="text-2xl md:text-3xl text-foreground/70 leading-[1.5] font-light font-serif italic">
+          <motion.div variants={fadeUp} className="max-w-md">
+            <span className="text-accent text-[11px] tracking-[0.3em] uppercase block font-light">Who We See</span>
+          </motion.div>
+          <motion.p variants={fadeUp} className="font-serif italic text-2xl md:text-3xl font-light leading-[1.5] text-foreground/70 flex-1">
             Services are designed to support women at every stage of life, including adolescence, reproductive years, midlife and beyond.
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 relative">
