@@ -338,7 +338,7 @@ export default function Home() {
             },
             {
               num: "04",
-              title: "Sexual Health and Function",
+              title: "Adult Sexual Health and\u00A0Function",
               intro: "Support for intimacy, comfort, and sexual wellbeing across life stages.",
               tone: "forest",
               items: [
