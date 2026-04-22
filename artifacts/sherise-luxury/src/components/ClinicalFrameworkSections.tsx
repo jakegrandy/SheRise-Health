@@ -104,9 +104,6 @@ export function ModelIntroSection() {
             <p className="text-[#B89047] text-[11px] font-light tracking-[0.3em] uppercase mb-8" style={FONT_SANS}>
               Clinical Framework
             </p>
-            <h2 className="text-5xl md:text-6xl font-medium text-[#132A24] mb-8 leading-tight" style={FONT_SERIF}>
-              The She Rises Framework
-            </h2>
           </div>
         </FadeIn>
 
