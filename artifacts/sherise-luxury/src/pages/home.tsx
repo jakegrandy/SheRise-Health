@@ -252,6 +252,16 @@ export default function Home() {
 
       {/* Care Stages */}
       <section className="py-32 md:py-48 px-8 md:px-16 max-w-[100rem] mx-auto relative z-20 bg-background overflow-hidden">
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUp}
+          className="text-accent text-[11px] font-light tracking-[0.3em] uppercase mb-12 md:mb-16"
+          style={{ fontFamily: "'Outfit', sans-serif" }}
+        >
+          Who we see and what we treat at She Rises
+        </motion.p>
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 relative">
           {[
             {
