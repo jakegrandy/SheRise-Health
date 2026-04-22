@@ -488,7 +488,7 @@ export default function Home() {
           >
             <div className="absolute -top-16 -left-8 font-serif text-[12rem] text-accent/10 leading-none">"</div>
             <p className="font-serif text-3xl md:text-4xl font-light leading-[1.6] italic text-background relative z-10">
-              The investment in my health through SheRises has been life-changing. The bespoke approach and unhurried appointments are exactly what healthcare should be.
+              I struggled with PCOS and was told I would never get pregnant. We welcomed our first child into the world last year and I believe we couldn't have done it without Scarlett. She helped me lose weight and start ovulating again. Her approach really changed my life.
             </p>
             <footer className="text-[11px] tracking-[0.3em] uppercase text-background/40 font-light flex items-center gap-4">
               <div className="w-8 h-px bg-accent/40" />
