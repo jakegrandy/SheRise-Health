@@ -107,28 +107,6 @@ export default function Home() {
           </motion.div>
         </motion.div>
 
-        <motion.div
-          className="absolute left-1/2 -translate-x-1/2 top-[34%] md:top-[36%] z-10 px-6 text-center max-w-2xl"
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-        >
-          <motion.p
-            variants={fadeUp}
-            className="text-accent text-[11px] tracking-[0.32em] uppercase font-light mb-5"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Welcome to She Rises
-          </motion.p>
-          <motion.h1
-            variants={fadeUp}
-            className="italic text-foreground text-2xl md:text-3xl lg:text-4xl font-extralight leading-[1.25]"
-            style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-          >
-            High-end specialty care and routine women's health in one <span className="text-accent">reimagined framework.</span>
-          </motion.h1>
-        </motion.div>
-
         <nav
           className="hidden md:flex absolute left-8 lg:left-16 top-[68%] -translate-y-1/2 z-20 flex-col gap-8 text-[13px] tracking-[0.32em] uppercase text-primary items-start"
           style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}
@@ -159,6 +137,20 @@ export default function Home() {
         </nav>
 
       </section>
+
+      {/* Hero Tagline */}
+      <div className="bg-background relative z-20 flex justify-center pt-16 pb-4 px-6">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="italic text-foreground text-2xl md:text-3xl lg:text-4xl font-extralight leading-[1.3] text-center max-w-3xl"
+          style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+        >
+          High-end specialty care and routine women's health in one <span className="text-accent">reimagined framework.</span>
+        </motion.h1>
+      </div>
 
       {/* CTA Button */}
       <div className="bg-background relative z-20 flex justify-center py-12">
