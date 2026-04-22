@@ -97,11 +97,11 @@ const FIVE_SYSTEMS = [
 
 export function ModelIntroSection() {
   return (
-    <section id="model" className="pt-0 pb-24 md:pb-36 bg-[#FCFBF9]">
+    <section id="model" className="pt-0 pb-8 md:pb-12 bg-[#FCFBF9]">
       <div className="max-w-5xl mx-auto px-6">
         <FadeIn>
-          <div className="text-center mb-16">
-            <p className="text-[#B89047] text-[11px] font-light tracking-[0.3em] uppercase mb-8" style={FONT_SANS}>
+          <div className="text-center">
+            <p className="text-[#B89047] text-[11px] font-light tracking-[0.3em] uppercase" style={FONT_SANS}>
               The SheRises Framework
             </p>
           </div>
