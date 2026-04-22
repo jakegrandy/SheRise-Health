@@ -146,9 +146,6 @@ export function ModelIntroSection() {
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.2}>
-          <FiveSystemsDiagram />
-        </FadeIn>
       </div>
     </section>
   );
