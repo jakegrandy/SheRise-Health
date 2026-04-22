@@ -171,7 +171,7 @@ export default function Home() {
         >
           <span className="text-accent text-[11px] tracking-[0.3em] uppercase block mb-6 font-light">Who We See</span>
           <p className="text-2xl md:text-3xl text-foreground/70 leading-[1.5] font-light font-serif italic">
-            Services are designed to support women at every stage of life, including adolescence, reproductive years, and midlife and beyond.
+            Services are designed to support women at every stage of life, including adolescence, reproductive years, midlife and beyond.
           </p>
         </motion.div>
 
