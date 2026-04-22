@@ -211,8 +211,12 @@ export default function Home() {
             <motion.span variants={fadeUp} className="text-accent text-[11px] tracking-[0.3em] uppercase block font-light mb-8 text-center">
               The SheRises Philosophy
             </motion.span>
-            <motion.h2 variants={fadeUp} className="font-serif text-5xl md:text-6xl lg:text-[5rem] font-light leading-[1.1] text-foreground text-center">
-              Medical practice that <span className="italic text-accent">listens</span>, investigates,<br/>and <span className="italic text-accent">restores</span>.
+            <motion.h2
+              variants={fadeUp}
+              className="text-4xl md:text-5xl lg:text-6xl font-extralight italic leading-[1.15] text-foreground text-center tracking-tight"
+              style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+            >
+              Medical practice that <span className="text-accent">listens</span>, investigates,<br/>and <span className="text-accent">restores</span>.
             </motion.h2>
           </motion.div>
 
