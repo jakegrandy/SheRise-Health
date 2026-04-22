@@ -113,7 +113,7 @@ export default function Home() {
           <a href="#philosophy" className="hover:text-accent transition-colors duration-500">The Philosophy</a>
           <a href="#systems" className="hover:text-accent transition-colors duration-500">The Framework</a>
           <a href="#care-stages" className="hover:text-accent transition-colors duration-500">Who We See</a>
-          <a href="#systems" className="hover:text-accent transition-colors duration-500">What We Treat</a>
+          <a href="#five-systems-detail" className="hover:text-accent transition-colors duration-500">What We Treat</a>
         </nav>
 
         <nav
