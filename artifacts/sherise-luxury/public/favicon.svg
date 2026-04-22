@@ -1,3 +1,12 @@
-<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="180" height="180" rx="36" fill="#FF3C00"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <rect width="180" height="180" rx="32" fill="#F5EFE8"/>
+  <text x="50%" y="54%"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-family="'Playfair Display', 'Cormorant Garamond', Georgia, serif"
+        font-style="italic"
+        font-weight="500"
+        font-size="118"
+        letter-spacing="-4"
+        fill="#B5736A">SR</text>
 </svg>
