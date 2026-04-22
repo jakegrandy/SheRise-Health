@@ -91,7 +91,7 @@ function SystemsPentagon() {
 
 export function FiveSystemsDiagram() {
   return (
-    <div className="bg-[#FCFBF9] border border-[#132A24]/10 rounded-2xl px-6 pt-8 pb-6 md:px-10">
+    <div className="bg-[#EDF2EE] border border-[#132A24]/10 rounded-2xl px-6 pt-8 pb-6 md:px-10">
       <p className="text-center text-[#B89047] text-xs font-semibold tracking-widest uppercase mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>
         Five Interconnected Physiologic Systems
       </p>
