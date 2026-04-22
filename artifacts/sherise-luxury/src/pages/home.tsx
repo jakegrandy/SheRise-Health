@@ -146,7 +146,7 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUp}
-            className="font-serif italic text-accent text-3xl md:text-4xl lg:text-5xl font-light leading-[1.2] text-center mb-16 md:mb-20"
+            className="font-serif italic text-accent text-3xl md:text-4xl lg:text-5xl font-light leading-[1.2] text-left mb-16 md:mb-20"
           >
             Reimagining Women's Healthcare
           </motion.h2>
