@@ -155,15 +155,15 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUp}
-            className="mb-24 md:mb-32 max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+            className="mb-24 md:mb-32 max-w-7xl mx-auto grid lg:grid-cols-[2fr_3fr] gap-10 lg:gap-16 items-center"
           >
-            <div>
+            <div className="max-w-md">
               <p className="text-accent text-[11px] font-light tracking-[0.3em] uppercase mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
                 The SheRises Framework
               </p>
               <SheRisesDifference />
             </div>
-            <div className="max-w-md mx-auto w-full">
+            <div className="w-full">
               <FiveSystemsDiagram />
             </div>
           </motion.div>

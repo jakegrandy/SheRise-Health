@@ -74,12 +74,12 @@ function SystemsPentagon() {
 
       {nodes.map((n, i) => (
         <g key={`node-${i}`}>
-          <circle cx={n.x} cy={n.y} r={nodeR} fill="#1B3B33" stroke="#B89047" strokeWidth="1.5" strokeOpacity="0.5" />
+          <circle cx={n.x} cy={n.y} r={nodeR} fill="#132A24" stroke="#B89047" strokeWidth="1.5" strokeOpacity="0.7" />
           {n.label.map((line, li) => (
             <text key={li}
-              x={n.x} y={n.y + (li - (n.label.length - 1) / 2) * 16}
+              x={n.x} y={n.y + (li - (n.label.length - 1) / 2) * 18}
               textAnchor="middle" dominantBaseline="middle"
-              fill="#F4F1EB" fontSize="11.5" fontFamily="Outfit, sans-serif" fontWeight="500">
+              fill="#F4F1EB" fontSize="14" fontFamily="Outfit, sans-serif" fontWeight="600" letterSpacing="0.3">
               {line}
             </text>
           ))}
@@ -91,12 +91,12 @@ function SystemsPentagon() {
 
 export function FiveSystemsDiagram() {
   return (
-    <div className="bg-[#132A24] px-8 pt-10 pb-4 md:px-12">
-      <p className="text-center text-[#E8D5A5] text-xs font-semibold tracking-widest uppercase mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>
+    <div className="bg-[#FCFBF9] border border-[#132A24]/10 rounded-2xl px-6 pt-8 pb-6 md:px-10">
+      <p className="text-center text-[#B89047] text-xs font-semibold tracking-widest uppercase mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>
         Five Interconnected Physiologic Systems
       </p>
       <SystemsPentagon />
-      <p className="text-center text-[#F4F1EB]/55 text-sm font-light mt-0 pb-8 max-w-xl mx-auto" style={{ fontFamily: "Outfit, sans-serif" }}>
+      <p className="text-center text-[#132A24]/60 text-sm font-light mt-0 pb-2 max-w-xl mx-auto" style={{ fontFamily: "Outfit, sans-serif" }}>
         These systems operate in constant, dynamic relationship. The She Rises Framework optimizes every system in your whole health.
       </p>
     </div>
