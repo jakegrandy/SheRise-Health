@@ -64,7 +64,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-accent selection:text-background">
       {/* Navigation */}
-      <nav className="absolute top-0 left-0 right-0 z-50 grid grid-cols-3 items-center px-8 py-10 md:px-16 text-primary">
+      <nav className="absolute top-0 left-0 right-0 z-50 grid grid-cols-3 items-center px-8 py-5 md:px-16 text-primary">
         <div className="font-serif text-2xl tracking-widest uppercase justify-self-start">
           SheRises
         </div>
