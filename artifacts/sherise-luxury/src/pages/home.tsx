@@ -1,5 +1,5 @@
-import { useRef } from "react";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, ArrowUp, ArrowUpRight } from "lucide-react";
 import generationsOfCare from "@assets/generations_of_care_1776802252403.png";
 import sheRisesLogo from "@assets/LOGO_with_vertical_list_transparent_1776884062361.png";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -54,6 +54,13 @@ const systems = [
 
 export default function Home() {
   const heroRef = useRef<HTMLElement>(null);
+  const [showTop, setShowTop] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 600);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]
@@ -578,6 +585,19 @@ export default function Home() {
           <div>&copy; {new Date().getFullYear()} SheRises Health</div>
         </div>
       </footer>
+
+      <button
+        type="button"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label="Back to top"
+        className={`fixed bottom-8 right-8 z-50 group inline-flex items-center gap-3 px-5 py-3 bg-background/90 backdrop-blur border border-accent/40 text-accent text-[10px] tracking-[0.3em] uppercase shadow-lg hover:bg-accent hover:text-background transition-all duration-500 ${
+          showTop ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-4 pointer-events-none"
+        }`}
+        style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}
+      >
+        <ArrowUp className="w-3.5 h-3.5" />
+        <span>Back to Top</span>
+      </button>
 
     </div>
   );
