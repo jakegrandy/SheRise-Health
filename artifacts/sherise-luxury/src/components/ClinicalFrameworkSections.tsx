@@ -34,7 +34,7 @@ const frameworkItems: FrameworkItem[] = [
     icon: <Flame className="w-6 h-6" />,
     name: "Metabolic Function",
     definition:
-      "Metabolism is more than body weight. It governs cellular energy production, insulin sensitivity, inflammatory signaling, and bone and muscle health. The root cause of most disease states is in your metabolic health.",
+      "Metabolism is more than body weight. It governs cellular energy production, insulin sensitivity, inflammatory signaling, and bone and muscle health. The root cause of most disease is in your metabolic health.",
     subsystems: [
       "Insulin sensitivity and glucose regulation",
       "Body composition and adipose signaling",
