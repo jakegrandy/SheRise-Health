@@ -324,7 +324,7 @@ export default function Home() {
             },
             {
               num: "03",
-              title: "Hormone and Metabolic Concerns",
+              title: "Hormone and Metabolic Concerns at\u00A0Every Age",
               intro: "Addressing root causes rather than isolated symptoms.",
               tone: "ivory",
               items: [
