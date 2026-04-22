@@ -407,7 +407,7 @@ export default function Home() {
           >
             <div className="absolute inset-0 border border-background/20 translate-x-4 translate-y-4" />
             <img
-              src={`${BASE}images/scarlett-headshot.png`}
+              src={`${BASE}images/scarlett-headshot.png?v=2`}
               alt="Scarlett Grandy, CNM, WHNP-BC"
               className="w-full h-full object-cover object-top brightness-100 transition-all duration-1000"
             />
