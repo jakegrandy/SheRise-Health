@@ -155,7 +155,7 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUp}
-            className="mb-24 md:mb-32 max-w-7xl mx-auto grid lg:grid-cols-[2fr_3fr] gap-10 lg:gap-16 items-center"
+            className="mb-24 md:mb-32 max-w-7xl mx-auto grid lg:grid-cols-[2fr_3fr] gap-10 lg:gap-16 items-start"
           >
             <div className="max-w-md">
               <p className="text-accent text-[11px] font-light tracking-[0.3em] uppercase mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
