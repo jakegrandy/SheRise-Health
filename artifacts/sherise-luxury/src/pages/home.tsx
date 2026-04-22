@@ -99,7 +99,7 @@ export default function Home() {
         </motion.div>
 
         <nav className="absolute bottom-0 left-0 right-0 z-20 flex items-center justify-center px-8 py-8 md:px-16 md:py-10 text-primary">
-          <div className="hidden md:flex gap-12 text-[13px] tracking-[0.32em] uppercase items-center justify-center" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 400 }}>
+          <div className="hidden md:flex gap-12 text-[13px] tracking-[0.32em] uppercase items-center justify-center" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}>
             <a href="#philosophy" className="hover:text-accent transition-colors duration-500">Our Philosophy</a>
             <a href="#systems" className="hover:text-accent transition-colors duration-500">The Framework</a>
             <a href="#provider" className="hover:text-accent transition-colors duration-500">Scarlett Grandy</a>
