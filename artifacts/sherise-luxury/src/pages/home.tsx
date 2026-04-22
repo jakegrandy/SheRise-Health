@@ -581,7 +581,13 @@ export default function Home() {
               src={srMonogram}
               alt="SheRises Women's Health"
               className="h-32 md:h-40 lg:h-48 w-auto select-none"
-              style={{ mixBlendMode: "multiply" }}
+              style={{
+                mixBlendMode: "multiply",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 60% 60% at 50% 50%, black 55%, transparent 90%)",
+                maskImage:
+                  "radial-gradient(ellipse 60% 60% at 50% 50%, black 55%, transparent 90%)",
+              }}
               draggable={false}
             />
           </a>
