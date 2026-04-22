@@ -367,7 +367,6 @@ export default function Home() {
             variants={fadeUp}
             className="mb-12 md:mb-16 flex flex-col items-center"
           >
-            <span className="text-accent text-[11px] tracking-[0.3em] uppercase block mb-8 font-light">Clinical Framework</span>
             <h2 className="font-serif text-5xl md:text-7xl font-light text-foreground leading-[1.1]">The Five Systems</h2>
           </motion.div>
 
