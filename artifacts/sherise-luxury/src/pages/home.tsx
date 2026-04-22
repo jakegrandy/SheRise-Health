@@ -99,19 +99,19 @@ export default function Home() {
         </motion.div>
 
         <nav
-          className="hidden md:flex absolute left-8 lg:left-16 top-1/2 -translate-y-1/2 z-20 flex-col gap-8 text-[13px] tracking-[0.32em] uppercase text-primary items-start"
+          className="hidden md:flex absolute left-8 lg:left-16 top-[68%] -translate-y-1/2 z-20 flex-col gap-8 text-[13px] tracking-[0.32em] uppercase text-primary items-start"
           style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}
         >
           <a href="#philosophy" className="hover:text-accent transition-colors duration-500">The Philosophy</a>
           <a href="#systems" className="hover:text-accent transition-colors duration-500">The Framework</a>
           <a href="#care-stages" className="hover:text-accent transition-colors duration-500">Who We See</a>
+          <a href="#systems" className="hover:text-accent transition-colors duration-500">What We Treat</a>
         </nav>
 
         <nav
-          className="hidden md:flex absolute right-8 lg:right-16 top-1/2 -translate-y-1/2 z-20 flex-col gap-8 text-[13px] tracking-[0.32em] uppercase text-primary items-end text-right"
+          className="hidden md:flex absolute right-8 lg:right-16 top-[68%] -translate-y-1/2 z-20 flex-col gap-8 text-[13px] tracking-[0.32em] uppercase text-primary items-end text-right"
           style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}
         >
-          <a href="#systems" className="hover:text-accent transition-colors duration-500">What We Treat</a>
           <a href="#provider" className="hover:text-accent transition-colors duration-500">Meet Scarlett Grandy</a>
           <a href="#book" className="group">
             <span className="border-b border-transparent group-hover:border-accent transition-colors pb-1">Inquire</span>
