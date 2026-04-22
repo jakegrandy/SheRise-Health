@@ -147,37 +147,19 @@ export default function Home() {
 
       {/* What We Do */}
       <section className="py-32 md:py-48 px-8 md:px-16 max-w-[100rem] mx-auto relative z-20 bg-background overflow-hidden">
-        <motion.div
-          className="mb-32 md:mb-48 max-w-5xl mx-auto text-center"
+        <motion.div 
+          className="mb-32 md:mb-48 flex flex-col lg:flex-row gap-16 lg:gap-32 items-start"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
         >
-          <motion.span
-            variants={fadeUp}
-            className="text-accent text-[11px] tracking-[0.3em] uppercase block mb-10 font-light"
-          >
-            What We Do
-          </motion.span>
-          <motion.h2
-            variants={fadeUp}
-            className="font-serif text-4xl md:text-5xl lg:text-[3.75rem] font-light leading-[1.2] text-foreground"
-          >
-            Whole-woman healthcare for{" "}
-            <span className="italic text-foreground/70">every season of life</span>
-            <span className="text-accent">.</span>
+          <motion.div variants={fadeUp} className="max-w-md">
+            <span className="text-accent text-[11px] tracking-[0.3em] uppercase block mb-8 font-light">What We Do</span>
+          </motion.div>
+          <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.25] text-foreground flex-1">
+            At She Rises Health, care spans the full spectrum of women’s health—from <span className="italic text-foreground/70">preventive screening</span> and <span className="italic text-foreground/70">reproductive care</span> to hormone optimization and metabolic health.
           </motion.h2>
-          <motion.div
-            variants={fadeUp}
-            className="w-12 h-px bg-accent mx-auto mt-12 mb-10"
-          />
-          <motion.p
-            variants={fadeUp}
-            className="text-lg md:text-xl text-foreground/60 leading-[1.8] font-light max-w-2xl mx-auto"
-          >
-            Rooted in science, guided by your story, and shaped around the way you live.
-          </motion.p>
         </motion.div>
 
         <motion.div
