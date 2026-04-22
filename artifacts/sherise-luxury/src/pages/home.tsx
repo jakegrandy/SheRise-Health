@@ -561,7 +561,7 @@ export default function Home() {
           </motion.p>
           <motion.div variants={fadeUp} className="pt-12">
             <a
-              href="mailto:hello@sheriseshealth.com"
+              href="mailto:info@sheriseshealth.com"
               className="group relative inline-flex items-center justify-center px-16 py-6 text-[11px] tracking-[0.3em] uppercase text-foreground border border-[#E5C8C0] transition-all duration-700 overflow-hidden"
               style={{ backgroundColor: "#F0DAD4" }}
             >
@@ -594,7 +594,7 @@ export default function Home() {
             />
           </a>
           <div className="flex gap-16">
-            <a href="mailto:hello@sheriseshealth.com" className="hover:text-foreground transition-colors duration-500">Contact</a>
+            <a href="mailto:info@sheriseshealth.com" className="hover:text-foreground transition-colors duration-500">Contact</a>
             <a href="#" className="hover:text-foreground transition-colors duration-500">Location</a>
             <a href="#" className="hover:text-foreground transition-colors duration-500">Privacy</a>
           </div>
