@@ -151,7 +151,7 @@ export default function Home() {
             <span className="text-accent text-[11px] tracking-[0.3em] uppercase block mb-8 font-light">What We Do</span>
           </motion.div>
           <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.25] text-foreground flex-1">
-            She Rises is <span className="italic">reimagining women's healthcare</span> for <span className="italic">women of all ages</span>.
+            She Rises is reimagining women's healthcare for women of all ages.
           </motion.h2>
         </motion.div>
 
