@@ -25,11 +25,10 @@ const FIVE_SYSTEMS = [
     definition:
       "Your hormones affect how you feel about everything. Dysfunction in one reliably disrupts the others.",
     subsystems: [
-      "Estrogen & progesterone balance",
-      "Adrenal cortisol and DHEA output",
+      "Estrogen & progesterone",
+      "Adrenal excess",
       "Thyroid function (TSH, free T3, T4, reverse T3)",
-      "Androgen levels and sensitivity",
-      "HPAG axis communication",
+      "Androgen levels, sensitivities & testosterone",
     ],
     conditions: ["Perimenopause", "PCOS", "Adrenal dysregulation", "Thyroid disorders", "BHRT candidacy"],
   },
