@@ -353,7 +353,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The 5 Systems */}
+      {/* The Framework */}
       <section id="systems" className="py-32 md:py-48 px-8 md:px-16 bg-background relative z-20">
         <div className="max-w-[100rem] mx-auto">
           <motion.div 
