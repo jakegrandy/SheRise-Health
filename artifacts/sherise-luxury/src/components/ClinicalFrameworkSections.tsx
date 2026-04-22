@@ -26,7 +26,7 @@ const FIVE_SYSTEMS = [
       "Your hormones affect how you feel about everything. Dysfunction in one reliably disrupts the others.",
     subsystems: [
       "Estrogen & progesterone",
-      "Adrenal excess",
+      "Adrenal excess or insufficiency",
       "Thyroid function (TSH, free T3, T4, reverse T3)",
       "Androgen levels, sensitivities & testosterone",
     ],
