@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import generationsOfCare from "@assets/generations_of_care_1776802252403.png";
+import sheRisesLogo from "@assets/SR_LOGO_3_with_stars_1776881378461.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiveSystemsDiagram } from "@/components/FiveSystemsDiagram";
 import { ModelIntroSection, SystemsSection } from "@/components/ClinicalFrameworkSections";
@@ -101,15 +102,27 @@ export default function Home() {
           animate="visible"
           variants={staggerContainer}
         >
-          <div className="pt-32 flex flex-col items-center">
-            <motion.h1 
-              variants={fadeUp} 
-              className="text-4xl md:text-6xl lg:text-[6.5rem] text-background leading-[1.1] tracking-[-0.02em] mb-16"
-              style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 300 }}
+          <div className="pt-28 md:pt-32 flex flex-col items-center w-full">
+            <motion.div
+              variants={fadeUp}
+              className="relative flex items-center justify-center"
             >
-              <span className="text-primary block">Reimagining</span>
-              <span className="italic text-accent">Women's</span> <span className="text-primary">Health</span>
-            </motion.h1>
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -m-32 md:-m-48"
+                style={{
+                  background:
+                    "radial-gradient(ellipse at center, rgba(250,243,232,0.7) 0%, rgba(250,243,232,0.4) 35%, rgba(250,243,232,0.15) 55%, rgba(250,243,232,0) 75%)",
+                  filter: "blur(20px)",
+                }}
+              />
+              <img
+                src={sheRisesLogo}
+                alt="SheRises Women's Health — Hormones, Metabolic, Reproductive"
+                className="relative w-[300px] sm:w-[380px] md:w-[500px] lg:w-[580px] xl:w-[620px] h-auto select-none drop-shadow-[0_2px_18px_rgba(120,60,70,0.18)]"
+                draggable={false}
+              />
+            </motion.div>
 
           </div>
         </motion.div>
