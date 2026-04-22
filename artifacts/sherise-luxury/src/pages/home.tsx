@@ -25,7 +25,7 @@ const systems = [
   {
     num: "01",
     title: "Hormonal Harmony",
-    copy: "Navigating perimenopause and menopause with precision. We optimize your hormones using bioidentical therapies, restoring energy, clarity, and libido.",
+    copy: "Hormones shape how you feel, think, and function. At SheRises, we identify and treat imbalances early, from reproductive years through perimenopause and postmenopause. We offer precise hormone care that restores stability, energy, and balance so you can thrive at every stage of your life.",
   },
   {
     num: "02",
