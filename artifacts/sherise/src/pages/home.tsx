@@ -291,7 +291,7 @@ function Hero() {
             <FadeIn direction="left" delay={0.2}>
               <div className="relative">
                 <div className="absolute inset-0 bg-[#B89047] translate-x-4 translate-y-4" />
-                <img src="/images/scarlett-authority.png" alt="Scarlett Grandy, CNM, WHNP-BC"
+                <img src="/images/scarlett-authority.png?v=3" alt="Scarlett Grandy, CNM, WHNP-BC"
                   className="relative z-10 w-full h-[580px] object-cover object-top" />
                 <div className="absolute -left-8 lg:-left-12 bottom-10 z-20 bg-[#132A24] p-5 lg:p-6 shadow-2xl border border-[#B89047]/30 max-w-[260px]">
                   <h3 className="text-[#F4F1EB] text-lg font-medium mb-1" style={FONT_SERIF}>Scarlett Grandy</h3>
@@ -650,7 +650,7 @@ function ProviderSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <FadeIn direction="right">
             <div className="relative">
-              <img src="/images/scarlett-authority.png" alt="Scarlett Grandy, CNM, WHNP-BC"
+              <img src="/images/scarlett-authority.png?v=3" alt="Scarlett Grandy, CNM, WHNP-BC"
                 className="w-full max-w-md mx-auto lg:mx-0 h-[560px] object-cover object-top shadow-xl" />
               <div className="absolute -bottom-6 -right-4 lg:-right-6 bg-[#B89047] p-5 shadow-xl">
                 <p className="text-[#132A24] font-bold text-3xl" style={FONT_SERIF}>20+</p>
