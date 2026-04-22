@@ -150,7 +150,7 @@ export default function Home() {
           <motion.div variants={fadeUp} className="max-w-md">
             <span className="text-accent text-[11px] tracking-[0.3em] uppercase block mb-8 font-light">What We Do</span>
           </motion.div>
-          <motion.h2 variants={fadeUp} className="font-serif italic text-4xl md:text-5xl lg:text-6xl font-light leading-[1.25] text-foreground/70 flex-1">
+          <motion.h2 variants={fadeUp} className="font-serif italic text-2xl md:text-3xl font-light leading-[1.5] text-foreground/70 flex-1">
             She Rises is reimagining women's healthcare for women of all ages.
           </motion.h2>
         </motion.div>
