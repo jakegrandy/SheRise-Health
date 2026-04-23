@@ -5,6 +5,7 @@ import sheRisesLogo from "@assets/SR_Logo_without_services_transparent.png";
 import srMonogram from "@assets/SR_Monogram_1776893310482.png";
 import scarlettHeadshot from "@assets/closer_up_Headshot_1776896576344.png";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Link } from "wouter";
 import { SheRisesDifference, SystemsSection } from "@/components/ClinicalFrameworkSections";
 import { FiveSystemsDiagram } from "@/components/FiveSystemsDiagram";
 
@@ -174,7 +175,7 @@ export default function Home() {
             <span className="border-b border-transparent group-hover:border-accent transition-colors pb-1">Inquire</span>
           </a>
           <a href="#testimonials" className="hover:text-accent transition-colors duration-500">Testimonials</a>
-          <a href="/urgent-care" className="text-accent hover:text-primary transition-colors duration-500">Urgent Care Needs</a>
+          <Link href="/urgent-care" className="text-accent hover:text-primary transition-colors duration-500">Urgent Care Needs</Link>
         </nav>
 
         <nav className="md:hidden absolute bottom-0 left-0 right-0 z-20 flex items-center justify-center gap-6 px-6 py-6 text-primary text-[10px] tracking-[0.28em] uppercase flex-wrap" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}>
