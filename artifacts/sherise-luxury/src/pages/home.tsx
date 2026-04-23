@@ -87,9 +87,9 @@ export default function Home() {
               className="w-full h-full object-contain object-bottom"
               style={{
                 WebkitMaskImage:
-                  "radial-gradient(ellipse 85% 80% at 50% 90%, rgba(0,0,0,1) 65%, rgba(0,0,0,0.9) 80%, rgba(0,0,0,0) 100%)",
+                  "radial-gradient(ellipse 95% 110% at 50% 100%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0.4) 88%, rgba(0,0,0,0) 100%)",
                 maskImage:
-                  "radial-gradient(ellipse 85% 80% at 50% 90%, rgba(0,0,0,1) 65%, rgba(0,0,0,0.9) 80%, rgba(0,0,0,0) 100%)",
+                  "radial-gradient(ellipse 95% 110% at 50% 100%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0.4) 88%, rgba(0,0,0,0) 100%)",
               }}
             />
           </motion.div>
