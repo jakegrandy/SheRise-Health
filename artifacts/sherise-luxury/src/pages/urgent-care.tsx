@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { ArrowLeft, ArrowUpRight, Video, MapPin, Check } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
@@ -27,6 +28,10 @@ const reasons = [
 ];
 
 export default function UrgentCare() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-accent selection:text-background">
       {/* Top bar */}
