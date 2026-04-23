@@ -185,7 +185,7 @@ export default function Home() {
       </div>
 
       {/* Credentials Bar */}
-      <section className="bg-background relative z-20">
+      <section className="bg-background relative z-20 border-b border-foreground/10">
         <div className="max-w-[100rem] mx-auto px-8 md:px-16 py-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] tracking-[0.25em] uppercase text-foreground/50">
           <span>Board Certified WHNP</span>
           <span className="hidden md:block w-1.5 h-1.5 rotate-45 bg-accent/40" />
