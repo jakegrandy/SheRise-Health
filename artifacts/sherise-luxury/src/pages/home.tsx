@@ -216,7 +216,7 @@ export default function Home() {
       </section>
 
       {/* The Framework */}
-      <section id="systems" className="py-32 md:py-48 px-8 md:px-16 bg-background relative z-20">
+      <section id="systems" className="py-32 md:py-48 px-8 md:px-16 bg-[#FAF6EE] relative z-20">
         <div className="max-w-[100rem] mx-auto">
           <motion.div
             initial="hidden"
@@ -332,7 +332,7 @@ export default function Home() {
       </section>
 
       {/* Care Stages */}
-      <section id="care-stages" className="py-32 md:py-48 px-8 md:px-16 max-w-[100rem] mx-auto relative z-20 bg-background overflow-hidden">
+      <section id="care-stages" className="py-32 md:py-48 px-8 md:px-16 max-w-[100rem] mx-auto relative z-20 bg-[#FAF6EE] overflow-hidden">
         <motion.p
           initial="hidden"
           whileInView="visible"
@@ -597,7 +597,7 @@ export default function Home() {
       </section>
 
       {/* Booking CTA */}
-      <section id="book" className="py-32 md:py-48 px-8 md:px-16 text-center bg-background relative z-20 border-b border-foreground/10">
+      <section id="book" className="py-32 md:py-48 px-8 md:px-16 text-center bg-[#FAF6EE] relative z-20 border-b border-foreground/10">
         <motion.div 
           className="max-w-4xl mx-auto space-y-16"
           initial="hidden"
@@ -626,7 +626,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-8 md:px-16 text-[11px] tracking-[0.3em] uppercase text-foreground/40 font-light bg-background relative z-20">
+      <footer className="py-16 px-8 md:px-16 text-[11px] tracking-[0.3em] uppercase text-foreground/40 font-light bg-[#FAF6EE] relative z-20">
         <div className="max-w-[100rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
           <a href="#top" className="flex items-center normal-case shrink-0">
             <img
