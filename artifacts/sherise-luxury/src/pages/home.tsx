@@ -112,7 +112,7 @@ export default function Home() {
 
         {/* Hero Logo (centered, lifted above hands) */}
         <motion.div
-          className="absolute top-[30%] md:top-[31%] lg:top-[32%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-30"
+          className="absolute top-[27%] md:top-[28%] lg:top-[29%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-30"
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
@@ -130,7 +130,7 @@ export default function Home() {
             <img
               src={sheRisesLogo}
               alt="SheRises Women's Health"
-              className="block w-[180px] sm:w-[210px] md:w-[250px] lg:w-[290px] xl:w-[330px] h-auto select-none relative"
+              className="block w-[210px] sm:w-[240px] md:w-[290px] lg:w-[340px] xl:w-[390px] h-auto select-none relative"
               style={{
                 filter:
                   "drop-shadow(0 0 18px rgba(242,226,205,0.85)) drop-shadow(0 0 32px rgba(242,226,205,0.6))",
