@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ArrowUp, ArrowUpRight } from "lucide-react";
 import generationsOfCare from "@assets/generations_of_care_1776802252403.png";
-import sheRisesLogo from "@assets/LOGO_with_vertical_list_transparent_1776884062361.png";
+import sheRisesLogo from "@assets/SR_Logo_without_services_transparent.png";
 import srMonogram from "@assets/SR_Monogram_1776893310482.png";
 import scarlettHeadshot from "@assets/closer_up_Headshot_1776896576344.png";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -101,15 +101,11 @@ export default function Home() {
           animate="visible"
           variants={staggerContainer}
         >
-          <motion.div
-            variants={fadeUp}
-            className="relative overflow-hidden w-[150px] sm:w-[170px] md:w-[200px] lg:w-[230px] xl:w-[250px]"
-            style={{ aspectRatio: "1254 / 780" }}
-          >
+          <motion.div variants={fadeUp} className="relative">
             <img
               src={sheRisesLogo}
               alt="SheRises Women's Health"
-              className="block w-full h-auto select-none"
+              className="block w-[150px] sm:w-[170px] md:w-[200px] lg:w-[230px] xl:w-[250px] h-auto select-none"
               draggable={false}
             />
           </motion.div>
