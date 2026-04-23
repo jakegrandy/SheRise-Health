@@ -85,7 +85,7 @@ export default function Home() {
             <img
               src={generationsOfCare}
               alt="Two generations holding hands"
-              className="w-full h-full object-contain object-bottom"
+              className="w-full h-full object-cover object-bottom"
               style={{
                 WebkitMaskImage:
                   "radial-gradient(ellipse 95% 110% at 50% 100%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0.4) 88%, rgba(0,0,0,0) 100%)",
@@ -117,6 +117,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+          style={{ zIndex: 999 }}
         >
           <p
             className="italic text-foreground text-2xl lg:text-3xl xl:text-4xl font-extralight leading-[1.3]"
