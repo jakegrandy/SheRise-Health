@@ -53,7 +53,7 @@ const frameworkItems: FrameworkItem[] = [
     subsystems: [
       "Menstrual cycle regulation and optimization",
       "Contraception counseling and management",
-      "Perimenopause transition planning",
+      "Perimenopause transition",
       "Postmenopausal health and longevity",
       "Fertility preservation and infertility support",
     ],
