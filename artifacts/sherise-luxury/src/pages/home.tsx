@@ -13,7 +13,7 @@ const BASE = import.meta.env.BASE_URL;
 
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1.4, ease: [0.16, 1, 0.3, 1] } }
+  visible: { opacity: 1, y: 0, transition: { duration: 1.4, ease: [0.16, 1, 0.3, 1] as any } }
 };
 
 const staggerContainer = {
@@ -116,7 +116,7 @@ export default function Home() {
           className="hidden md:block absolute top-8 lg:top-12 left-1/2 -translate-x-1/2 z-30 w-full max-w-3xl lg:max-w-4xl px-6 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as any, delay: 0.2 }}
           style={{ zIndex: 999 }}
         >
           <p
@@ -457,7 +457,7 @@ export default function Home() {
             className="relative aspect-[3/4] w-full max-w-xl"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] as any }}
             viewport={{ once: true }}
           >
             <div className="absolute inset-0 border border-background/20 translate-x-4 translate-y-4" />
