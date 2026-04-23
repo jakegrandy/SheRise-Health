@@ -106,22 +106,35 @@ export default function Home() {
             className="italic text-foreground text-2xl lg:text-3xl xl:text-4xl font-extralight leading-[1.3]"
             style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
           >
-            High-end specialty care and routine women's health in one <span className="text-accent">reimagined framework.</span>
+            High-end specialty care and routine women's health in one<br /><span className="text-accent">reimagined framework.</span>
           </p>
         </motion.div>
 
-        {/* Hero Logo (centered over hands) */}
+        {/* Hero Logo (centered, lifted above hands) */}
         <motion.div
-          className="absolute top-[34%] md:top-[36%] lg:top-[38%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-30"
+          className="absolute top-[30%] md:top-[31%] lg:top-[32%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-30"
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
         >
           <motion.div variants={fadeUp} className="relative">
+            <div
+              className="absolute inset-0 -z-10 rounded-full"
+              style={{
+                background:
+                  "radial-gradient(ellipse 65% 60% at 50% 50%, rgba(242,226,205,0.95) 0%, rgba(242,226,205,0.7) 45%, rgba(242,226,205,0) 75%)",
+                filter: "blur(8px)",
+                transform: "scale(1.15)",
+              }}
+            />
             <img
               src={sheRisesLogo}
               alt="SheRises Women's Health"
-              className="block w-[260px] sm:w-[300px] md:w-[360px] lg:w-[420px] xl:w-[480px] h-auto select-none"
+              className="block w-[260px] sm:w-[300px] md:w-[360px] lg:w-[420px] xl:w-[480px] h-auto select-none relative"
+              style={{
+                filter:
+                  "drop-shadow(0 0 18px rgba(242,226,205,0.85)) drop-shadow(0 0 32px rgba(242,226,205,0.6))",
+              }}
               draggable={false}
             />
           </motion.div>
