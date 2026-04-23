@@ -4,7 +4,7 @@ function SystemsPentagon() {
   const systems = [
     { label: ["Hormonal", "Regulation"], angle: -90 },
     { label: ["Metabolic", "Function"], angle: -18 },
-    { label: ["Reproductive", "Health"], angle: 54 },
+    { label: ["Reproductive &", "Sexual Health"], angle: 54 },
     { label: ["Nervous System", "Regulation"], angle: 126 },
     { label: ["Lifestyle", "Inputs"], angle: 198 },
   ];

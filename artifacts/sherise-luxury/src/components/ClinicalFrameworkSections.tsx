@@ -47,7 +47,7 @@ const frameworkItems: FrameworkItem[] = [
   {
     number: "03",
     icon: <Moon className="w-6 h-6" />,
-    name: "Reproductive Health",
+    name: "Reproductive & Sexual Health",
     definition:
       "Reproductive physiology spans decades and life stages. At She Rises, we care for you in your teens and 20's through all your firsts. We are with you through your 30's and 40's when your body starts to change and your family planning years are coming to an end. And we are here with you in your 50's and into your golden years. We want you thriving in every stage.",
     subsystems: [
