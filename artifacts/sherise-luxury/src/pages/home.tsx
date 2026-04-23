@@ -138,8 +138,20 @@ export default function Home() {
 
       </section>
 
+      {/* Urgent Care Link */}
+      <div className="bg-background relative z-20 flex justify-center pt-12 pb-4 px-6">
+        <a
+          href="/urgent-care"
+          className="group inline-flex items-center gap-3 text-[12px] md:text-[13px] tracking-[0.3em] uppercase text-accent hover:text-primary transition-colors duration-500"
+          style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}
+        >
+          <span className="border-b border-accent/40 group-hover:border-primary pb-1">Urgent Care Needs</span>
+          <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-500" />
+        </a>
+      </div>
+
       {/* Hero Tagline */}
-      <div className="bg-background relative z-20 flex justify-center pt-16 pb-4 px-6">
+      <div className="bg-background relative z-20 flex justify-center pt-8 pb-4 px-6">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -153,7 +165,7 @@ export default function Home() {
       </div>
 
       {/* CTA Button */}
-      <div className="bg-background relative z-20 flex flex-col items-center gap-5 py-12">
+      <div className="bg-background relative z-20 flex justify-center py-12">
         <a
           href="#book"
           className="group relative inline-flex items-center justify-center px-12 py-6 text-[11px] tracking-[0.3em] uppercase text-primary border border-[#E5C8C0] transition-all duration-700 overflow-hidden"
@@ -164,14 +176,6 @@ export default function Home() {
             Request a Consultation
             <ArrowRight className="w-4 h-4 opacity-50 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-700" />
           </span>
-        </a>
-        <a
-          href="mailto:info@sheriseshealth.com?subject=Urgent%20Care%20Need"
-          className="group inline-flex items-center gap-2 text-[11px] tracking-[0.3em] uppercase text-accent hover:text-primary transition-colors duration-500"
-          style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}
-        >
-          <span className="border-b border-accent/40 group-hover:border-primary pb-1">Urgent Care Needs</span>
-          <ArrowRight className="w-3 h-3 transform group-hover:translate-x-1 transition-transform duration-500" />
         </a>
       </div>
 
