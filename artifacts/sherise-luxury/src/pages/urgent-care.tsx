@@ -78,8 +78,7 @@ export default function UrgentCare() {
               style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
               We offer same-day care for common and time-sensitive women's health concerns—without
-              the long waits or rushed visits. Choose what works best for you: come in or
-              connect from home.
+              the long waits. Choose what works best for you: come in or connect from home.
             </motion.p>
           </motion.div>
         </div>
