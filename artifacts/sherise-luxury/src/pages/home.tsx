@@ -131,6 +131,7 @@ export default function Home() {
             <span className="border-b border-transparent group-hover:border-accent transition-colors pb-1">Inquire</span>
           </a>
           <a href="#testimonials" className="hover:text-accent transition-colors duration-500">Testimonials</a>
+          <a href="/urgent-care" className="text-accent hover:text-primary transition-colors duration-500">Urgent Care Needs</a>
         </nav>
 
         <nav className="md:hidden absolute bottom-0 left-0 right-0 z-20 flex items-center justify-center gap-6 px-6 py-6 text-primary text-[10px] tracking-[0.28em] uppercase flex-wrap" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}>
@@ -143,20 +144,8 @@ export default function Home() {
 
       </section>
 
-      {/* Urgent Care Link */}
-      <div className="bg-background relative z-20 flex justify-center pt-12 pb-4 px-6">
-        <a
-          href="/urgent-care"
-          className="group inline-flex items-center gap-3 text-[12px] md:text-[13px] tracking-[0.3em] uppercase text-accent hover:text-primary transition-colors duration-500"
-          style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontWeight: 600 }}
-        >
-          <span className="border-b border-accent/40 group-hover:border-primary pb-1">Urgent Care Needs</span>
-          <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-500" />
-        </a>
-      </div>
-
       {/* Hero Tagline */}
-      <div className="bg-background relative z-20 flex justify-center pt-8 pb-4 px-6">
+      <div className="bg-background relative z-20 flex justify-center pt-16 pb-4 px-6">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
