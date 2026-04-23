@@ -130,7 +130,7 @@ export default function Home() {
             <img
               src={sheRisesLogo}
               alt="SheRises Women's Health"
-              className="block w-[260px] sm:w-[300px] md:w-[360px] lg:w-[420px] xl:w-[480px] h-auto select-none relative"
+              className="block w-[180px] sm:w-[210px] md:w-[250px] lg:w-[290px] xl:w-[330px] h-auto select-none relative"
               style={{
                 filter:
                   "drop-shadow(0 0 18px rgba(242,226,205,0.85)) drop-shadow(0 0 32px rgba(242,226,205,0.6))",
