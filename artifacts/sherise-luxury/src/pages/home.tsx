@@ -93,6 +93,21 @@ export default function Home() {
               }}
             />
           </motion.div>
+          {/* Soft cream vignette to lighten lower-left corner */}
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 55% 55% at 0% 100%, hsl(34 59% 88%) 0%, hsl(34 59% 88% / 0.7) 35%, hsl(34 59% 88% / 0) 70%)",
+            }}
+          />
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 55% 55% at 100% 100%, hsl(34 59% 88%) 0%, hsl(34 59% 88% / 0.7) 35%, hsl(34 59% 88% / 0) 70%)",
+            }}
+          />
         </div>
 
         {/* Hero Tagline (top-center, above logo) */}
