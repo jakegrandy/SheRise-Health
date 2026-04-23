@@ -105,7 +105,7 @@ export default function Home() {
             <img
               src={sheRisesLogo}
               alt="SheRises Women's Health"
-              className="block w-[150px] sm:w-[170px] md:w-[200px] lg:w-[230px] xl:w-[250px] h-auto select-none"
+              className="block w-[210px] sm:w-[240px] md:w-[290px] lg:w-[330px] xl:w-[370px] h-auto select-none"
               draggable={false}
             />
           </motion.div>
@@ -113,13 +113,13 @@ export default function Home() {
 
         {/* Hero Tagline (upper-right) */}
         <motion.div
-          className="hidden md:block absolute top-10 lg:top-14 right-8 lg:right-16 z-30 max-w-md lg:max-w-lg text-right"
+          className="hidden md:block absolute top-10 lg:top-14 right-8 lg:right-16 z-30 max-w-lg lg:max-w-2xl xl:max-w-3xl text-right"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
         >
           <p
-            className="italic text-foreground text-lg lg:text-xl xl:text-2xl font-extralight leading-[1.35]"
+            className="italic text-foreground text-2xl lg:text-3xl xl:text-4xl font-extralight leading-[1.3]"
             style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
           >
             High-end specialty care and routine women's health in one <span className="text-accent">reimagined framework.</span>
