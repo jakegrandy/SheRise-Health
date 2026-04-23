@@ -189,7 +189,7 @@ export default function Home() {
       </section>
 
       {/* CTA Button */}
-      <div className="bg-background relative z-20 flex justify-center pt-16 pb-12">
+      <div className="bg-background relative z-20 flex flex-col items-center gap-5 pt-16 pb-12">
         <a
           href="#book"
           className="group relative inline-flex items-center justify-center px-12 py-6 text-[11px] tracking-[0.3em] uppercase text-primary border border-[#E5C8C0] transition-all duration-700 overflow-hidden"
@@ -201,6 +201,17 @@ export default function Home() {
             <ArrowRight className="w-4 h-4 opacity-50 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-700" />
           </span>
         </a>
+        <Link
+          href="/urgent-care"
+          className="group relative inline-flex items-center justify-center px-12 py-6 text-[11px] tracking-[0.3em] uppercase text-[#2E4F3E] border border-[#B9D3BE] transition-all duration-700 overflow-hidden"
+          style={{ backgroundColor: "#D9E8DC" }}
+        >
+          <div className="absolute inset-0 bg-[#2E4F3E] translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[0.16,1,0.3,1]" />
+          <span className="relative z-10 flex items-center gap-4 group-hover:text-background transition-colors duration-700">
+            Need a Same-Day Appt? Urgent Women's Health Needs
+            <ArrowRight className="w-4 h-4 opacity-50 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-700" />
+          </span>
+        </Link>
       </div>
 
       {/* Credentials Bar */}
