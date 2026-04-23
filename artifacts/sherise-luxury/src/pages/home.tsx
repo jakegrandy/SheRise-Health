@@ -96,7 +96,7 @@ export default function Home() {
         </div>
 
         <motion.div
-          className="absolute top-6 md:top-8 lg:top-10 left-6 md:left-10 lg:left-16 z-30"
+          className="absolute top-2 md:top-3 lg:top-4 left-2 md:left-3 lg:left-4 z-30"
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
