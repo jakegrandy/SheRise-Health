@@ -66,7 +66,7 @@ export default function UrgentCare() {
             </motion.p>
             <motion.h1
               variants={fadeUp}
-              className="font-light text-5xl md:text-7xl lg:text-8xl leading-[1.05] text-foreground mb-10"
+              className="font-light text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] text-foreground mb-10 whitespace-nowrap"
               style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
               When something feels off,<br />
