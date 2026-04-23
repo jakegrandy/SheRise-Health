@@ -33,13 +33,13 @@
 
 :root {
   /*
-     Cream:        #FCFBF9  → hsl(40 33% 98%)
-     Cream Dark:   #F4F1EB  → hsl(40 30% 94%)
+     Cream:        #F2E2CD  → hsl(34 59% 88%)
+     Cream Dark:   #E5D2B6  → hsl(34 45% 81%)
      Forest green: #132A24  → hsl(158 37% 12%)
      Rose:         #B5736A  → hsl(7 34% 56%)
   */
 
-  --background:             40 33% 98%;   
+  --background:             34 59% 88%;   
   --foreground:             158 37% 12%;  
 
   --card:                   40 30% 94%;

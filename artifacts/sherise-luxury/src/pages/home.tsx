@@ -85,7 +85,12 @@ export default function Home() {
               src={generationsOfCare}
               alt="Two generations holding hands"
               className="w-full h-full object-contain object-bottom"
-              style={{ mixBlendMode: "multiply" }}
+              style={{
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 60% 70% at 50% 90%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0) 100%)",
+                maskImage:
+                  "radial-gradient(ellipse 60% 70% at 50% 90%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0) 100%)",
+              }}
             />
           </motion.div>
         </div>
