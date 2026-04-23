@@ -58,7 +58,7 @@ const frameworkItems: FrameworkItem[] = [
       "Fertility preservation and infertility support",
       "Sexual function",
     ],
-    conditions: ["Irregular cycles", "PMS/PMDD", "Fertility planning", "PCOS", "Heavy periods", "Contraception", "Low sexual desire", "Painful sexual intercourse", "Vaginitis management", "STI testing and treatment"],
+    conditions: ["Irregular cycles", "PMS/PMDD", "Fertility planning", "PCOS", "Heavy periods", "Contraception", "Low sexual desire", "Painful sexual intercourse", "Vulvar skin conditions", "Vaginitis management", "STI testing and treatment"],
   },
   {
     number: "04",
