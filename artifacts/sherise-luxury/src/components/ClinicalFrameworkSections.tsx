@@ -130,7 +130,7 @@ export function SheRisesDifference() {
           The She Rises Difference
         </p>
         <h3 className="text-2xl md:text-3xl font-medium text-[#132A24] leading-snug" style={FONT_SERIF}>
-          Hormones, metabolism, and reproductive health are treated together within your unique neurobehavioral context.
+          Hormones, metabolism, sexual health, and longevity are treated together within your unique neurobehavioral context.
         </h3>
       </div>
     </FadeIn>
