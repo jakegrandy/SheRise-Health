@@ -359,7 +359,7 @@ export default function Home() {
               items: [
                 "Low desire, arousal concerns, and orgasm changes",
                 "Pain with sex, vaginal dryness, and pelvic discomfort",
-                "Sexual health screening and counseling",
+                "Intimate tissue wellness and restoration",
                 "Perimenopause, menopause, and postpartum related sexual changes",
                 "Relationship-centered communication and support",
                 "Infection management and health promotion",
