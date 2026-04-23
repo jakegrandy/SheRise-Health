@@ -95,25 +95,9 @@ export default function Home() {
           </motion.div>
         </div>
 
+        {/* Hero Tagline (top-center, above logo) */}
         <motion.div
-          className="absolute top-2 md:top-3 lg:top-4 left-2 md:left-3 lg:left-4 z-30"
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-        >
-          <motion.div variants={fadeUp} className="relative">
-            <img
-              src={sheRisesLogo}
-              alt="SheRises Women's Health"
-              className="block w-[210px] sm:w-[240px] md:w-[290px] lg:w-[330px] xl:w-[370px] h-auto select-none"
-              draggable={false}
-            />
-          </motion.div>
-        </motion.div>
-
-        {/* Hero Tagline (upper-right) */}
-        <motion.div
-          className="hidden md:block absolute top-10 lg:top-14 right-8 lg:right-16 z-30 max-w-lg lg:max-w-2xl xl:max-w-3xl text-right"
+          className="hidden md:block absolute top-8 lg:top-12 left-1/2 -translate-x-1/2 z-30 w-full max-w-3xl lg:max-w-4xl px-6 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
@@ -124,6 +108,23 @@ export default function Home() {
           >
             High-end specialty care and routine women's health in one <span className="text-accent">reimagined framework.</span>
           </p>
+        </motion.div>
+
+        {/* Hero Logo (centered over hands) */}
+        <motion.div
+          className="absolute top-[34%] md:top-[36%] lg:top-[38%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-30"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <motion.div variants={fadeUp} className="relative">
+            <img
+              src={sheRisesLogo}
+              alt="SheRises Women's Health"
+              className="block w-[260px] sm:w-[300px] md:w-[360px] lg:w-[420px] xl:w-[480px] h-auto select-none"
+              draggable={false}
+            />
+          </motion.div>
         </motion.div>
 
         <nav
