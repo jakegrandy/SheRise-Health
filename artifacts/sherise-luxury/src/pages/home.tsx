@@ -96,20 +96,38 @@ export default function Home() {
         </div>
 
         <motion.div
-          className="absolute -top-6 md:-top-8 left-[calc(50%-1.25rem)] -translate-x-1/2 z-10"
+          className="absolute top-6 md:top-8 lg:top-10 left-6 md:left-10 lg:left-16 z-30"
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
         >
-          <motion.div variants={fadeUp} className="relative">
+          <motion.div
+            variants={fadeUp}
+            className="relative overflow-hidden w-[150px] sm:w-[170px] md:w-[200px] lg:w-[230px] xl:w-[250px]"
+            style={{ aspectRatio: "1254 / 780" }}
+          >
             <img
               src={sheRisesLogo}
-              alt="SheRises Women's Health — Hormones, Metabolic, Reproductive"
-              className="block w-[280px] sm:w-[320px] md:w-[380px] lg:w-[440px] xl:w-[480px] h-auto select-none"
-              style={{ filter: "brightness(0.78) saturate(1.25) contrast(1.05)" }}
+              alt="SheRises Women's Health"
+              className="block w-full h-auto select-none"
               draggable={false}
             />
           </motion.div>
+        </motion.div>
+
+        {/* Hero Tagline (upper-right) */}
+        <motion.div
+          className="hidden md:block absolute top-10 lg:top-14 right-8 lg:right-16 z-30 max-w-md lg:max-w-lg text-right"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+        >
+          <p
+            className="italic text-foreground text-lg lg:text-xl xl:text-2xl font-extralight leading-[1.35]"
+            style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+          >
+            High-end specialty care and routine women's health in one <span className="text-accent">reimagined framework.</span>
+          </p>
         </motion.div>
 
         <nav
@@ -144,22 +162,8 @@ export default function Home() {
 
       </section>
 
-      {/* Hero Tagline */}
-      <div className="bg-background relative z-20 flex justify-center pt-16 pb-4 px-6">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="italic text-foreground text-2xl md:text-3xl lg:text-4xl font-extralight leading-[1.3] text-center max-w-3xl"
-          style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
-        >
-          High-end specialty care and routine women's health in one <span className="text-accent">reimagined framework.</span>
-        </motion.h1>
-      </div>
-
       {/* CTA Button */}
-      <div className="bg-background relative z-20 flex justify-center py-12">
+      <div className="bg-background relative z-20 flex justify-center pt-16 pb-12">
         <a
           href="#book"
           className="group relative inline-flex items-center justify-center px-12 py-6 text-[11px] tracking-[0.3em] uppercase text-primary border border-[#E5C8C0] transition-all duration-700 overflow-hidden"
